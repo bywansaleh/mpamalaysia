@@ -12,12 +12,7 @@ import LogoText from './logo-text';
 
 export default async function Footer() {
 	return (
-		<footer
-			className={cn(
-				'border-t bg-white py-10 dark:bg-black',
-				'hover:[&_a]:underline'
-			)}
-		>
+		<footer className={cn('border-t bg-card py-10', 'hover:[&_a]:underline')}>
 			<div className="container flex flex-col items-start gap-6">
 				<div className="">
 					<LogoText className="h-8" />
@@ -34,7 +29,7 @@ export default async function Footer() {
 						<h4>About</h4>
 						<p>
 							<span className="text-brand">
-								The Music Publishers Association of Malaysia
+								Music Publishers Association of Malaysia
 							</span>{' '}
 							safeguards the rights and promotes the works of music publishers
 							in the country.

@@ -12,7 +12,7 @@
 	}
 	html {
 		@apply font-normal antialiased;
-		@apply font-sans tracking-[-0.01em];
+		@apply font-sans;
 		font-feature-settings:
 			'calt' 1,
 			'case' 1,
@@ -26,6 +26,6 @@
 		/* 'ss03' 1; */
 	}
 	body {
-		@apply bg-background tracking-[inherit] text-foreground;
+		@apply bg-background tracking-[-0.015em] text-foreground;
 	}
 }

@@ -5,9 +5,9 @@ import MyFlag from './my-flag';
 
 export default function Nav() {
 	return (
-		<nav className="">
-			<div className="container py-8">
-				<div className="flex h-8 gap-1">
+		<nav className="border-b py-6">
+			<div className="container">
+				<div className="flex h-8 gap-2">
 					<div>
 						<MyFlag className="h-full" />
 					</div>

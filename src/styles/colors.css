@@ -2,13 +2,13 @@
 
 @layer base {
 	:root {
-		--hue: 340;
+		--hue: 10;
 
 		--brand: var(--hue) 80% 55%;
 		--brand-foreground: var(--hue) 80% 100%;
-		--background: var(--hue) 20% 97%;
+		--background: var(--hue) 30% 96.5%;
 		--foreground: var(--hue) 4% 3.9%;
-		--card: var(--hue) 4% 99%;
+		--card: var(--hue) 4% 99.8%;
 		--card-foreground: var(--hue) 4% 3.9%;
 		--popover: var(--hue) 4% 104%;
 		--popover-foreground: var(--hue) 4% 3.9%;
@@ -22,7 +22,7 @@
 		--accent-foreground: var(--hue) 4% 9%;
 		--destructive: 353 84.2% 55.2%;
 		--destructive-foreground: 353 4% 98%;
-		--border: var(--hue) 4% 89%;
+		--border: var(--hue) 4% 86%;
 		--input: var(--hue) 4% 89%;
 		--ring: var(--hue) 70% 45.1%;
 	}
@@ -32,7 +32,7 @@
 		--brand-foreground: var(--hue) 80% 10%;
 		--background: var(--hue) 4% 7%;
 		--foreground: var(--hue) 4% 98%;
-		--card: var(--hue) 4% 5%;
+		--card: var(--hue) 4% 2.5%;
 		--card-foreground: var(--hue) 4% 98%;
 		--popover: var(--hue) 4% 6%;
 		--popover-foreground: var(--hue) 4% 98%;
@@ -46,7 +46,7 @@
 		--accent-foreground: var(--hue) 4% 98%;
 		--destructive: 353 62.8% 50.6%;
 		--destructive-foreground: 353 4% 98%;
-		--border: var(--hue) 10% 15%;
+		--border: var(--hue) 10% 17%;
 		--input: var(--hue) 10% 14.9%;
 		--ring: var(--hue) 70% 63.9%;
 	}

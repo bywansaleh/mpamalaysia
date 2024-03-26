@@ -1,8 +1,10 @@
 import {
 	DM_Serif_Display as Heading,
+	// Manrope as Sans,
 	Rethink_Sans as Sans,
-	Instrument_Serif as Serif,
+	DM_Serif_Text as Serif,
 } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
 
 import { cn } from '@/lib/utils';
 
@@ -34,6 +36,7 @@ const fontSerif = Serif({
 });
 
 const fontClassNames = cn(
+	GeistSans.variable,
 	fontSans.variable,
 	fontHeading.variable,
 	fontSerif.variable

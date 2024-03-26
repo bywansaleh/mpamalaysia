@@ -4,7 +4,7 @@ import { baseUrl } from '@/lib/config';
 
 export const siteTitle = 'Music Publishers Association Malaysia';
 export const siteDescription =
-	'The Music Publishers Association of Malaysia safeguards the rights and promotes the works of music publishers in the country.';
+	'Music Publishers Association of Malaysia safeguards the rights and promotes the works of music publishers in the country.';
 
 const siteImage = `${baseUrl}/opengraph`;
 

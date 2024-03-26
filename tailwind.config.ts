@@ -16,21 +16,23 @@ export default {
 		container: {
 			center: true,
 			padding: {
-				DEFAULT: '2rem',
-				sm: '2rem',
+				DEFAULT: '1rem',
+				// sm: '1rem',
 			},
 			screens: {
-				'2xl': '1400px',
+				'2xl': '100rem',
 			},
 		},
 		extend: {
 			fontFamily: {
 				sans: [
+					// 'var(--font-sans)',
+					// 'var(--font-geist-sans)',
 					'InterVariable',
-					'var(--font-sans)',
 					...defaultTheme.fontFamily.sans,
 				],
 				serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif],
+				heading: ['var(--font-heading)', ...defaultTheme.fontFamily.serif],
 			},
 
 			colors: {
@@ -112,10 +114,22 @@ export default {
 		require('@tailwindcss/typography'),
 		require('tailwindcss-easing'),
 
-		plugin(function ({ addVariant }) {
+		plugin(function ({ addVariant, matchUtilities, theme }) {
 			addVariant('firefox', '@supports (-moz-appearance: none)');
 			addVariant('safari', '@supports (background: -webkit-named-image(i))');
 			addVariant('chrome', '@supports (-webkit-app-region: inherit)');
+
+			matchUtilities(
+				{
+					'p-mask': (value) => ({
+						mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+						'-webkit-mask-composite': 'xor',
+						'mask-composite': 'exclude',
+						padding: value,
+					}),
+				},
+				{ values: theme('spacing') }
+			);
 		}),
 	],
 } satisfies Config;
