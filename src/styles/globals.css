@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './colors.css';
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		@apply border-border;
+	}
+	html {
+		@apply font-normal antialiased;
+		@apply font-sans tracking-[-0.01em];
+		font-feature-settings:
+			'calt' 1,
+			'case' 1,
+			'cv01' 1,
+			'cv05' 1,
+			/* 'cv06' 1, */ /* 'cv08' 1, */ /* 'cv10' 1, */ /* 'cv11' 1, */ 'cv12' 1,
+			'cv13' 1,
+			'dlig' 1,
+			'liga' 1;
+		/* 'ss01' 1; */
+		/* 'ss03' 1; */
+	}
+	body {
+		@apply bg-background tracking-[inherit] text-foreground;
+	}
+}
