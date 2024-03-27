@@ -1,3 +1,3 @@
-export const hue = 170;
-export const bgLight = `${hue} 30% 96.5%`;
-export const bgDark = `${hue} 4% 7%`;
+export const hue = 20;
+export const bgLight = `${hue} 12% 95%`;
+export const bgDark = `${hue} 4% 6%`;

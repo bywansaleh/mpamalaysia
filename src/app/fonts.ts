@@ -1,4 +1,5 @@
 import {
+	Montserrat as Brand,
 	DM_Serif_Display as Heading,
 	// Manrope as Sans,
 	Rethink_Sans as Sans,
@@ -34,12 +35,21 @@ const fontSerif = Serif({
 	variable: '--font-serif',
 	fallback: ['serif'],
 });
+const fontBrand = Brand({
+	preload: true,
+	subsets: ['latin'],
+	display: 'swap',
+	style: ['normal', 'italic'],
+	variable: '--font-brand',
+	fallback: ['serif'],
+});
 
 const fontClassNames = cn(
 	GeistSans.variable,
 	fontSans.variable,
 	fontHeading.variable,
-	fontSerif.variable
+	fontSerif.variable,
+	fontBrand.variable
 );
 
 export default fontClassNames;

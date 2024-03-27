@@ -22,7 +22,7 @@
 		--accent-foreground: var(--hue) 4% 9%;
 		--destructive: 353 84.2% 55.2%;
 		--destructive-foreground: 353 4% 98%;
-		--border: var(--hue) 4% 88%;
+		--border: var(--hue) 4% 89%;
 		--input: var(--hue) 4% 89%;
 		--ring: var(--hue) 70% 45.1%;
 	}
@@ -46,7 +46,7 @@
 		--accent-foreground: var(--hue) 4% 98%;
 		--destructive: 353 62.8% 50.6%;
 		--destructive-foreground: 353 4% 98%;
-		--border: var(--hue) 8% 15%;
+		--border: var(--hue) 8% 12%;
 		--input: var(--hue) 8% 14.9%;
 		--ring: var(--hue) 70% 63.9%;
 	}

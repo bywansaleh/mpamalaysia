@@ -33,6 +33,7 @@ export default {
 				],
 				serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif],
 				heading: ['var(--font-heading)', ...defaultTheme.fontFamily.serif],
+				brand: ['var(--font-brand)', ...defaultTheme.fontFamily.serif],
 			},
 
 			colors: {

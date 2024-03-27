@@ -18,8 +18,14 @@ export default function MouseProvider() {
 				[x, y] = [(ev as MouseEvent).clientX, (ev as MouseEvent).clientY];
 			}
 
-			document.documentElement.style.setProperty('--mx', `${Math.round(x)}px`);
-			document.documentElement.style.setProperty('--my', `${Math.round(y)}px`);
+			document.documentElement.style.setProperty(
+				'--mx',
+				Math.round(x).toString()
+			);
+			document.documentElement.style.setProperty(
+				'--my',
+				Math.round(y).toString()
+			);
 
 			// mvx.set(x);
 			// mvy.set(y);

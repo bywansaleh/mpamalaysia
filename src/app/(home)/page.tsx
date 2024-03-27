@@ -1,25 +1,40 @@
+/* eslint-disable @next/next/no-img-element */
+
+// import img from '@/assets/images/mj1.png';
+
 import styles from './styles.module.css';
 
 export default function Home() {
 	return (
 		<>
-			<div className="border-b">
-				<div className="container py-10 pt-20">
-					<h2 className="max-w-screen-lg text-pretty font-serif text-5xl tracking-tight">
-						<span className="text-muted-foreground">
-							Protecting and promoting
-						</span>{' '}
-						the rights and interests of music publishers in Malaysia.
-					</h2>
-					<p className="mt-40 max-w-screen-md text-pretty text-3xl font-light !leading-none">
-						Music Publishers Association of Malaysia safeguards the rights and
-						promotes the works of music publishers in the country. We focus on
-						the following six pillars.
-					</p>
+			<div className="relative border-b">
+				<div className="container py-10 pt-32">
+					<div className="max-w-screen-md">
+						<h2 className="text-pretty font-serif text-5xl tracking-tight">
+							<span className="text-muted-foreground/80">
+								Protecting and promoting
+							</span>{' '}
+							the rights and interests of music publishers in Malaysia.
+						</h2>
+						<p className="mt-40 text-pretty text-3xl font-light !leading-[1.1]">
+							Music Publishers Association of Malaysia safeguards the rights and
+							promotes the works of music publishers in the country.{' '}
+							<span className="text-muted-foreground/80">
+								We focus on the following six pillars.
+							</span>
+						</p>
+					</div>
 				</div>
 			</div>
 
-			<div className="border-b">
+			<div className="relative border-b">
+				<img
+					src="/images/mj1.png"
+					alt=""
+					// width={600}
+					// height={351}
+					className="absolute bottom-0 right-0 -z-10 aspect-[600/351] h-full opacity-80"
+				/>
 				<div className="container py-10">
 					<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 						<div className={styles.card}>
@@ -77,10 +92,13 @@ export default function Home() {
 						</div>
 					</div>
 
-					<p className="mt-20 max-w-md text-pretty text-sm font-medium text-muted-foreground">
-						Our mission is to empower music publishers in the country with
-						resources, recognition, and education to maximize their creative and
-						financial potential and to compete internationally.
+					<p className="mt-20 max-w-md text-pretty text-sm font-medium leading-tight text-muted-foreground/80">
+						Our mission is to empower music publishers in the country with{' '}
+						<span className="text-foreground">
+							resources, recognition, and education
+						</span>{' '}
+						to maximize their creative and financial potential whilst competing
+						globally.
 					</p>
 				</div>
 			</div>
