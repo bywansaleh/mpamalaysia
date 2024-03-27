@@ -1,7 +1,7 @@
 .card {
 	--radius: 10px;
 
-	@apply relative flex aspect-[2] flex-col rounded-[--radius] border bg-card bg-gradient-to-b from-card to-muted/10 p-4 text-card-foreground md:p-6;
+	@apply relative flex flex-col rounded-[--radius] bg-card/70 p-4 text-card-foreground shadow-xl backdrop-blur-lg md:p-6;
 
 	& > div {
 		@apply overflow-hidden;
@@ -36,9 +36,9 @@
 	}
 
 	h3 {
-		@apply relative z-10 mb-4 text-sm font-bold uppercase tracking-wider text-brand;
+		@apply relative z-10 mb-4 text-xs font-bold uppercase tracking-wider text-brand md:text-sm;
 	}
 	p {
-		@apply relative z-10 mt-auto max-w-sm text-balance !leading-snug;
+		@apply relative z-10 mt-auto max-w-sm text-balance text-sm !leading-snug md:text-base;
 	}
 }

@@ -2,6 +2,7 @@
 
 // import img from '@/assets/images/mj1.png';
 
+import Council from './council';
 import styles from './styles.module.css';
 
 export default function Home() {
@@ -10,13 +11,13 @@ export default function Home() {
 			<div className="relative border-b">
 				<div className="container py-10 pt-32">
 					<div className="max-w-screen-md">
-						<h2 className="text-pretty font-serif text-5xl tracking-tight">
+						<h2 className="text-pretty font-serif text-4xl tracking-tight md:text-5xl">
 							<span className="text-muted-foreground/80">
 								Protecting and promoting
 							</span>{' '}
 							the rights and interests of music publishers in Malaysia.
 						</h2>
-						<p className="mt-40 text-pretty text-3xl font-light !leading-[1.1]">
+						<p className="mt-40 text-pretty text-2xl font-light !leading-[1.1] md:text-3xl">
 							Music Publishers Association of Malaysia safeguards the rights and
 							promotes the works of music publishers in the country.{' '}
 							<span className="text-muted-foreground/80">
@@ -27,16 +28,16 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className="relative border-b">
+			<div className="relative overflow-hidden border-b bg-gradient-to-bl from-brand/15 to-50%">
 				<img
-					src="/images/mj1.png"
+					src="/images/16.png"
 					alt=""
 					// width={600}
 					// height={351}
-					className="absolute bottom-0 right-0 -z-10 aspect-[600/351] h-full opacity-80"
+					className="absolute -top-40 right-0 -z-10 w-1/3 min-w-[50vw] rotate-45 opacity-100"
 				/>
 				<div className="container py-10">
-					<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+					<div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
 						<div className={styles.card}>
 							<h3>Advocacy</h3>
 							<p>
@@ -102,6 +103,8 @@ export default function Home() {
 					</p>
 				</div>
 			</div>
+
+			<Council />
 		</>
 	);
 }

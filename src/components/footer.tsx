@@ -8,17 +8,10 @@ import {
 } from '@/app/company';
 import { siteTitle } from '@/app/metadata';
 
-import LogoText from './logo-text';
-
 export default async function Footer() {
 	return (
 		<footer className={cn('border-t bg-card py-10', 'hover:[&_a]:underline')}>
 			<div className="container flex flex-col items-start gap-6">
-				<div className="">
-					<LogoText className="h-8" />
-					<span className="sr-only">{siteTitle}</span>
-				</div>
-
 				<div
 					className={cn(
 						'grid grid-cols-1 gap-10 text-xs font-medium md:grid-cols-3',
