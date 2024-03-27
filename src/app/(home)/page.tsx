@@ -4,14 +4,14 @@ export default function Home() {
 	return (
 		<>
 			<div className="border-b">
-				<div className="container pb-10 pt-20">
+				<div className="container py-10 pt-20">
 					<h2 className="max-w-screen-lg text-pretty font-serif text-5xl tracking-tight">
 						<span className="text-muted-foreground">
 							Protecting and promoting
 						</span>{' '}
 						the rights and interests of music publishers in Malaysia.
 					</h2>
-					<p className="mt-60 max-w-screen-md text-pretty text-3xl font-light !leading-none">
+					<p className="mt-40 max-w-screen-md text-pretty text-3xl font-light !leading-none">
 						Music Publishers Association of Malaysia safeguards the rights and
 						promotes the works of music publishers in the country. We focus on
 						the following six pillars.
@@ -77,7 +77,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<p className="mt-40 max-w-md text-pretty text-sm font-medium text-muted-foreground">
+					<p className="mt-20 max-w-md text-pretty text-sm font-medium text-muted-foreground">
 						Our mission is to empower music publishers in the country with
 						resources, recognition, and education to maximize their creative and
 						financial potential and to compete internationally.

@@ -1,11 +1,22 @@
 .card {
-	@apply relative flex aspect-[2] flex-col rounded-lg bg-card p-4 text-card-foreground md:p-6;
+	@apply relative flex aspect-[2] flex-col overflow-hidden rounded-lg bg-card p-4 text-card-foreground md:p-6;
 
 	&:before {
-		@apply absolute inset-0 z-0 rounded-lg bg-gradient-to-b from-border to-border/60 to-30% opacity-80 content-[''] p-mask-px;
+		@apply pointer-events-none absolute inset-0 z-10 -skew-x-6 scale-125 rounded-[inherit] opacity-0 transition-all duration-700 content-[''];
+
+		background: url('../../assets/images/grid2.svg') repeat;
+		background-size: 100%;
+		mask: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+	}
+
+	&:after {
+		@apply absolute inset-0 z-10 rounded-[inherit] bg-gradient-to-b from-border to-border/60 to-30% opacity-80 content-[''] p-mask-px;
 	}
 
 	&:hover {
+		&:before {
+			@apply opacity-20;
+		}
 		a {
 			@apply underline;
 		}
