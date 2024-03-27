@@ -47,8 +47,10 @@ export default function Home() {
 							<h3>Joint Rights Movement</h3>
 							<p>
 								Collaborating to manage royalties and protect copyrights with
-								Performing Rights Organizations such as MACP, WAMI, COMPASS, and
-								others.
+								Performing Rights Organizations such as{' '}
+								<a href="https://macp.com.my">MACP</a>,{' '}
+								<a href="https://wami.id/">WAMI</a>,{' '}
+								<a href="https://www.compass.org.sg/">COMPASS</a>, and others.
 							</p>
 						</div>
 

@@ -55,7 +55,8 @@ export default async function Footer() {
 				</div>
 
 				<p className={cn('text-xs font-medium text-muted-foreground/70')}>
-					Copyright &copy; {new Date().getFullYear()} {siteTitle}{' '}
+					{siteTitle} &copy; {new Date().getFullYear()}
+					<br />
 					{companyAddress}
 					<br />
 					Phone: <a href={`tel:${companyPhone}`}>{companyPhone}</a> &middot;

@@ -5,6 +5,12 @@
 		@apply p-mask-px absolute inset-0 z-0 rounded-lg bg-gradient-to-b from-border to-border/60 to-30% opacity-80 content-[''];
 	}
 
+	&:hover {
+		a {
+			@apply underline;
+		}
+	}
+
 	h3 {
 		@apply relative mb-4 text-sm font-semibold uppercase tracking-widest text-brand;
 	}
