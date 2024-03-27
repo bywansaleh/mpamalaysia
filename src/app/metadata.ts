@@ -1,6 +1,8 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 
 import { baseUrl } from '@/lib/config';
+
+import { bgDark, bgLight } from '@/styles/colors';
 
 export const siteTitle = 'Music Publishers Association Malaysia';
 export const siteDescription =
@@ -8,7 +10,7 @@ export const siteDescription =
 
 const siteImage = `${baseUrl}/opengraph`;
 
-export const openGraphMetadata = ({
+const openGraphMetadata = ({
 	title = siteTitle,
 	description = siteDescription,
 	imageUrl = siteImage,
@@ -31,7 +33,7 @@ export const openGraphMetadata = ({
 		},
 	],
 });
-export const twitterMetadata = ({
+const twitterMetadata = ({
 	title = siteTitle,
 	description = siteDescription,
 	imageUrl = siteImage,
@@ -47,7 +49,7 @@ export const twitterMetadata = ({
 	images: [imageUrl],
 });
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
 	metadataBase: new URL(baseUrl),
 
 	title: {
@@ -59,10 +61,14 @@ const metadata: Metadata = {
 		follow: true,
 	},
 	description: siteDescription,
-	keywords: ['NextJS', 'React', 'TypeScript', 'TailwindCSS'],
-	icons: [
-		{ media: '(prefers-color-scheme: light)', url: '/icon-dark.svg' },
-		{ media: '(prefers-color-scheme: dark)', url: '/icon-light.svg' },
+	keywords: [
+		'malaysia',
+		'music',
+		'publishers',
+		'mpa',
+		'rights',
+		'royalties',
+		'copyright',
 	],
 	// icons: [
 	// 	{ media: '(prefers-color-scheme: light)', url: '/icon-dark.svg' },
@@ -79,4 +85,9 @@ const metadata: Metadata = {
 	twitter: twitterMetadata(),
 };
 
-export default metadata;
+export const viewport: Viewport = {
+	themeColor: [
+		{ media: '(prefers-color-scheme: light)', color: bgLight },
+		{ media: '(prefers-color-scheme: dark)', color: bgDark },
+	],
+};

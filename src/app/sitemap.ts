@@ -1,9 +1,11 @@
 import { MetadataRoute } from 'next';
 
+import { baseUrl } from '@/lib/config';
+
 export default function sitemap(): MetadataRoute.Sitemap {
 	return [
 		{
-			url: 'https://newstart.vercel.app',
+			url: baseUrl,
 			lastModified: new Date(),
 		},
 	];

@@ -2,7 +2,7 @@
 	@apply relative flex aspect-[2] flex-col rounded-lg bg-card p-4 text-card-foreground md:p-6;
 
 	&:before {
-		@apply p-mask-px absolute inset-0 z-0 rounded-lg bg-gradient-to-b from-border to-border/60 to-30% opacity-80 content-[''];
+		@apply absolute inset-0 z-0 rounded-lg bg-gradient-to-b from-border to-border/60 to-30% opacity-80 content-[''] p-mask-px;
 	}
 
 	&:hover {

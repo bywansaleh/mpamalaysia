@@ -1,23 +1,18 @@
-import globalMetadata from './metadata';
 import Providers from './providers';
 
 import '../styles/globals.css';
 
-import { Viewport } from 'next';
+import { CSSProperties } from 'react';
 
 import Footer from '@/components/footer';
 import Nav from '@/components/nav';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 
+import { bgDark, bgLight, hue } from '@/styles/colors';
+
 import fontClassNames from './fonts';
 
-export const metadata = globalMetadata;
-export const viewport: Viewport = {
-	themeColor: [
-		{ media: '(prefers-color-scheme: light)', color: '#fff' },
-		{ media: '(prefers-color-scheme: dark)', color: '#000' },
-	],
-};
+export * from './metadata';
 
 export default function RootLayout({
 	children,
@@ -25,7 +20,18 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className={fontClassNames} suppressHydrationWarning>
+		<html
+			lang="en"
+			className={fontClassNames}
+			suppressHydrationWarning
+			style={
+				{
+					'--hue': hue,
+					'--bg-light': bgLight,
+					'--bg-dark': bgDark,
+				} as CSSProperties
+			}
+		>
 			<head>
 				<link rel="preconnect" href="https://rsms.me/" />
 				<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />

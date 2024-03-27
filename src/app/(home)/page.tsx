@@ -1,21 +1,17 @@
-import { Metadata } from 'next';
-
 import styles from './styles.module.css';
-
-export const metadata: Metadata = {
-	title: 'Home',
-};
 
 export default function Home() {
 	return (
 		<>
 			<div className="border-b">
 				<div className="container pb-10 pt-20">
-					<h2 className="max-w-screen-lg text-balance font-serif text-5xl tracking-tight">
-						Protecting and promoting the rights and interests of music
-						publishers.
+					<h2 className="max-w-screen-lg text-pretty font-serif text-5xl tracking-tight">
+						<span className="text-muted-foreground">
+							Protecting and promoting
+						</span>{' '}
+						the rights and interests of music publishers in Malaysia.
 					</h2>
-					<p className="mt-60 max-w-screen-md text-balance text-3xl font-light !leading-none">
+					<p className="mt-60 max-w-screen-md text-pretty text-3xl font-light !leading-none">
 						Music Publishers Association of Malaysia safeguards the rights and
 						promotes the works of music publishers in the country. We focus on
 						the following six pillars.
