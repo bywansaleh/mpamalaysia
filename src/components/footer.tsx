@@ -59,8 +59,8 @@ export default async function Footer() {
 					<br />
 					{companyAddress}
 					<br />
-					Phone: <a href={`tel:${companyPhone}`}>{companyPhone}</a> &middot;
 					Email: <a href={`mailto:${companyEmail}`}>{companyEmail}</a> &middot;
+					Phone: <a href={`tel:${companyPhone}`}>{companyPhone}</a> &middot;
 					Fax: {companyFax}
 				</p>
 			</div>
