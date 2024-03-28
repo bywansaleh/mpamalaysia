@@ -101,7 +101,7 @@ export default function Pillars() {
 					</div>
 				</div>
 
-				<p className="mt-32 max-w-md text-pretty text-sm font-medium leading-tight text-muted-foreground/80">
+				<p className="mt-8 max-w-md text-pretty text-sm font-medium leading-tight text-muted-foreground/80">
 					Our mission is to empower music publishers in the country with{' '}
 					<span className="text-foreground">
 						resources, recognition, and education
