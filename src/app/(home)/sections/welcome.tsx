@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 export default function Welcome() {
 	return (
-		<div className="relative">
-			<div className="container py-10 pt-32">
+		<div className="relative overflow-hidden">
+			<div className="container relative py-10 pt-32">
 				<div className="max-w-screen-md">
 					<h2 className="text-pretty font-heading text-4xl font-medium tracking-tight md:text-5xl">
 						<span className="text-muted-foreground/80">
@@ -17,6 +18,14 @@ export default function Welcome() {
 						</span>
 					</p>
 				</div>
+
+				<img
+					src="/images/gradient.png"
+					alt=""
+					className="absolute -top-full right-0 -z-10 h-[200%] opacity-40 dark:opacity-10"
+				/>
+
+				{/* <div className="absolute right-0 top-1/2 -z-10 size-[50rem] -translate-y-1/2 rounded-full border-[4rem] border-brand opacity-10 blur-[3px]" /> */}
 			</div>
 		</div>
 	);
