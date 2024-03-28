@@ -7,7 +7,7 @@ export default function Nav() {
 	return (
 		<nav className="[--h:theme(spacing.20)]">
 			<div className="fixed inset-x-0 top-0 z-[999] flex h-[--h] items-center">
-				<div className="absolute inset-x-0 top-0 z-0 h-[150%] bg-gradient-to-b from-background/30 from-40%" />
+				<div className="absolute inset-x-0 top-0 z-0 h-[200%] bg-gradient-to-b from-background from-20%" />
 
 				<div className="container z-10">
 					<div className="flex h-8 gap-2 mix-blend-difference">
@@ -21,7 +21,7 @@ export default function Nav() {
 					</div>
 				</div>
 
-				<div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[150%]">
+				{/* <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[150%]">
 					<div className="relative size-full">
 						{Array.from({ length: 8 }).map((_, i) => {
 							return (
@@ -39,7 +39,7 @@ export default function Nav() {
 							);
 						})}
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</nav>
 	);

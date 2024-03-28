@@ -89,7 +89,7 @@ export default function Council() {
 						))}
 				</div>
 
-				<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+				<div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4">
 					{members
 						.filter((member) => member.position === 'Council Member')
 						.map((member, i) => (
@@ -136,7 +136,7 @@ function Card({ member }: { member: Member }) {
 					alt={member.name}
 					className={cn(
 						'block aspect-square size-20 scale-105 grayscale transition-all duration-500 group-hover:grayscale-0',
-						member.position === 'Council Member' && 'size-14'
+						member.position === 'Council Member' && 'size-16'
 					)}
 				/>
 			</div>
