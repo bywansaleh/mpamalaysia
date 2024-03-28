@@ -5,6 +5,10 @@
 @import './colors.css';
 
 @layer base {
+	:root {
+		--radius: 12px;
+	}
+
 	*,
 	*::before,
 	*::after {

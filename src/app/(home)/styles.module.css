@@ -1,35 +1,11 @@
 .card {
-	--radius: 10px;
-
-	@apply relative flex flex-col rounded-[--radius] bg-card/70 p-4 text-card-foreground shadow-xl backdrop-blur-lg md:p-6;
+	@apply relative flex flex-col rounded-[--radius] bg-card/70 p-4 text-card-foreground shadow-lg shadow-black/5 backdrop-blur-lg md:p-6;
 
 	& > div {
 		@apply overflow-hidden;
 	}
 
-	/* &:before {
-		@apply pointer-events-none absolute inset-0 z-10 -skew-x-6 scale-125 rounded-[inherit] opacity-100 transition-all duration-700 content-[''] dark:invert;
-
-		background: url('../../assets/images/grid.svg') repeat;
-		background-size: 100%;
-		mask: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-	} */
-
-	&:after {
-		@apply pointer-events-none absolute -inset-px z-10 rounded-[calc(var(--radius)-1px)] bg-gradient-to-b from-border to-border/50 opacity-50 content-[''] p-mask-px;
-
-		background: radial-gradient(
-			circle at calc(var(--mx) * 1px) calc(var(--my) * 1px),
-			hsl(var(--brand) / 100%),
-			transparent 30vmin
-		);
-		background-attachment: fixed;
-	}
-
 	&:hover {
-		/* &:before {
-			@apply opacity-20;
-		} */
 		a {
 			@apply underline;
 		}
@@ -40,5 +16,18 @@
 	}
 	p {
 		@apply relative z-10 mt-auto max-w-sm text-balance text-sm !leading-snug md:text-base;
+	}
+}
+
+.glow {
+	&:after {
+		@apply pointer-events-none absolute -inset-px z-10 rounded-[calc(var(--radius)-1px)] bg-gradient-to-b from-border to-border/50 opacity-50 content-[''] p-mask-px;
+
+		background: radial-gradient(
+			circle at calc(var(--mx) * 1px) calc(var(--my) * 1px),
+			hsl(var(--brand) / 100%),
+			transparent 30vmin
+		);
+		background-attachment: fixed;
 	}
 }

@@ -2,6 +2,8 @@
 
 // import img from '@/assets/images/mj1.png';
 
+import { cn } from '@/lib/utils';
+
 import Council from './council';
 import styles from './styles.module.css';
 
@@ -34,11 +36,11 @@ export default function Home() {
 					alt=""
 					// width={600}
 					// height={351}
-					className="absolute -top-40 right-0 -z-10 w-1/3 min-w-[50vw] rotate-45 opacity-100"
+					className="absolute -top-40 right-0 -z-10 w-2/3 min-w-[50vw] rotate-45 opacity-100 sm:w-1/3"
 				/>
 				<div className="container py-10">
 					<div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
-						<div className={styles.card}>
+						<div className={cn(styles.card, styles.glow)}>
 							<h3>Advocacy</h3>
 							<p>
 								Representing the interests of music publishing companies,
@@ -47,7 +49,7 @@ export default function Home() {
 							</p>
 						</div>
 
-						<div className={styles.card}>
+						<div className={cn(styles.card, styles.glow)}>
 							<h3>Education</h3>
 							<p>
 								Providing information resources and seminars on copyright,
@@ -55,7 +57,7 @@ export default function Home() {
 							</p>
 						</div>
 
-						<div className={styles.card}>
+						<div className={cn(styles.card, styles.glow)}>
 							<h3>Joint Rights Movement</h3>
 							<p>
 								Collaborating to manage royalties and protect copyrights with
@@ -66,7 +68,7 @@ export default function Home() {
 							</p>
 						</div>
 
-						<div className={styles.card}>
+						<div className={cn(styles.card, styles.glow)}>
 							<h3>Networking</h3>
 							<p>
 								Facilitating networking opportunities among music publishers,
@@ -74,7 +76,7 @@ export default function Home() {
 							</p>
 						</div>
 
-						<div className={styles.card}>
+						<div className={cn(styles.card, styles.glow)}>
 							<h3>Industry Standards</h3>
 							<p>
 								Contributing to the development, industry standards, and best
@@ -83,7 +85,7 @@ export default function Home() {
 							</p>
 						</div>
 
-						<div className={styles.card}>
+						<div className={cn(styles.card, styles.glow)}>
 							<h3>Market Research</h3>
 							<p>
 								Conducting or supporting research initiatives to gather
@@ -93,7 +95,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<p className="mt-20 max-w-md text-pretty text-sm font-medium leading-tight text-muted-foreground/80">
+					<p className="mt-32 max-w-md text-pretty text-sm font-medium leading-tight text-muted-foreground/80">
 						Our mission is to empower music publishers in the country with{' '}
 						<span className="text-foreground">
 							resources, recognition, and education
