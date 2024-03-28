@@ -2,19 +2,19 @@
 import { ImageResponse } from 'next/og';
 import { ImageResponseOptions } from 'next/server';
 
+import { bgLight } from '@/styles/colors';
+
+import { baseUrl } from './config';
+
 const loadFont = async (url: URL) =>
 	fetch(new URL(url, import.meta.url)).then((res) => res.arrayBuffer());
 
 export default async function generateOpenGraph({
 	title,
-	imageUrl = null,
-	snippet,
 	width = 1200,
 	height = 675,
 }: {
 	title: string;
-	imageUrl?: string | null;
-	snippet?: string;
 	width?: number;
 	height?: number;
 }) {
@@ -58,7 +58,7 @@ export default async function generateOpenGraph({
 					fontSize: '3rem',
 					fontFamily: 'Inter',
 					color: '#000',
-					background: '#fff',
+					background: `hsl(${bgLight})`,
 				}}
 			>
 				<div
@@ -140,57 +140,20 @@ export default async function generateOpenGraph({
 					</div>
 				</div>
 
-				{snippet && !imageUrl && (
-					<div
-						style={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'flex-end',
-							flex: 1,
-							// width: width / 2,
-							height,
-							padding: '3rem',
-							fontFamily: 'Inter',
-							fontSize: '2rem',
-							fontWeight: 400,
-							letterSpacing: '-0.025em',
-							lineHeight: 1,
-							// textAlign: 'justify',
-							color: '#fff',
-							background: '#000',
-						}}
-					>
-						<div
-							style={{
-								fontSize: '70rem',
-								position: 'absolute',
-								top: '-16rem',
-								right: '-7rem',
-								opacity: 0.2,
-							}}
-						>
-							“
-						</div>
-
-						{snippet}
-					</div>
-				)}
-
-				{imageUrl && (
-					<img
-						alt=""
-						src={imageUrl}
-						style={{
-							// position: 'absolute',
-							// inset: 0,
-							// right: 0,
-							width: width / 2,
-							height: height,
-							objectFit: 'cover',
-							objectPosition: 'center',
-						}}
-					/>
-				)}
+				<img
+					alt=""
+					src={`${baseUrl}/images/16.png`}
+					style={{
+						// position: 'absolute',
+						// inset: 0,
+						// right: 0,
+						// width: width / 2,
+						height: height,
+						objectFit: 'cover',
+						objectPosition: 'center',
+						transform: 'rotate(25deg)',
+					}}
+				/>
 			</div>
 		);
 
