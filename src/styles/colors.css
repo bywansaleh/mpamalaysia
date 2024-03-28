@@ -27,7 +27,7 @@
 
 	.dark {
 		--brand: var(--hue) 60% 50%;
-		--brand-foreground: var(--hue) 80% 10%;
+		--brand-foreground: var(--hue) 80% 100%;
 		--background: var(--bg-dark);
 		--foreground: var(--hue) 4% 98%;
 		--card: var(--hue) 4% 2.5%;
