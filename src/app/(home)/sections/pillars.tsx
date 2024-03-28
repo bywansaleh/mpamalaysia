@@ -11,7 +11,7 @@ import styles from './styles.module.css';
 
 export default function Pillars() {
 	return (
-		<div className="relative overflow-hidden border-b bg-gradient-to-bl from-brand/20 to-50%">
+		<div className="relative overflow-hidden border-t bg-gradient-to-bl from-brand/20 to-50%">
 			<img
 				src="/images/16.png"
 				alt=""

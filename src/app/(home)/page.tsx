@@ -8,7 +8,7 @@ import Pillars from './sections/pillars';
 export default function Home() {
 	return (
 		<>
-			<div className="relative border-b">
+			<div className="relative">
 				<div className="container py-10 pt-32">
 					<div className="max-w-screen-md">
 						<h2 className="text-pretty font-heading text-4xl font-medium tracking-tight md:text-5xl">
