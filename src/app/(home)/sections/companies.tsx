@@ -1,11 +1,23 @@
 export default function Companies() {
 	return (
 		<div className="relative overflow-hidden pb-10">
-			{/* <div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" /> */}
+			<div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" />
 
 			<div className="container">
 				<div className="relative grid gap-6 overflow-hidden rounded-3xl bg-black bg-gradient-to-br from-brand to-brand/80 p-4 text-white [perspective:800px] md:grid-cols-2 md:p-12">
 					<div className="pointer-events-none absolute inset-0 z-0 bg-[url(/images/dot.svg)] bg-repeat opacity-50 [mask:linear-gradient(to_top,black,transparent)] [transform:rotateX(30deg)] dark:invert-0" />
+
+					{/* <div
+						className="absolute inset-0 z-0 opacity-20"
+						style={{
+							background: `radial-gradient(
+                circle at calc(var(--mx) * 1px) calc(var(--my) * 1px),
+                white,
+                transparent 20vmin
+              )`,
+							backgroundAttachment: 'fixed',
+						}}
+					/> */}
 
 					<div className="relative flex flex-col justify-between">
 						<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
