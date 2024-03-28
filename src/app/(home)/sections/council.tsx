@@ -111,16 +111,16 @@ function Card({ member }: { member: Member }) {
 	return (
 		<div className={cn('group', styles.member, styles.glow)}>
 			<div className="flex flex-1 flex-col gap-1">
-				<p className="text-xs font-bold text-brand/90">{member.position}</p>
+				<p className="text-xs font-semibold text-brand/90">{member.position}</p>
 				<h3
 					className={cn(
-						'text-2xl font-normal !leading-none tracking-tighter',
+						'text-2xl font-semibold !leading-none tracking-tighter',
 						member.position === 'Council Member' && 'text-base'
 					)}
 				>
 					{member.name}
 				</h3>
-				<p className="line-clamp-1 text-xs font-semibold tracking-tighter text-muted-foreground/80">
+				<p className="line-clamp-1 text-xs font-medium tracking-tighter text-muted-foreground/80">
 					{member.company}
 				</p>
 			</div>

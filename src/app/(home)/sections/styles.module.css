@@ -15,10 +15,10 @@
 		/* @apply text-muted; */
 	}
 	h3 {
-		@apply relative z-10 mb-4 font-serif text-xl font-light tracking-tight text-brand md:text-2xl;
+		@apply relative z-10 mb-4 text-lg font-light tracking-tighter text-brand md:text-xl;
 	}
 	p {
-		@apply relative z-10 max-w-sm text-balance text-sm !leading-snug md:text-base;
+		@apply relative z-10 max-w-sm text-balance text-xs !leading-snug md:text-base;
 	}
 }
 
@@ -28,8 +28,9 @@
 
 .glow {
 	&:after {
-		@apply pointer-events-none absolute -inset-px z-10 rounded-[calc(var(--radius)-1px)] bg-gradient-to-b from-border to-border/50 opacity-50 content-[''] p-mask-px;
+		@apply pointer-events-none absolute -inset-px z-10 bg-gradient-to-b from-border to-border/50 opacity-70 content-[''] p-mask-px;
 
+		border-radius: calc(var(--radius) + 1px);
 		background: radial-gradient(
 			circle at calc(var(--mx) * 1px) calc(var(--my) * 1px),
 			hsl(var(--brand) / 100%),

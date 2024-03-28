@@ -1,17 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import { cn } from '@/lib/utils';
 
-import AdvocacyIcon from './icons/advocacy';
-import EducationIcon from './icons/education';
-import IndustryIcon from './icons/industry';
-import JointRightsIcon from './icons/joint-rights';
-import MarketIcon from './icons/market';
-import NetworkingIcon from './icons/networking';
+import AdvocacyIcon from '../icons/advocacy';
+import EducationIcon from '../icons/education';
+import IndustryIcon from '../icons/industry';
+import JointRightsIcon from '../icons/joint-rights';
+import MarketIcon from '../icons/market';
+import NetworkingIcon from '../icons/networking';
 import styles from './styles.module.css';
 
 export default function Pillars() {
 	return (
-		<div className="relative overflow-hidden border-b bg-gradient-to-bl from-brand/15 to-50%">
+		<div className="relative overflow-hidden border-b bg-gradient-to-bl from-brand/20 to-50%">
 			<img
 				src="/images/16.png"
 				alt=""

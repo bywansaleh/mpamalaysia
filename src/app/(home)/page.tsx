@@ -2,8 +2,8 @@
 
 // import img from '@/assets/images/mj1.png';
 
-import Council from './council';
-import Pillars from './pillars';
+import Council from './sections/council';
+import Pillars from './sections/pillars';
 
 export default function Home() {
 	return (
