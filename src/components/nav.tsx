@@ -28,18 +28,14 @@ export default function Nav() {
 					})}
 				</div>
 				<div className="container z-10">
-					<div className="flex h-8 gap-2 mix-blend-difference">
-						<div>
-							<MyFlag className="h-full" />
-						</div>
-						<div>
-							<LogoText className="h-full" />
-							<span className="sr-only">{siteTitle}</span>
-						</div>
+					<div className="flex h-8 gap-2">
+						<MyFlag className="h-full" />
+						<LogoText className="h-full" />
+						<span className="sr-only">{siteTitle}</span>
 					</div>
 				</div>
 
-				{/* <div className="absolute inset-x-0 top-0 z-0 h-[200%] bg-gradient-to-b from-background from-20%" /> */}
+				{/* <div className="absolute inset-x-0 top-0 z-0 h-[200%] bg-gradient-to-b from-foreground from-20% opacity-10" /> */}
 			</div>
 		</nav>
 	);
