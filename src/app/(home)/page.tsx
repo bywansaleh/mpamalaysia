@@ -10,12 +10,12 @@ import Welcome from './sections/welcome';
 
 export default function Home() {
 	return (
-		<>
+		<div className="overflow-x-hidden">
 			<Welcome />
 			<Pillars />
 			<Companies />
 			<Council />
 			<Achievements />
-		</>
+		</div>
 	);
 }
