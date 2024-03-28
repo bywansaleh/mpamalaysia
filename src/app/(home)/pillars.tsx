@@ -45,7 +45,7 @@ export default function Pillars() {
 					</div>
 
 					<div className={cn(styles.pillar, styles.glow)}>
-						<JointRightsIcon className="h-auto w-12 md:w-16" />
+						<JointRightsIcon className="h-auto w-8 md:w-12" />
 						<div>
 							<h3 className="flex items-center justify-between">
 								Joint Rights Movement

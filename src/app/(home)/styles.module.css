@@ -11,8 +11,11 @@
 		}
 	}
 
+	svg {
+		/* @apply text-muted; */
+	}
 	h3 {
-		@apply relative z-10 mb-4 font-serif text-xl font-light tracking-tight md:text-2xl;
+		@apply relative z-10 mb-4 font-serif text-xl font-light tracking-tight text-brand md:text-2xl;
 	}
 	p {
 		@apply relative z-10 max-w-sm text-balance text-sm !leading-snug md:text-base;
