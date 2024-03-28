@@ -1,10 +1,10 @@
 export default function Companies() {
 	return (
-		<div className="relative overflow-hidden border-t py-10">
+		<div className="relative overflow-hidden pb-10">
 			{/* <div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" /> */}
 
 			<div className="container">
-				<div className="relative grid gap-6 overflow-hidden rounded-3xl bg-black bg-gradient-to-br from-brand to-brand/80 p-6 text-white [perspective:800px] md:grid-cols-2 md:p-12">
+				<div className="relative grid gap-6 overflow-hidden rounded-3xl bg-black bg-gradient-to-br from-brand to-brand/80 p-4 text-white [perspective:800px] md:grid-cols-2 md:p-12">
 					<div className="pointer-events-none absolute inset-0 z-0 bg-[url(/images/dot.svg)] bg-repeat opacity-50 [mask:linear-gradient(to_top,black,transparent)] [transform:rotateX(30deg)] dark:invert-0" />
 
 					<div className="relative flex flex-col justify-between">
@@ -28,11 +28,11 @@ export default function Companies() {
 					</div>
 
 					<div className="relative">
-						<div className="grid-flow-col grid-rows-[repeat(13,minmax(0,1fr))] md:grid">
+						<div className="grid-flow-col grid-rows-[repeat(13,minmax(0,1fr))] gap-x-2 md:grid">
 							{companies.map((company, i) => (
 								<div
 									key={i}
-									className="line-clamp-1 rounded-md px-2 py-1 text-sm hover:bg-white hover:text-brand"
+									className="line-clamp-1 rounded-md px-2 py-1 text-sm hover:bg-white hover:text-brand max-md:-mx-2"
 								>
 									<h3>{company.name}</h3>
 								</div>

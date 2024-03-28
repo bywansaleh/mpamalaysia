@@ -13,8 +13,8 @@ export default function Home() {
 		<>
 			<Welcome />
 			<Pillars />
-			<Council />
 			<Companies />
+			<Council />
 			<Achievements />
 		</>
 	);

@@ -5,7 +5,15 @@ import styles from './styles.module.css';
 
 export default function Council() {
 	return (
-		<div className="relative border-t">
+		<div className="relative">
+			{/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand opacity-10" /> */}
+
+			<img
+				src="/images/gradient.png"
+				alt=""
+				className="pointer-events-none absolute -right-1/4 top-0 -z-10 h-[200%] select-none opacity-40 dark:opacity-10"
+			/>
+
 			<div className="container py-10">
 				<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					Council <span className="text-muted-foreground/80">Members</span>

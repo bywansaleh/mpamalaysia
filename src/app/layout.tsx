@@ -11,6 +11,7 @@ import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { bgDark, bgLight, hue } from '@/styles/colors';
 
 import fontClassNames from './fonts';
+import StyledJsxRegistry from './registry';
 
 export * from './metadata';
 
@@ -37,14 +38,16 @@ export default function RootLayout({
 				<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 			</head>
 			<body>
-				<Providers>
-					<div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
-						<Nav />
-						<main>{children}</main>
-						<Footer />
-					</div>
-					<TailwindIndicator />
-				</Providers>
+				<StyledJsxRegistry>
+					<Providers>
+						<div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
+							<Nav />
+							<main>{children}</main>
+							<Footer />
+						</div>
+						<TailwindIndicator />
+					</Providers>
+				</StyledJsxRegistry>
 			</body>
 		</html>
 	);

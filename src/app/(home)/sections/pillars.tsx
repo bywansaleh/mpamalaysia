@@ -11,15 +11,14 @@ import styles from './styles.module.css';
 
 export default function Pillars() {
 	return (
-		<div className="relative overflow-hidden border-t bg-gradient-to-bl from-brand/20 to-50%">
-			<img
-				src="/images/16.png"
-				alt=""
-				// width={600}
-				// height={351}
-				className="absolute -top-40 right-0 -z-10 w-2/3 min-w-[50vw] rotate-45 opacity-100 sm:w-1/3"
-			/>
-			<div className="container py-10">
+		<div className="relative">
+			<div className="container relative py-10">
+				<img
+					src="/images/16.png"
+					alt=""
+					className="pointer-events-none absolute -bottom-40 -right-20 -z-10 w-2/3 min-w-[30vw] rotate-[50deg] select-none opacity-90 grayscale-[0.2] sm:w-1/4"
+				/>
+
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 					<div className={cn(styles.pillar, styles.glow)}>
 						<Advocacy2Icon className="h-auto w-10 md:w-14" />
