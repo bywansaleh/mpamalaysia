@@ -112,7 +112,7 @@ export default function Achievements() {
 								MPA initiated the inclusion of one local publisher, and
 								subsequently two, on the Board of Directors of MACP.
 								Additionally, MPA led the effort to revise the definition of a
-								local publisher in MACP's M&A, stipulating that only local
+								local publisher in MACP&apos;s M&A, stipulating that only local
 								publishers have the authority to elect their representatives to
 								the MACP Board of Directors.
 							</p>
