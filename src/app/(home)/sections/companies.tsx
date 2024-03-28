@@ -2,6 +2,7 @@ export default function Companies() {
 	return (
 		<div className="relative overflow-hidden border-t [perspective:800px]">
 			<div className="absolute inset-0 z-0 bg-[url(/images/dot.svg)] bg-repeat opacity-30 invert [mask:linear-gradient(to_top,black,transparent)] [transform:rotateX(30deg)] dark:invert-0" />
+			<div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" />
 
 			<div className="container relative grid gap-6 py-10 md:grid-cols-2">
 				<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">

@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import { cn } from '@/lib/utils';
 
-import AdvocacyIcon from '../icons/advocacy';
-import EducationIcon from '../icons/education';
-import IndustryIcon from '../icons/industry';
-import JointRightsIcon from '../icons/joint-rights';
-import MarketIcon from '../icons/market';
-import NetworkingIcon from '../icons/networking';
+import Advocacy2Icon from '../icons/advocacy-2';
+import Education2Icon from '../icons/education-2';
+import Industry2Icon from '../icons/industry-2';
+import JointRights2Icon from '../icons/joint-rights-2';
+import Market2Icon from '../icons/market-2';
+import Networking2Icon from '../icons/networking-2';
 import styles from './styles.module.css';
 
 export default function Pillars() {
@@ -22,7 +22,7 @@ export default function Pillars() {
 			<div className="container py-10">
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 					<div className={cn(styles.pillar, styles.glow)}>
-						<AdvocacyIcon className="h-auto w-10 md:w-14" />
+						<Advocacy2Icon className="h-auto w-10 md:w-14" />
 						<div>
 							<h3 className="flex items-center justify-between">Advocacy</h3>
 							<p>
@@ -34,7 +34,7 @@ export default function Pillars() {
 					</div>
 
 					<div className={cn(styles.pillar, styles.glow)}>
-						<EducationIcon className="h-auto w-10 md:w-14" />
+						<Education2Icon className="h-auto w-10 md:w-14" />
 						<div>
 							<h3 className="flex items-center justify-between">Education</h3>
 							<p>
@@ -45,7 +45,7 @@ export default function Pillars() {
 					</div>
 
 					<div className={cn(styles.pillar, styles.glow)}>
-						<JointRightsIcon className="h-auto w-8 md:w-12" />
+						<JointRights2Icon className="h-auto w-8 md:w-12" />
 						<div>
 							<h3 className="flex items-center justify-between">
 								Joint Rights Movement
@@ -62,7 +62,7 @@ export default function Pillars() {
 					</div>
 
 					<div className={cn(styles.pillar, styles.glow)}>
-						<NetworkingIcon className="h-auto w-10 md:w-14" />
+						<Networking2Icon className="h-auto w-10 md:w-14" />
 						<div>
 							<h3 className="flex items-center justify-between">Networking</h3>
 							<p>
@@ -73,7 +73,7 @@ export default function Pillars() {
 					</div>
 
 					<div className={cn(styles.pillar, styles.glow)}>
-						<IndustryIcon className="h-auto w-10 md:w-14" />
+						<Industry2Icon className="h-auto w-10 md:w-14" />
 						<div>
 							<h3 className="flex items-center justify-between">
 								Industry Standards
@@ -87,7 +87,7 @@ export default function Pillars() {
 					</div>
 
 					<div className={cn(styles.pillar, styles.glow)}>
-						<MarketIcon className="h-auto w-10 md:w-14" />
+						<Market2Icon className="h-auto w-10 md:w-14" />
 						<div>
 							<h3 className="flex items-center justify-between">
 								Market Research
