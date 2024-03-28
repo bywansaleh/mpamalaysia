@@ -27,7 +27,7 @@ export default function Council() {
 						))}
 				</div>
 
-				<p className="mt-8 max-w-md text-pretty text-sm font-medium leading-tight text-muted-foreground/80">
+				<p className="mt-8 max-w-sm text-pretty text-sm font-normal text-muted-foreground/80">
 					The council members boast extensive experience, particularly hailing
 					from music backgrounds, and are recognized as prominent leaders within
 					the industry.

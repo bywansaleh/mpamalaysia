@@ -2,6 +2,7 @@
 
 // import img from '@/assets/images/mj1.png';
 
+import Achievements from './sections/achievements';
 import Companies from './sections/companies';
 import Council from './sections/council';
 import Pillars from './sections/pillars';
@@ -14,6 +15,7 @@ export default function Home() {
 			<Pillars />
 			<Council />
 			<Companies />
+			<Achievements />
 		</>
 	);
 }
