@@ -77,7 +77,7 @@ export default function Council() {
 	return (
 		<div className="relative">
 			<div className="container py-10">
-				<h2 className="mb-8 text-pretty font-serif text-4xl tracking-tight md:text-5xl">
+				<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					Council <span className="text-muted-foreground/80">Members</span>
 				</h2>
 
@@ -109,12 +109,7 @@ export default function Council() {
 
 function Card({ member }: { member: Member }) {
 	return (
-		<div
-			className={cn(
-				'group relative flex items-center gap-8 rounded-[--radius] bg-card p-4 text-left shadow-lg shadow-black/5',
-				styles.glow
-			)}
-		>
+		<div className={cn('group', styles.member, styles.glow)}>
 			<div className="flex flex-1 flex-col gap-1">
 				<p className="text-xs font-bold text-brand/90">{member.position}</p>
 				<h3

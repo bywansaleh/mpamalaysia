@@ -3,7 +3,7 @@ import {
 	DM_Serif_Display as Heading,
 	// Manrope as Sans,
 	// Rethink_Sans as Sans,
-	DM_Serif_Text as Serif,
+	Fraunces as Serif,
 } from 'next/font/google';
 
 // import { GeistSans } from 'geist/font/sans';
@@ -32,7 +32,7 @@ const fontSerif = Serif({
 	subsets: ['latin'],
 	display: 'swap',
 	weight: ['400'],
-	style: ['normal', 'italic'],
+	style: ['normal'],
 	variable: '--font-serif',
 	fallback: ['serif'],
 });
