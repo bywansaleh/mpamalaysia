@@ -6,7 +6,7 @@ export default function MouseProvider() {
 	// const mvx = useMotionValue(0);
 	// const mvy = useMotionValue(0);
 
-	// const includeTouch = true;
+	const includeTouch = true;
 
 	useEffect(() => {
 		const updateMousePosition: EventListener = (ev) => {
@@ -32,8 +32,14 @@ export default function MouseProvider() {
 		};
 
 		window.addEventListener('pointermove', updateMousePosition);
+		if (includeTouch) {
+			window.addEventListener('touchmove', updateMousePosition);
+		}
 		return () => {
 			window.removeEventListener('pointermove', updateMousePosition);
+			if (includeTouch) {
+				window.removeEventListener('touchmove', updateMousePosition);
+			}
 		};
 	}, []);
 

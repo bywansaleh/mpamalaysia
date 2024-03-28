@@ -14,12 +14,12 @@ export default async function Footer() {
 			<div className="container flex flex-col items-start gap-4">
 				<div
 					className={cn(
-						'grid grid-cols-1 gap-10 text-xs font-medium md:grid-cols-4',
+						'grid grid-cols-1 gap-4 text-xs font-medium md:grid-cols-4',
 						'[&_h4]:col-span-4 [&_h4]:mb-2 [&_h4]:text-2xs [&_h4]:font-bold [&_h4]:uppercase [&_h4]:tracking-widest [&_h4]:text-muted-foreground/70'
 					)}
 				>
 					<div className="col-span-2">
-						<h3 className="mb-4 text-3xl font-light">Contact</h3>
+						<h3 className="mb-2 text-2xl font-light">Contact</h3>
 						<p className="text-balance">{companyAddress}</p>
 
 						<div className="mt-4 flex gap-2">

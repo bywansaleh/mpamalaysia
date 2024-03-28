@@ -8,7 +8,7 @@ export default function Companies() {
 					Publishing <span className="text-muted-foreground/80">Companies</span>
 				</h2>
 
-				<div className="">
+				<div className="-mx-2">
 					{companies.map((company, i) => (
 						<div
 							key={i}
