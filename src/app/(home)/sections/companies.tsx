@@ -29,7 +29,7 @@ export default function Companies() {
 							height="2039"
 							viewBox="0 0 1931 2039"
 							fill="none"
-							className="relative size-72 -scale-x-100 fill-current md:-bottom-12"
+							className="relative size-72 -scale-x-100 fill-current max-md:[mask:linear-gradient(to_bottom,black_80%,transparent)] md:-bottom-12"
 						>
 							<path
 								fillRule="evenodd"
@@ -39,7 +39,7 @@ export default function Companies() {
 						</svg>
 					</div>
 
-					<div className="relative">
+					<div className="relative max-md:-mt-4">
 						<div className="grid-flow-col grid-rows-[repeat(13,minmax(0,1fr))] gap-x-2 md:grid">
 							{companies.map((company, i) => (
 								<div
