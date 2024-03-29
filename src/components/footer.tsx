@@ -14,8 +14,8 @@ export default async function Footer() {
 			<div className="container flex flex-col items-start gap-4">
 				<div
 					className={cn(
-						'grid grid-cols-1 gap-4 text-xs font-medium md:grid-cols-4',
-						'[&_h4]:col-span-4 [&_h4]:mb-2 [&_h4]:text-2xs [&_h4]:font-bold [&_h4]:uppercase [&_h4]:tracking-widest [&_h4]:text-muted-foreground/70'
+						'grid grid-cols-1 gap-6 text-xs font-medium md:grid-cols-4',
+						'[&_h4]:col-span-4 [&_h4]:mb-2 [&_h4]:text-2xs [&_h4]:font-bold [&_h4]:uppercase [&_h4]:tracking-widest [&_h4]:text-muted-foreground'
 					)}
 				>
 					<div className="col-span-2">
@@ -49,7 +49,7 @@ export default async function Footer() {
 
 					<div>
 						<h4>About</h4>
-						<p>
+						<p className="text-pretty">
 							<span className="text-brand">
 								Music Publishers Association of Malaysia
 							</span>{' '}
@@ -76,7 +76,7 @@ export default async function Footer() {
 					</div>
 				</div>
 
-				<p className="text-xs font-medium text-muted-foreground/70">
+				<p className="text-xs font-medium text-muted-foreground">
 					{siteTitle} &copy; {new Date().getFullYear()} &middot; Phone:{' '}
 					<a href={`tel:${companyPhone}`}>{companyPhone}</a> &middot; Fax:{' '}
 					{companyFax}

@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+
 export default function Achievements() {
 	return (
 		<div className="relative overflow-hidden py-10">
@@ -6,14 +7,14 @@ export default function Achievements() {
 				<img
 					src="/images/06.png"
 					alt=""
-					className="pointer-events-none absolute -bottom-20 z-0 w-96 rotate-[-40deg] select-none opacity-30 grayscale-[0.3] md:-left-40 md:opacity-70"
+					className="pointer-events-none absolute top-0 z-0 w-96 rotate-[-40deg] select-none opacity-40 grayscale-[0.3] md:-left-40"
 				/>
 
 				<h2 className="relative mb-12 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					Achievements
 				</h2>
 
-				<div className="relative grid gap-10 md:ml-60 md:grid-cols-2 lg:grid-cols-3">
+				<div className="relative grid gap-10 drop-shadow-lg md:grid-cols-2 lg:grid-cols-3">
 					{achievements.map((achievement, i) => (
 						<div key={i} className="flex gap-6">
 							<div className="w-[10%] font-serif text-5xl font-extralight text-brand">

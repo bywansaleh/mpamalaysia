@@ -5,7 +5,7 @@ export default function Welcome() {
 			<div className="container relative py-10 pt-32">
 				<div className="max-w-screen-md">
 					<h2 className="text-pretty font-heading text-4xl font-medium tracking-tight md:text-5xl">
-						<span className="text-muted-foreground/80">
+						<span className="text-muted-foreground">
 							Protecting and promoting
 						</span>{' '}
 						the rights and interests of music publishers in Malaysia.
@@ -13,7 +13,7 @@ export default function Welcome() {
 					<p className="mt-40 text-pretty text-2xl font-light !leading-[1.1] md:text-3xl">
 						Music Publishers Association of Malaysia safeguards the rights and
 						promotes the works of music publishers in the country.{' '}
-						<span className="text-muted-foreground/80">
+						<span className="text-muted-foreground">
 							We focus on the following six pillars.
 						</span>
 					</p>
@@ -22,7 +22,7 @@ export default function Welcome() {
 				<img
 					src="/images/gradient.png"
 					alt=""
-					className="pointer-events-none absolute -top-full right-0 -z-10 h-[250%] select-none object-contain opacity-40 dark:opacity-15"
+					className="pointer-events-none absolute -top-2/3 right-0 -z-10 h-[170%] select-none object-contain opacity-40 dark:opacity-10"
 				/>
 
 				{/* <div className="absolute right-0 top-1/2 -z-10 size-[50rem] -translate-y-1/2 rounded-full border-[4rem] border-brand opacity-10 blur-[3px]" /> */}

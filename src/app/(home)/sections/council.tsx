@@ -16,7 +16,7 @@ export default function Council() {
 
 			<div className="container py-10">
 				<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
-					Council <span className="text-muted-foreground/80">Members</span>
+					Council <span className="text-muted-foreground">Members</span>
 				</h2>
 
 				<div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -38,7 +38,7 @@ export default function Council() {
 				<p className="mt-8 max-w-sm text-pretty text-sm font-normal">
 					The council members boast extensive experience, particularly hailing
 					from music backgrounds, and are{' '}
-					<span className="text-muted-foreground/80">
+					<span className="text-muted-foreground">
 						recognized as prominent leaders
 					</span>{' '}
 					within the industry.
@@ -52,7 +52,8 @@ function Card({ member }: { member: Member }) {
 	return (
 		<div
 			className={cn(
-				'group relative flex flex-row-reverse items-center gap-2 rounded-[--radius] bg-card p-3 text-left shadow-lg shadow-black/5 ring-1 ring-border md:p-4',
+				styles.card,
+				'group flex flex-row-reverse items-center gap-2 !p-4',
 				member.position === 'Council Member' &&
 					'flex-col items-start md:flex-row-reverse md:items-center',
 				styles.glow
@@ -81,7 +82,7 @@ function Card({ member }: { member: Member }) {
 				>
 					{member.name}
 				</h3>
-				<p className="line-clamp-1 text-xs font-medium tracking-tighter text-muted-foreground/80">
+				<p className="line-clamp-1 text-xs font-medium tracking-tighter text-muted-foreground">
 					{member.company}
 				</p>
 			</div>

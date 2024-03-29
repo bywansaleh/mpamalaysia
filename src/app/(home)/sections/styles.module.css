@@ -1,5 +1,10 @@
+.card {
+	@apply relative rounded-[--radius] bg-card/70 p-4 text-card-foreground shadow-lg shadow-black/5 ring-1 ring-border/70 backdrop-blur-lg md:p-6;
+}
+
 .pillar {
-	@apply relative flex flex-col items-start gap-4 rounded-[--radius] bg-card/70 p-4 text-card-foreground shadow-lg shadow-black/5 backdrop-blur-lg md:flex-row-reverse md:p-6;
+	@apply card;
+	@apply flex flex-col items-start gap-4 md:flex-row-reverse;
 
 	& > div {
 		flex: 1;

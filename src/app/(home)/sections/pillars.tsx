@@ -90,7 +90,7 @@ export default function Pillars() {
 
 				<p className="mt-8 max-w-sm text-pretty text-sm font-normal">
 					Our mission is to empower music publishers in the country with{' '}
-					<span className="text-muted-foreground/80">
+					<span className="text-muted-foreground">
 						resources, recognition, and education
 					</span>{' '}
 					to maximize their creative and financial potential whilst competing
