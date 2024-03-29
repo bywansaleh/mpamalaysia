@@ -27,7 +27,7 @@ export default function Council() {
 						))}
 				</div>
 
-				<div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4">
+				<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
 					{members
 						.filter((member) => member.position === 'Council Member')
 						.map((member, i) => (
@@ -50,13 +50,33 @@ export default function Council() {
 
 function Card({ member }: { member: Member }) {
 	return (
-		<div className={cn('group', styles.member, styles.glow)}>
+		<div
+			className={cn(
+				'group relative flex flex-row-reverse items-center gap-2 rounded-[--radius] bg-card p-3 text-left shadow-lg shadow-black/5 ring-1 ring-border md:p-4',
+				member.position === 'Council Member' &&
+					'flex-col items-start md:flex-row-reverse md:items-center',
+				styles.glow
+			)}
+		>
+			<div>
+				<div className="inline-block overflow-hidden rounded-full bg-gray-300">
+					<img
+						src={member.image}
+						alt={member.name}
+						className={cn(
+							'block aspect-square size-20 scale-110',
+							member.position === 'Council Member' && 'size-16'
+						)}
+					/>
+				</div>
+			</div>
+
 			<div className="flex flex-1 flex-col gap-1">
 				<p className="text-xs font-semibold text-brand/90">{member.position}</p>
 				<h3
 					className={cn(
 						'text-2xl font-semibold !leading-none tracking-tighter',
-						member.position === 'Council Member' && 'text-base'
+						member.position === 'Council Member' && 'text-sm md:text-base'
 					)}
 				>
 					{member.name}
@@ -64,17 +84,6 @@ function Card({ member }: { member: Member }) {
 				<p className="line-clamp-1 text-xs font-medium tracking-tighter text-muted-foreground/80">
 					{member.company}
 				</p>
-			</div>
-
-			<div className="overflow-hidden rounded-full bg-gray-300">
-				<img
-					src={member.image}
-					alt={member.name}
-					className={cn(
-						'block aspect-square size-20 scale-110',
-						member.position === 'Council Member' && 'size-16'
-					)}
-				/>
 			</div>
 		</div>
 	);
