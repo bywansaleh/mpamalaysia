@@ -27,6 +27,8 @@ export default function Welcome() {
 
 				{/* <div className="absolute right-0 top-1/2 -z-10 size-[50rem] -translate-y-1/2 rounded-full border-[4rem] border-brand opacity-10 blur-[3px]" /> */}
 			</div>
+
+			<div className="pointer-events-none absolute inset-0 z-0 bg-[url(/images/dot.svg)] bg-repeat opacity-50 invert [mask:linear-gradient(to_bottom,black,transparent)] dark:opacity-20 dark:invert-0" />
 		</div>
 	);
 }
