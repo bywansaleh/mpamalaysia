@@ -14,7 +14,7 @@ export const revalidate = 60;
 
 export default function Home() {
 	return (
-		<div className="w-screen overflow-hidden">
+		<div>
 			<Welcome />
 			<Pillars />
 			<Companies />

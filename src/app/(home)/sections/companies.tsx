@@ -1,6 +1,6 @@
 export default function Companies() {
 	return (
-		<div className="relative pb-10">
+		<div className="relative py-20">
 			<div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" />
 
 			<div className="container">

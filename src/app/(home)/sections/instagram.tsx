@@ -5,7 +5,7 @@ export default async function Instagram() {
 	const posts = await getInstagramPosts();
 
 	return (
-		<div className="relative overflow-hidden border-t bg-brand">
+		<div className="z-100 relative bg-brand shadow-[0_0_100px_hsl(var(--brand)/40%)]">
 			<div className="relative p-4">
 				{/* <h2 className="relative mb-12 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					From <span className="text-muted-foreground">Instagram</span>

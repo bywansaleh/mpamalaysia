@@ -40,7 +40,7 @@ export default function RootLayout({
 			<body>
 				<StyledJsxRegistry>
 					<Providers>
-						<div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
+						<div className="grid min-h-screen w-screen grid-rows-[auto_1fr_auto] overflow-hidden">
 							<Nav />
 							<main>{children}</main>
 							<Footer />

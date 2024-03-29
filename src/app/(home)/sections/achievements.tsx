@@ -14,14 +14,14 @@ export default function Achievements() {
 					Achievements
 				</h2>
 
-				<div className="relative grid gap-10 drop-shadow-lg md:grid-cols-2 lg:grid-cols-3">
+				<div className="grid gap-10 drop-shadow-lg md:ml-60 md:grid-cols-2 lg:grid-cols-3">
 					{achievements.map((achievement, i) => (
 						<div key={i} className="flex gap-6">
 							<div className="w-[10%] font-serif text-5xl font-extralight text-brand">
 								{achievement.number}
 							</div>
 							<div className="flex-1">
-								<h3 className="mb-2 text-xl font-medium tracking-tight text-muted-foreground">
+								<h3 className="mb-2 text-xl font-medium tracking-tight">
 									{achievement.title}
 								</h3>
 								<p className="text-pretty text-xs !leading-relaxed md:text-sm">
