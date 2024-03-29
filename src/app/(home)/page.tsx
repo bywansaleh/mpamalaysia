@@ -5,6 +5,7 @@
 import Achievements from './sections/achievements';
 import Companies from './sections/companies';
 import Council from './sections/council';
+import Instagram from './sections/instagram';
 import Pillars from './sections/pillars';
 import Welcome from './sections/welcome';
 
@@ -16,6 +17,7 @@ export default function Home() {
 			<Companies />
 			<Council />
 			<Achievements />
+			<Instagram />
 		</div>
 	);
 }
