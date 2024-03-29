@@ -76,7 +76,7 @@ export default async function Footer() {
 								</a>
 							</li>
 							<li>
-								<a href="https://rpm.my/">Recording Perfomers Malaysia</a>
+								<a href="https://rpm.my/">Recording Performers Malaysia</a>
 							</li>
 							<li>
 								<a href="https://ppm.my/">Public Performance Malaysia</a>
