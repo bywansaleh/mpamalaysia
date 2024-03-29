@@ -35,10 +35,13 @@ export default function Council() {
 						))}
 				</div>
 
-				<p className="mt-8 max-w-sm text-pretty text-sm font-normal text-muted-foreground/80">
+				<p className="mt-8 max-w-sm text-pretty text-sm font-normal">
 					The council members boast extensive experience, particularly hailing
-					from music backgrounds, and are recognized as prominent leaders within
-					the industry.
+					from music backgrounds, and are{' '}
+					<span className="text-muted-foreground/80">
+						recognized as prominent leaders
+					</span>{' '}
+					within the industry.
 				</p>
 			</div>
 		</div>

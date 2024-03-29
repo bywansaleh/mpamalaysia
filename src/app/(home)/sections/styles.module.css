@@ -1,5 +1,5 @@
 .pillar {
-	@apply relative flex flex-row-reverse items-start gap-4 rounded-[--radius] bg-card/70 p-4 text-card-foreground shadow-lg shadow-black/5 backdrop-blur-lg md:p-6;
+	@apply relative flex flex-col items-start gap-4 rounded-[--radius] bg-card/70 p-4 text-card-foreground shadow-lg shadow-black/5 backdrop-blur-lg md:flex-row-reverse md:p-6;
 
 	& > div {
 		flex: 1;
@@ -15,7 +15,7 @@
 		/* @apply text-muted; */
 	}
 	h3 {
-		@apply relative z-10 mb-4 text-lg font-light tracking-tighter text-brand md:text-xl;
+		@apply relative z-10 mb-4 text-lg font-light !leading-tight tracking-tighter text-brand md:text-xl;
 	}
 	p {
 		@apply relative z-10 max-w-sm text-balance text-xs !leading-normal md:text-sm;

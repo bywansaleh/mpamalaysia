@@ -10,7 +10,7 @@ import Welcome from './sections/welcome';
 
 export default function Home() {
 	return (
-		<div className="w-screen overflow-x-hidden">
+		<div className="w-screen overflow-hidden">
 			<Welcome />
 			<Pillars />
 			<Companies />
