@@ -23,12 +23,12 @@
 }
 
 .member {
-	@apply relative flex items-center gap-8 rounded-[--radius] bg-card p-4 text-left shadow-lg shadow-black/5;
+	@apply relative flex items-center gap-8 rounded-[--radius] bg-card p-4 text-left shadow-lg shadow-black/5 ring-1 ring-border;
 }
 
 .glow {
 	&:after {
-		@apply pointer-events-none absolute -inset-px z-10 bg-gradient-to-b from-border to-border/50 opacity-70 content-[''] p-mask-px;
+		@apply pointer-events-none absolute -inset-px z-10 bg-gradient-to-b from-border to-border/50 opacity-80 content-[''] p-mask-px;
 
 		border-radius: calc(var(--radius) + 1px);
 		background: radial-gradient(

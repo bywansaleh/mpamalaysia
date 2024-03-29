@@ -22,7 +22,7 @@ export default function Welcome() {
 				<img
 					src="/images/gradient.png"
 					alt=""
-					className="pointer-events-none absolute -top-full right-0 -z-10 h-[250%] select-none object-contain opacity-70 dark:opacity-15"
+					className="pointer-events-none absolute -top-full right-0 -z-10 h-[250%] select-none object-contain opacity-40 dark:opacity-15"
 				/>
 
 				{/* <div className="absolute right-0 top-1/2 -z-10 size-[50rem] -translate-y-1/2 rounded-full border-[4rem] border-brand opacity-10 blur-[3px]" /> */}

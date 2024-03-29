@@ -123,7 +123,7 @@ export default {
 			matchUtilities(
 				{
 					'p-mask': (value) => ({
-						mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+						mask: 'linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)',
 						'-webkit-mask-composite': 'xor',
 						'mask-composite': 'exclude',
 						padding: value,
