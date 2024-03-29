@@ -11,8 +11,10 @@ export default async function Instagram() {
 					From <span className="text-muted-foreground">Instagram</span>
 				</h2> */}
 
-				<div className="grid grid-cols-2 gap-4 lg:grid-cols-8">
-					{posts?.data?.map((post) => <Post key={post.id} post={post} />)}
+				<div className="grid grid-cols-2 gap-4 lg:grid-cols-6">
+					{posts?.data
+						?.slice(0, 6)
+						.map((post) => <Post key={post.id} post={post} />)}
 				</div>
 			</div>
 		</div>
