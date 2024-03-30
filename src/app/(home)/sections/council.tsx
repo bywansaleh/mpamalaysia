@@ -64,7 +64,7 @@ function Member({ member }: { member: Member }) {
 			)}
 		>
 			<div>
-				<div className="inline-block overflow-hidden rounded-full bg-gray-300">
+				<div className="inline-block overflow-hidden rounded-full bg-gray-400">
 					<img
 						src={member.image}
 						alt={member.name}
