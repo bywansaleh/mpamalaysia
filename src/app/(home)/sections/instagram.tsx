@@ -1,5 +1,3 @@
-import Balancer from 'react-wrap-balancer';
-
 import { cn } from '@/lib/utils';
 
 /* eslint-disable @next/next/no-img-element */
@@ -40,8 +38,8 @@ function Post({ post }: { post: Post }) {
 				className="aspect-square w-full object-cover transition-all duration-300 ease-in-out [mask:linear-gradient(to_bottom,black,rgba(0,0,0,0.3)_80%)] group-hover:scale-105 group-hover:opacity-60 group-hover:blur"
 			/>
 			<div className="absolute inset-0 flex flex-col justify-end gap-2 p-2">
-				<p className="line-clamp-6 text-pretty text-2xs font-medium !leading-tight opacity-0 transition-all duration-100 group-hover:opacity-100">
-					<Balancer>{post.caption}</Balancer>
+				<p className="line-clamp-[8] text-pretty text-2xs font-medium !leading-tight opacity-0 transition-all duration-100 group-hover:opacity-100">
+					{post.caption}
 				</p>
 				{/* <p className="text-pretty text-xs font-semibold">{post.username}</p> */}
 				<div className="flex w-full flex-row-reverse items-center justify-between gap-1 text-2xs font-semibold tracking-tighter">

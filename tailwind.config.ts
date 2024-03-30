@@ -27,7 +27,7 @@ export default {
 			fontFamily: {
 				sans: [
 					// 'var(--font-sans)',
-					'var(--font-geist-sans)',
+					// 'var(--font-geist-sans)',
 					'InterVariable',
 					...defaultTheme.fontFamily.sans,
 				],
