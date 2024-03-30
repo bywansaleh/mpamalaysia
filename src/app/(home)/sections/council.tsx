@@ -16,7 +16,7 @@ export default function Council() {
 				className="pointer-events-none absolute -right-1/4 top-0 -z-10 h-[200%] select-none opacity-40 dark:opacity-10"
 			/>
 
-			<div className="container py-10">
+			<div className="container py-20">
 				<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					Council <span className="text-muted-foreground">Members</span>
 				</h2>
@@ -25,7 +25,7 @@ export default function Council() {
 					{members
 						.filter((member) => member.position !== 'Council Member')
 						.map((member, i) => (
-							<Card member={member} key={i} />
+							<Member member={member} key={i} />
 						))}
 				</div>
 
@@ -33,7 +33,7 @@ export default function Council() {
 					{members
 						.filter((member) => member.position === 'Council Member')
 						.map((member, i) => (
-							<Card member={member} key={i} />
+							<Member member={member} key={i} />
 						))}
 				</div>
 
@@ -52,7 +52,7 @@ export default function Council() {
 	);
 }
 
-function Card({ member }: { member: Member }) {
+function Member({ member }: { member: Member }) {
 	return (
 		<div
 			className={cn(
@@ -77,7 +77,9 @@ function Card({ member }: { member: Member }) {
 			</div>
 
 			<div className="flex flex-1 flex-col gap-1">
-				<p className="text-xs font-semibold text-brand/90">{member.position}</p>
+				<p className="text-xs font-semibold tracking-tighter text-brand/90">
+					{member.position}
+				</p>
 				<h3
 					className={cn(
 						'text-2xl font-semibold !leading-none tracking-tighter',

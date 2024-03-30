@@ -49,36 +49,36 @@ const achievements: Achievement[] = [
 		number: '1.',
 		title: 'Broadcast',
 		description:
-			'Initiated negotiations with major broadcasters such as MEASAT (Astro) and Media Prima for TV Sync License. Digital rights (OSM and MACP via an agency agreement). Dubbing rights (via MACP and Public Performance Malaysia Berhad).',
+			'Commenced discussions with leading broadcasters including MEASAT (Astro) and Media Prima for TV Sync Licensing. Secured digital rights through OSM and MACP via an agency agreement. Obtained dubbing rights via MACP and Public Performance Malaysia Berhad.',
 	},
 	{
 		number: '2.',
 		title: 'TV Productions',
 		description:
-			'MPA has signed an MOU with the TV Drama Association of Malaysia in a move to improve and enhance the licensing of synchronization rights for TV production. MPA has established guidelines for synchronization rates and will make additional efforts to encourage the use of local songs in TV production.',
+			'An MOU has been forged with the TV Drama Association of Malaysia to enhance synchronization rights licensing for TV production. This collaboration sets guidelines for rates and encourages the incorporation of local songs in TV programs.',
 	},
 	{
 		number: '3.',
 		title: 'Going International',
 		description:
-			'Initiatives taken by MPA to promote locally published songs abroad, targeting other territories, began with participation in events such as the ICMP Asia Pacific Regional Meeting of Music Publishers in Beijing, China, and other music expos like MIDEM.',
+			'MPA is actively promoting domestically published songs abroad, beginning with participation in key events such as the ICMP Asia Pacific Regional Meeting of Music Publishers in Beijing and music expos like MIDEM. These efforts aim to amplify the presence of local music talent on the global stage.',
 	},
 	{
 		number: '4.',
 		title: 'Digital & Streaming',
 		description:
-			'MPA set up a YouTube task force, which will collaborate with MACP to assist in the claiming of unmatched song lists that may contain millions of titles on YouTube.',
+			'MPA has established a dedicated YouTube task force in collaboration with MACP. This task force aims to aid in the identification and claiming process for unmatched song lists potentially containing millions of titles on YouTube.',
 	},
 	{
 		number: '5.',
 		title: 'Intellectual Property',
 		description:
-			'MPA is currently collaborating with MACP to prepare a working paper for MyIPO, advocating for the extension of copyright to 70 years.',
+			'Consistent teamwork with MACP has been instrumental in crafting a compelling working paper for MyIPO, championing the extension of copyright duration to 70 years.',
 	},
 	{
 		number: '6.',
 		title: 'Networking',
 		description:
-			"MPA initiated the inclusion of one local publisher, and subsequently two, on the Board of Directors of MACP. Additionally, MPA led the effort to revise the definition of a local publisher in MACP's M&A, stipulating that only local publishers have the authority to elect their representatives to the MACP Board of Directors.",
+			"Inclusion of two local publishers on the Board of Directors of MACP. Leading the effort to revise the definition of a local publisher in MACP's M&A, stipulating that only local publishers have the authority to elect their representatives to the MACP Board of Directors.",
 	},
 ];
