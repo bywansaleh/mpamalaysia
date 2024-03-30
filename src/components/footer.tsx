@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Balancer from 'react-wrap-balancer';
 
+import { siteTitle } from '@/lib/config';
 import { cn } from '@/lib/utils';
 
 import {
@@ -9,7 +10,6 @@ import {
 	companyFax,
 	companyPhone,
 } from '@/app/company';
-import { siteTitle } from '@/app/metadata';
 
 export default async function Footer() {
 	return (

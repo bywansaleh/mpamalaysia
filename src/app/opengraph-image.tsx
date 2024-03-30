@@ -1,6 +1,5 @@
+import { siteDescription, siteTitle } from '@/lib/config';
 import generateOpenGraph from '@/lib/generate-opengraph';
-
-import { siteDescription, siteTitle } from './metadata';
 
 export const runtime = 'edge';
 

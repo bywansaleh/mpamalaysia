@@ -1,4 +1,4 @@
-import { siteTitle } from '@/app/metadata';
+import { siteTitle } from '@/lib/config';
 
 import LogoText from './logo-text';
 import MyFlag from './my-flag';

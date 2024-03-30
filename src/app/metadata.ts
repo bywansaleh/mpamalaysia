@@ -1,12 +1,8 @@
 import { Metadata, Viewport } from 'next';
 
-import { baseUrl } from '@/lib/config';
+import { baseUrl, siteDescription, siteTitle } from '@/lib/config';
 
 import { bgDark, bgLight } from '@/styles/colors';
-
-export const siteTitle = 'Music Publishers Association Malaysia';
-export const siteDescription =
-	'Music Publishers Association of Malaysia safeguards the rights and promotes the works of music publishers in the country.';
 
 const siteImage = `${baseUrl}/opengraph`;
 
