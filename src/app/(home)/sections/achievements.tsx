@@ -7,14 +7,14 @@ export default function Achievements() {
 				<img
 					src="/images/06.png"
 					alt=""
-					className="pointer-events-none absolute top-0 z-0 w-96 rotate-[-40deg] select-none opacity-20 grayscale-[0.3] md:-left-40 md:opacity-50"
+					className="pointer-events-none absolute top-0 z-0 w-96 rotate-[-40deg] select-none opacity-20 grayscale-[0.3] md:-left-40 md:opacity-90"
 				/>
 
 				<h2 className="relative mb-12 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					Achievements
 				</h2>
 
-				<div className="grid gap-10 drop-shadow-lg md:ml-60 md:grid-cols-2 lg:grid-cols-3">
+				<div className="grid gap-10 md:ml-60 md:grid-cols-2 lg:grid-cols-3">
 					{achievements.map((achievement, i) => (
 						<div key={i} className="flex gap-6">
 							<div className="w-[10%] font-serif text-5xl font-extralight text-brand">
