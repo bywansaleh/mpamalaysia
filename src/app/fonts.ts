@@ -5,8 +5,7 @@ import {
 	// Rethink_Sans as Sans,
 	Fraunces as Serif,
 } from 'next/font/google';
-
-// import { GeistSans } from 'geist/font/sans';
+import { GeistSans } from 'geist/font/sans';
 
 import { cn } from '@/lib/utils';
 
@@ -46,7 +45,7 @@ const fontSerif = Serif({
 // });
 
 const fontClassNames = cn(
-	// GeistSans.variable,
+	GeistSans.variable,
 	// fontSans.variable,
 	fontHeading.variable,
 	fontSerif.variable

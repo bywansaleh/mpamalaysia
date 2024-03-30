@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Balancer from 'react-wrap-balancer';
+
 import { cn } from '@/lib/utils';
 
 import {
@@ -29,7 +31,9 @@ export default async function Footer() {
 				>
 					<div className="col-span-2">
 						<h3 className="mb-2 text-2xl font-light">Contact</h3>
-						<p className="text-balance">{companyAddress}</p>
+						<p className="text-balance">
+							<Balancer>{companyAddress}</Balancer>
+						</p>
 
 						<div className="mt-4 flex gap-2">
 							<a
@@ -59,11 +63,13 @@ export default async function Footer() {
 					<div>
 						<h4>About</h4>
 						<p className="text-pretty">
-							<span className="text-brand">
-								Music Publishers Association of Malaysia
-							</span>{' '}
-							safeguards the rights and promotes the works of music publishers
-							in the country.
+							<Balancer>
+								<span className="text-brand">
+									Music Publishers Association of Malaysia
+								</span>{' '}
+								safeguards the rights and promotes the works of music publishers
+								in the country.
+							</Balancer>
 						</p>
 					</div>
 

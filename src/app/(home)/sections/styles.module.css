@@ -2,31 +2,6 @@
 	@apply relative rounded-[--radius] bg-card/70 p-4 text-card-foreground shadow-lg shadow-black/5 ring-1 ring-border/70 backdrop-blur-lg md:p-6;
 }
 
-.pillar {
-	@apply card;
-	@apply flex flex-col items-start gap-4 md:flex-row-reverse;
-
-	& > div {
-		flex: 1;
-	}
-
-	&:hover {
-		a {
-			@apply underline;
-		}
-	}
-
-	svg {
-		/* @apply text-muted; */
-	}
-	h3 {
-		@apply relative z-10 mb-4 text-lg font-light !leading-tight tracking-tighter text-brand md:text-xl;
-	}
-	p {
-		@apply relative z-10 max-w-sm text-balance text-xs !leading-normal md:text-sm;
-	}
-}
-
 .glow {
 	&:after {
 		@apply pointer-events-none absolute -inset-px z-10 bg-gradient-to-b from-border to-border/50 opacity-80 content-[''] p-mask-px;

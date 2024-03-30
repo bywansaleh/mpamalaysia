@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
+import Balancer from 'react-wrap-balancer';
+
 export default function Achievements() {
 	return (
 		<div className="relative overflow-hidden py-10">
@@ -22,10 +24,10 @@ export default function Achievements() {
 							</div>
 							<div className="flex-1">
 								<h3 className="mb-2 text-xl font-medium tracking-tight">
-									{achievement.title}
+									<Balancer>{achievement.title}</Balancer>
 								</h3>
 								<p className="text-pretty text-xs !leading-relaxed md:text-sm">
-									{achievement.description}
+									<Balancer>{achievement.description}</Balancer>
 								</p>
 							</div>
 						</div>

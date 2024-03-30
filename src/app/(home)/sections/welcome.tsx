@@ -1,3 +1,5 @@
+import Balancer from 'react-wrap-balancer';
+
 /* eslint-disable @next/next/no-img-element */
 export default function Welcome() {
 	return (
@@ -5,17 +7,21 @@ export default function Welcome() {
 			<div className="container relative py-10 pt-32">
 				<div className="max-w-screen-md">
 					<h2 className="text-pretty font-heading text-4xl font-medium tracking-tight md:text-5xl">
-						<span className="text-muted-foreground">
-							Protecting and promoting
-						</span>{' '}
-						the rights and interests of music publishers in Malaysia.
+						<Balancer>
+							<span className="text-muted-foreground">
+								Protecting and promoting
+							</span>{' '}
+							the rights and interests of music publishers in Malaysia.
+						</Balancer>
 					</h2>
 					<p className="mt-40 text-pretty text-2xl font-light !leading-[1.1] md:text-3xl">
-						Music Publishers Association of Malaysia safeguards the rights and
-						promotes the works of music publishers in the country.{' '}
-						<span className="text-muted-foreground">
-							We focus on the following six pillars.
-						</span>
+						<Balancer>
+							Music Publishers Association of Malaysia safeguards the rights and
+							promotes the works of music publishers in the country.{' '}
+							<span className="text-muted-foreground">
+								We focus on the following six pillars.
+							</span>
+						</Balancer>
 					</p>
 				</div>
 

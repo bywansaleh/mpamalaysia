@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Balancer from 'react-wrap-balancer';
+
 import { cn } from '@/lib/utils';
 
 import styles from './styles.module.css';
@@ -36,12 +38,14 @@ export default function Council() {
 				</div>
 
 				<p className="mt-8 max-w-sm text-pretty text-sm font-normal">
-					The council members boast extensive experience, particularly hailing
-					from music backgrounds, and are{' '}
-					<span className="text-muted-foreground">
-						recognized as prominent leaders
-					</span>{' '}
-					within the industry.
+					<Balancer>
+						The council members boast extensive experience, particularly hailing
+						from music backgrounds, and are{' '}
+						<span className="text-muted-foreground">
+							recognized as prominent leaders
+						</span>{' '}
+						within the industry.
+					</Balancer>
 				</p>
 			</div>
 		</div>

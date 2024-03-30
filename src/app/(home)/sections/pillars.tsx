@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Balancer from 'react-wrap-balancer';
+
 import { cn } from '@/lib/utils';
 
 import Advocacy2Icon from '../icons/advocacy-2';
@@ -14,88 +16,29 @@ export default function Pillars() {
 		<div className="relative">
 			<div className="container relative py-10">
 				<div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-					<div className={cn(styles.pillar, styles.glow)}>
-						<Advocacy2Icon className="h-auto w-10 md:w-14" />
-						<div>
-							<h3>Advocacy</h3>
-							<p>
-								Representing the interests of music publishing companies,
-								including safeguarding their rights and those of songwriters in
-								copyright affairs and legislation.
-							</p>
-						</div>
-					</div>
+					{pillars.map((pillar, i) => (
+						<div
+							key={i}
+							className={cn(
+								styles.card,
+								styles.glow,
+								'flex flex-col items-start gap-4 md:flex-row-reverse',
+								'[&_a]:hover:underline'
+							)}
+						>
+							{pillar.icon}
 
-					<div className={cn(styles.pillar, styles.glow)}>
-						<Education2Icon className="h-auto w-10 md:w-14" />
-						<div>
-							<h3>Education</h3>
-							<p>
-								Providing information resources and seminars on copyright,
-								license management, and royalty collection.
-							</p>
+							<div className="flex-1">
+								<h3 className="relative z-10 mb-4 text-lg font-light !leading-tight tracking-tight text-brand md:text-xl">
+									{pillar.title}
+								</h3>
+								<p className="relative z-10 max-w-sm text-balance text-xs !leading-normal md:text-sm">
+									<Balancer>{pillar.description}</Balancer>
+								</p>
+							</div>
 						</div>
-					</div>
-
-					<div className={cn(styles.pillar, styles.glow)}>
-						<JointRights2Icon className="h-auto w-10 md:w-14" />
-						<div>
-							<h3>Joint Rights Movement</h3>
-							<p>
-								Collaborating to manage royalties and protect copyrights with
-								Performing Rights Organizations such as{' '}
-								<a href="https://macp.com.my">MACP</a> (Malaysia),{' '}
-								<a href="https://wami.id/">WAMI</a> (Indonesia),{' '}
-								<a href="https://www.compass.org.sg/">COMPASS</a> (Singapore),
-								and others.
-							</p>
-						</div>
-					</div>
-
-					<div className={cn(styles.pillar, styles.glow)}>
-						<Networking2Icon className="h-auto w-10 md:w-14" />
-						<div>
-							<h3>Networking</h3>
-							<p>
-								Facilitating networking opportunities among music publishers,
-								songwriters, composers, and other professional industry players.
-							</p>
-						</div>
-					</div>
-
-					<div className={cn(styles.pillar, styles.glow)}>
-						<Industry2Icon className="h-auto w-10 md:w-14" />
-						<div>
-							<h3>Industry Standards</h3>
-							<p>
-								Contributing to the development, industry standards, and best
-								practices for music publishing, including establishing
-								guidelines for licensing fee alignment.
-							</p>
-						</div>
-					</div>
-
-					<div className={cn(styles.pillar, styles.glow)}>
-						<Market2Icon className="h-auto w-10 md:w-14" />
-						<div>
-							<h3>Market Research</h3>
-							<p>
-								Conducting or supporting research initiatives to gather
-								information on the music publishing industry, trends, and
-								consumer behavior.
-							</p>
-						</div>
-					</div>
+					))}
 				</div>
-
-				<p className="mt-8 max-w-sm text-pretty text-sm font-normal">
-					Our mission is to empower music publishers in the country with{' '}
-					<span className="text-muted-foreground">
-						resources, recognition, and education
-					</span>{' '}
-					to maximize their creative and financial potential whilst competing
-					globally.
-				</p>
 
 				<img
 					src="/images/16.png"
@@ -106,3 +49,77 @@ export default function Pillars() {
 		</div>
 	);
 }
+
+type Pillar = {
+	title: string;
+	description: string | React.ReactNode;
+	icon: React.ReactNode;
+};
+
+const pillars = [
+	{
+		title: 'Advocacy',
+		description: (
+			<>
+				Representing the interests of music publishing companies, including
+				safeguarding their rights and those of songwriters in copyright affairs
+				and legislation.
+			</>
+		),
+		icon: <Advocacy2Icon className="h-auto w-10 md:w-14" />,
+	},
+	{
+		title: 'Education',
+		description: (
+			<>
+				Providing information resources and seminars on copyright, license
+				management, and royalty collection.
+			</>
+		),
+		icon: <Education2Icon className="h-auto w-10 md:w-14" />,
+	},
+	{
+		title: 'Joint Rights Movement',
+		description: (
+			<>
+				Collaborating to manage royalties and protect copyrights with Performing
+				Rights Organizations such as <a href="https://macp.com.my">MACP</a>{' '}
+				(Malaysia), <a href="https://wami.id/">WAMI</a> (Indonesia),{' '}
+				<a href="https://www.compass.org.sg/">COMPASS</a> (Singapore), and
+				others.
+			</>
+		),
+		icon: <JointRights2Icon className="h-auto w-10 md:w-14" />,
+	},
+	{
+		title: 'Networking',
+		description: (
+			<>
+				Facilitating networking opportunities among music publishers,
+				songwriters, composers, and other professional industry players.
+			</>
+		),
+		icon: <Networking2Icon className="h-auto w-10 md:w-14" />,
+	},
+	{
+		title: 'Industry Standards',
+		description: (
+			<>
+				Contributing to the development, industry standards, and best practices
+				for music publishing, including establishing guidelines for licensing
+				fee alignment.
+			</>
+		),
+		icon: <Industry2Icon className="h-auto w-10 md:w-14" />,
+	},
+	{
+		title: 'Market Research',
+		description: (
+			<>
+				Conducting or supporting research initiatives to gather information on
+				the music publishing industry, trends, and consumer behavior.
+			</>
+		),
+		icon: <Market2Icon className="h-auto w-10 md:w-14" />,
+	},
+];
