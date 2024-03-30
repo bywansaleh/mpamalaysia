@@ -4,8 +4,8 @@ export default function Companies() {
 			<div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" />
 
 			<div className="container">
-				<div className="relative grid gap-6 overflow-hidden rounded-3xl bg-black bg-gradient-to-br from-brand to-brand/80 p-4 text-white [perspective:800px] md:grid-cols-2 md:p-12">
-					<div className="pointer-events-none absolute inset-0 z-0 bg-[url(/images/dot.svg)] bg-repeat opacity-50 [mask:linear-gradient(to_top,black,transparent)] [transform:rotateX(30deg)]" />
+				<div className="relative grid gap-6 overflow-hidden rounded-3xl bg-black bg-gradient-to-br from-brand to-brand/80 p-4 text-white md:grid-cols-2 md:p-12">
+					<div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/dot.svg)] bg-repeat opacity-50 [mask:linear-gradient(to_top,black,transparent)]" />
 
 					{/* <div
 						className="absolute inset-0 z-0 opacity-20"
