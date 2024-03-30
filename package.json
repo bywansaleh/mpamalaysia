@@ -41,7 +41,6 @@
     "valibot": "^0.30.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.11.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
     "@tailwindcss/typography": "^0.5.12",
     "@tanstack/eslint-plugin-query": "^5.28.6",
@@ -65,8 +64,5 @@
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-easing": "^0.2.1",
     "typescript": "^5.4.3"
-  },
-  "resolutions": {
-    "string-width": "4.2.3"
   }
 }
