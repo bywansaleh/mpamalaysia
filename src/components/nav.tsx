@@ -52,14 +52,14 @@ export default function Nav() {
 							<span className="sr-only">{siteTitle}</span>
 						</div>
 
-						<ul className="flex h-7 items-center gap-1 rounded-full bg-card/50 px-3 py-1 text-xs font-medium !leading-none tracking-tight ring-1 ring-foreground/[7%] backdrop-blur sm:h-9 sm:px-1 sm:text-sm">
+						<ul className="flex h-7 items-center gap-0 rounded-full bg-card/50 p-1 text-2xs font-medium !leading-none tracking-tight ring-1 ring-foreground/[7%] backdrop-blur sm:h-9 sm:text-sm">
 							{links.map((link) => (
 								<li key={link.id} className="h-full">
 									<a
 										href={link.href}
 										className={cn(
-											'relative flex h-full items-center justify-center rounded-full px-3 transition-all duration-100 hover:bg-foreground/5',
-											section === link.id && '!bg-brand/10 !text-brand'
+											'relative flex h-full items-center justify-center rounded-full px-2 transition-all duration-100 hover:bg-foreground/10 sm:px-3',
+											section === link.id && '!bg-brand/20'
 										)}
 										onClick={(ev) => {
 											ev.preventDefault();
