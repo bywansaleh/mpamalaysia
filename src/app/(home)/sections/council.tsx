@@ -3,7 +3,6 @@ import Balancer from 'react-wrap-balancer';
 
 import { cn } from '@/lib/utils';
 
-import Img from '@/components/img';
 import Section from '@/components/section';
 
 import styles from './styles.module.css';
@@ -13,7 +12,7 @@ export default function Council() {
 		<Section id="council" className="relative scroll-m-10">
 			{/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand opacity-10" /> */}
 
-			<Img
+			<img
 				src="/images/gradient.png"
 				alt=""
 				className="pointer-events-none absolute -right-1/4 top-0 -z-10 h-[200%] select-none opacity-40 dark:opacity-10"
@@ -68,7 +67,7 @@ function Member({ member }: { member: Member }) {
 		>
 			<div>
 				<div className="inline-block overflow-hidden rounded-full bg-gray-400">
-					<Img
+					<img
 						src={member.image}
 						alt={member.name}
 						className={cn(

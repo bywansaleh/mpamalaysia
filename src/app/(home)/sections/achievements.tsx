@@ -2,7 +2,6 @@
 
 import Balancer from 'react-wrap-balancer';
 
-import Img from '@/components/img';
 import Section from '@/components/section';
 
 export default function Achievements() {
@@ -12,7 +11,7 @@ export default function Achievements() {
 			className="relative scroll-m-20 overflow-hidden py-28"
 		>
 			<div className="container relative">
-				<Img
+				<img
 					src="/images/06.png"
 					alt=""
 					className="pointer-events-none absolute top-0 z-0 w-96 rotate-[-40deg] select-none opacity-20 grayscale-[0.3] md:-left-40 md:opacity-90"
