@@ -16,12 +16,6 @@ export default async function Footer() {
 		<footer
 			className={cn('relative overflow-hidden py-10', 'hover:[&_a]:underline')}
 		>
-			{/* <img
-				src="/images/gradient.png"
-				alt=""
-				className="pointer-events-none absolute -right-0 top-1/4 z-0 w-[60rem] -translate-y-1/2 rotate-90 select-none opacity-40 grayscale-[0.6] dark:opacity-10"
-			/> */}
-
 			<div className="container relative flex flex-col items-start gap-4">
 				<div
 					className={cn(
