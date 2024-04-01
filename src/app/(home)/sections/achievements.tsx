@@ -2,9 +2,14 @@
 
 import Balancer from 'react-wrap-balancer';
 
+import Section from '@/components/section';
+
 export default function Achievements() {
 	return (
-		<div className="relative overflow-hidden py-10">
+		<Section
+			id="achievements"
+			className="relative scroll-m-20 overflow-hidden py-28"
+		>
 			<div className="container relative">
 				<img
 					src="/images/06.png"
@@ -34,7 +39,7 @@ export default function Achievements() {
 					))}
 				</div>
 			</div>
-		</div>
+		</Section>
 	);
 }
 

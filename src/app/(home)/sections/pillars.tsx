@@ -3,6 +3,8 @@ import Balancer from 'react-wrap-balancer';
 
 import { cn } from '@/lib/utils';
 
+import Section from '@/components/section';
+
 import Advocacy2Icon from '../icons/advocacy-2';
 import Education2Icon from '../icons/education-2';
 import Industry2Icon from '../icons/industry-2';
@@ -13,7 +15,7 @@ import styles from './styles.module.css';
 
 export default function Pillars() {
 	return (
-		<div className="relative">
+		<Section id="pillars" className="relative scroll-m-20">
 			<div className="container relative py-10">
 				<div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 					{pillars.map((pillar, i) => (
@@ -46,7 +48,7 @@ export default function Pillars() {
 					className="pointer-events-none absolute -bottom-40 -right-20 -z-10 w-2/3 min-w-[30vw] rotate-[50deg] select-none opacity-40 grayscale-[0.2] sm:w-1/4 md:opacity-90"
 				/>
 			</div>
-		</div>
+		</Section>
 	);
 }
 

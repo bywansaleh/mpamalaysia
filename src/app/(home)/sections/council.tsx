@@ -3,11 +3,13 @@ import Balancer from 'react-wrap-balancer';
 
 import { cn } from '@/lib/utils';
 
+import Section from '@/components/section';
+
 import styles from './styles.module.css';
 
 export default function Council() {
 	return (
-		<div className="relative">
+		<Section id="council" className="relative scroll-m-10">
 			{/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand opacity-10" /> */}
 
 			<img
@@ -48,7 +50,7 @@ export default function Council() {
 					</Balancer>
 				</p>
 			</div>
-		</div>
+		</Section>
 	);
 }
 

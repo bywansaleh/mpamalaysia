@@ -1,6 +1,8 @@
+import Section from '@/components/section';
+
 export default function Companies() {
 	return (
-		<div className="relative py-20">
+		<Section id="companies" className="relative scroll-m-10 py-20">
 			<div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" />
 
 			<div className="container">
@@ -40,11 +42,11 @@ export default function Companies() {
 					</div>
 
 					<div className="relative z-[2] max-md:-mt-4">
-						<div className="grid-flow-col grid-rows-[repeat(13,minmax(0,1fr))] gap-x-2 md:grid">
+						<div className="grid grid-flow-col grid-rows-[repeat(13,minmax(0,1fr))] gap-x-4">
 							{companies.map((company, i) => (
 								<div
 									key={i}
-									className="line-clamp-1 rounded-md px-2 py-1 text-sm hover:bg-white hover:text-brand max-md:-mx-2"
+									className="line-clamp-1 rounded-md px-2 py-1 text-xs hover:bg-white hover:text-brand max-md:-mx-2 md:text-sm"
 								>
 									<h3>{company.name}</h3>
 								</div>
@@ -53,7 +55,7 @@ export default function Companies() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</Section>
 	);
 }
 

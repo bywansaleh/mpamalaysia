@@ -1,9 +1,11 @@
 import Balancer from 'react-wrap-balancer';
 
+import Section from '@/components/section';
+
 /* eslint-disable @next/next/no-img-element */
 export default function Welcome() {
 	return (
-		<div className="relative">
+		<Section id="welcome" className="relative">
 			<div className="container relative py-10 pt-32">
 				<div className="">
 					<h2 className="max-w-screen-lg text-pretty font-heading text-4xl font-medium tracking-tight md:text-5xl">
@@ -35,6 +37,6 @@ export default function Welcome() {
 			</div>
 
 			<div className="pointer-events-none absolute inset-0 -z-10 bg-[url(/images/dot.svg)] bg-repeat opacity-50 invert [mask:linear-gradient(to_bottom,black,transparent)] dark:opacity-20 dark:invert-0" />
-		</div>
+		</Section>
 	);
 }
