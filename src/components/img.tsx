@@ -3,7 +3,7 @@
 import { ComponentProps } from 'react';
 import type { SetRequired } from 'type-fest';
 
-import { imageLoader } from '@/lib/config';
+import { baseUrl, imageLoader } from '@/lib/config';
 
 export default function Img({
 	src,
@@ -13,9 +13,7 @@ export default function Img({
 	// replace src with cdn
 	src =
 		process.env.NODE_ENV === 'production'
-			? imageLoader(
-					'https://images.weserv.nl/?url=https://staging.mpamalaysia.com/'
-				)
+			? imageLoader(`https://images.weserv.nl/?url=${baseUrl}${src}`)
 			: src;
 
 	return <img src={src} alt={alt} {...params} />;
