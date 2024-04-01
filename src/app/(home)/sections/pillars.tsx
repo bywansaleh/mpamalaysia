@@ -43,6 +43,7 @@ export default function Pillars() {
 				</div>
 
 				<img
+					loading="eager"
 					src="/images/16.png"
 					alt=""
 					className="pointer-events-none absolute -bottom-40 -right-20 -z-10 w-2/3 min-w-[30vw] rotate-[50deg] select-none opacity-40 grayscale-[0.2] sm:w-1/4 md:opacity-90"

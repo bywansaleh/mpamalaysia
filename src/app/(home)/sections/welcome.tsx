@@ -28,6 +28,7 @@ export default function Welcome() {
 				</div>
 
 				<img
+					loading="eager"
 					src="/images/gradient.png"
 					alt=""
 					className="pointer-events-none absolute -top-2/3 right-0 -z-10 h-[170%] select-none object-contain opacity-40 dark:opacity-10"
