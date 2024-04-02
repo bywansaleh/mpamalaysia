@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 
 export default function Council() {
 	return (
-		<Section id="council" className="relative scroll-m-10">
+		<Section id="council" className="relative py-20">
 			{/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand opacity-10" /> */}
 
 			<img
@@ -18,7 +18,7 @@ export default function Council() {
 				className="pointer-events-none absolute -right-1/4 top-0 -z-10 h-[200%] select-none opacity-40 dark:opacity-10"
 			/>
 
-			<div className="container py-20">
+			<div className="container">
 				<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					Council <span className="text-muted-foreground">Members</span>
 				</h2>

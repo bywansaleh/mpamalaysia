@@ -8,7 +8,7 @@ export default function Achievements() {
 	return (
 		<Section
 			id="achievements"
-			className="relative scroll-m-20 overflow-hidden py-28"
+			className="relative scroll-m-0 overflow-hidden py-20 md:scroll-m-20"
 		>
 			<div className="container relative">
 				<img

@@ -15,8 +15,8 @@ import styles from './styles.module.css';
 
 export default function Pillars() {
 	return (
-		<Section id="pillars" className="relative scroll-m-20">
-			<div className="container relative py-10">
+		<Section id="pillars" className="relative scroll-m-10 py-10">
+			<div className="container relative">
 				<div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 					{pillars.map((pillar, i) => (
 						<div
