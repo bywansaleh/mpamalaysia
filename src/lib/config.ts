@@ -1,6 +1,6 @@
 export const baseUrl =
 	process.env.NODE_ENV === 'production'
-		? 'https://staging.mpamalaysia.com'
+		? 'https://mpamalaysia.com'
 		: 'http://localhost:2656';
 
 export const siteTitle = 'Music Publishers Association Malaysia';
