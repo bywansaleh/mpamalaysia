@@ -28,6 +28,12 @@ export default async function Footer() {
 						<p className="text-balance">
 							<Balancer>{companyAddress}</Balancer>
 						</p>
+						<p className="text-balance">
+							<Balancer>
+								Phone: <a href={`tel:${companyPhone}`}>{companyPhone}</a>{' '}
+								&middot; Fax: {companyFax}
+							</Balancer>
+						</p>
 
 						<div className="mt-4 flex gap-2">
 							<a
@@ -86,9 +92,7 @@ export default async function Footer() {
 				</div>
 
 				<p className="text-xs font-medium text-muted-foreground">
-					{siteTitle} &copy; {new Date().getFullYear()} &middot; Phone:{' '}
-					<a href={`tel:${companyPhone}`}>{companyPhone}</a> &middot; Fax:{' '}
-					{companyFax}
+					{siteTitle} &copy; {new Date().getFullYear()}
 				</p>
 			</div>
 		</footer>
