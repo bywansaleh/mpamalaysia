@@ -2,11 +2,11 @@
 
 import { useEffect } from 'react';
 
+const includeTouch = true;
+
 export default function MouseProvider() {
 	// const mvx = useMotionValue(0);
 	// const mvy = useMotionValue(0);
-
-	const includeTouch = true;
 
 	useEffect(() => {
 		const updateMousePosition: EventListener = (ev) => {
@@ -41,6 +41,7 @@ export default function MouseProvider() {
 				window.removeEventListener('touchmove', updateMousePosition);
 			}
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	// const springmvx = useSpring(mvx, { damping: 40, stiffness: 500 });

@@ -39,7 +39,7 @@ export default function ThemeSelect() {
 		<>
 			<button
 				type="button"
-				className="hover:text-brand flex size-8 items-center justify-center gap-1 px-1 py-0 font-semibold transition"
+				className="flex size-8 items-center justify-center gap-1 px-1 py-0 font-semibold transition hover:text-brand"
 				onClick={toggle}
 				title={themes[theme].label}
 			>

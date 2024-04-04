@@ -59,7 +59,7 @@ type Pillar = {
 	icon: React.ReactNode;
 };
 
-const pillars = [
+const pillars: Pillar[] = [
 	{
 		title: 'Advocacy',
 		description: (
