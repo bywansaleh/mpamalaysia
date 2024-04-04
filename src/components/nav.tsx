@@ -44,15 +44,17 @@ export default function Nav() {
 					})}
 				</div>
 
+				<div className="pointer-events-none absolute inset-x-0 top-0 block h-20 bg-background [mask:linear-gradient(to_top,transparent,black)] sm:hidden" />
+
 				<div className="container z-10">
 					<div className="flex items-center justify-between">
-						<div className="flex h-6 gap-1 sm:h-8 sm:gap-1">
-							<MyFlag className="h-full" />
+						<div className="flex h-7 gap-1 sm:h-8 sm:gap-1">
+							<MyFlag className="hidden h-full sm:block" />
 							<LogoText className="h-full" />
 							<span className="sr-only">{siteTitle}</span>
 						</div>
 
-						<ul className="flex h-8 items-center gap-0 rounded-full bg-card/50 p-1 text-xs font-medium !leading-none tracking-tight ring-1 ring-foreground/[7%] backdrop-blur sm:h-9 sm:text-sm">
+						<ul className="flex h-8 items-center gap-0 rounded-full p-1 text-xs font-medium !leading-none tracking-tight ring-foreground/[7%] sm:h-9 sm:bg-card/50 sm:text-sm sm:ring-1 sm:backdrop-blur">
 							{links.map((link) => (
 								<li key={link.id} className="h-full">
 									<a

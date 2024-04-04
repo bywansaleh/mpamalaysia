@@ -66,12 +66,12 @@ function Member({ member }: { member: Member }) {
 			)}
 		>
 			<div>
-				<div className="inline-block overflow-hidden rounded-full bg-gray-400">
+				<div className="inline-block rounded-full p-1.5 ring-1 ring-foreground/20">
 					<img
 						src={member.image}
 						alt={member.name}
 						className={cn(
-							'block aspect-square size-20 scale-110',
+							'block aspect-square size-20 scale-110 rounded-full bg-foreground/20',
 							member.position === 'Council Member' && 'size-16'
 						)}
 					/>
@@ -110,7 +110,7 @@ const members: Member[] = [
 		name: 'Ng Ay Na',
 		position: 'Chairman',
 		company: 'Goodsound Music Publishing Sdn Bhd',
-		image: '/images/council/ng-ay-na.png',
+		image: '/images/council/ng-ay-na-3.png',
 	},
 	{
 		name: 'Jennifah Johari',
