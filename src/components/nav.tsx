@@ -46,7 +46,7 @@ export default function Nav() {
 
 				<div className="container z-10">
 					<div className="flex items-center justify-between">
-						<div className="flex h-6 gap-1 sm:h-8 sm:gap-2">
+						<div className="flex h-6 gap-1 sm:h-8 sm:gap-1">
 							<MyFlag className="h-full" />
 							<LogoText className="h-full" />
 							<span className="sr-only">{siteTitle}</span>
