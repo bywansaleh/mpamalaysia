@@ -46,19 +46,19 @@ export default function Nav() {
 
 				<div className="container z-10">
 					<div className="flex items-center justify-between">
-						<div className="flex h-5 gap-2 sm:h-8">
+						<div className="flex h-6 gap-1 sm:h-8 sm:gap-2">
 							<MyFlag className="h-full" />
 							<LogoText className="h-full" />
 							<span className="sr-only">{siteTitle}</span>
 						</div>
 
-						<ul className="flex h-7 items-center gap-0 rounded-full bg-card/50 p-1 text-2xs font-medium !leading-none tracking-tight ring-1 ring-foreground/[7%] backdrop-blur sm:h-9 sm:text-sm">
+						<ul className="flex h-8 items-center gap-0 rounded-full bg-card/50 p-1 text-xs font-medium !leading-none tracking-tight ring-1 ring-foreground/[7%] backdrop-blur sm:h-9 sm:text-sm">
 							{links.map((link) => (
 								<li key={link.id} className="h-full">
 									<a
 										href={link.href}
 										className={cn(
-											'relative flex h-full items-center justify-center rounded-full px-2 transition-all duration-100 hover:bg-foreground/10 sm:px-3',
+											'relative flex h-full items-center justify-center rounded-full px-1.5 transition-all duration-100 hover:bg-foreground/10 sm:px-3',
 											section === link.id && '!bg-brand/20'
 										)}
 										onClick={(ev) => {
