@@ -23,17 +23,17 @@ export default function Council() {
 					Council <span className="text-muted-foreground">Members</span>
 				</h2>
 
-				<div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+				{/* <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
 					{members
 						.filter((member) => member.position !== 'Council Member')
 						.map((member, i) => (
 							<Member member={member} key={i} />
 						))}
-				</div>
+				</div> */}
 
 				<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
 					{members
-						.filter((member) => member.position === 'Council Member')
+						// .filter((member) => member.position === 'Council Member')
 						.map((member, i) => (
 							<Member member={member} key={i} />
 						))}
@@ -59,20 +59,21 @@ function Member({ member }: { member: Member }) {
 		<div
 			className={cn(
 				styles.card,
-				'group flex flex-row-reverse items-center gap-2 !p-4',
-				member.position === 'Council Member' &&
-					'flex-col items-start md:flex-row-reverse md:items-center',
+				'group flex gap-2 !p-4',
+				// member.position === 'Council Member' &&
+				'flex-col items-start md:flex-row-reverse md:items-center',
 				styles.glow
 			)}
 		>
 			<div>
-				<div className="inline-block rounded-full p-2 ring-1 ring-foreground/20">
+				<div className="inline-block rounded-full p-1.5 ring-1 ring-foreground/20">
 					<img
 						src={member.image}
 						alt={member.name}
 						className={cn(
-							'block aspect-square size-20 scale-110 rounded-full bg-foreground/20',
-							member.position === 'Council Member' && 'size-16'
+							'block aspect-square scale-110 rounded-full bg-foreground/20',
+							// member.position === 'Council Member' ? 'size-16' : 'size-20'
+							'size-14'
 						)}
 					/>
 				</div>
@@ -84,8 +85,9 @@ function Member({ member }: { member: Member }) {
 				</p>
 				<h3
 					className={cn(
-						'text-2xl font-semibold !leading-none tracking-tighter',
-						member.position === 'Council Member' && 'text-sm md:text-base'
+						'font-semibold !leading-none tracking-tighter',
+						// member.position === 'Council Member' &&
+						'text-sm md:text-base'
 					)}
 				>
 					<Balancer>{member.name}</Balancer>
