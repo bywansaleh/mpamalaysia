@@ -66,7 +66,7 @@ function Member({ member }: { member: Member }) {
 			)}
 		>
 			<div>
-				<div className="inline-block rounded-full p-1.5 ring-1 ring-foreground/20">
+				<div className="inline-block rounded-full p-2 ring-1 ring-foreground/20">
 					<img
 						src={member.image}
 						alt={member.name}
