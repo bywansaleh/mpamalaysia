@@ -28,7 +28,11 @@ export default function Pillars() {
 								'[&_a]:hover:underline'
 							)}
 						>
-							{pillar.icon}
+							<div className="aspect-square rounded-lg p-1.5 ring-1 ring-foreground/10">
+								<div className="aspect-square rounded bg-card/40 p-3 shadow-lg ring-1 ring-foreground/10 [&>svg]:size-8 md:[&>svg]:size-10">
+									{pillar.icon}
+								</div>
+							</div>
 
 							<div className="flex-1">
 								<h3 className="relative z-10 mb-4 text-lg font-light !leading-tight tracking-tight text-brand md:text-xl">
@@ -69,7 +73,7 @@ const pillars: Pillar[] = [
 				and legislation.
 			</>
 		),
-		icon: <Advocacy2Icon className="h-auto w-10 md:w-14" />,
+		icon: <Advocacy2Icon />,
 	},
 	{
 		title: 'Education',
@@ -79,7 +83,7 @@ const pillars: Pillar[] = [
 				management, and royalty collection.
 			</>
 		),
-		icon: <Education2Icon className="h-auto w-10 md:w-14" />,
+		icon: <Education2Icon />,
 	},
 	{
 		title: 'Joint Rights Movement',
@@ -92,7 +96,7 @@ const pillars: Pillar[] = [
 				others.
 			</>
 		),
-		icon: <JointRights2Icon className="h-auto w-10 md:w-14" />,
+		icon: <JointRights2Icon />,
 	},
 	{
 		title: 'Networking',
@@ -102,7 +106,7 @@ const pillars: Pillar[] = [
 				songwriters, composers, and other professional industry players.
 			</>
 		),
-		icon: <Networking2Icon className="h-auto w-10 md:w-14" />,
+		icon: <Networking2Icon />,
 	},
 	{
 		title: 'Industry Standards',
@@ -113,7 +117,7 @@ const pillars: Pillar[] = [
 				fee alignment.
 			</>
 		),
-		icon: <Industry2Icon className="h-auto w-10 md:w-14" />,
+		icon: <Industry2Icon />,
 	},
 	{
 		title: 'Market Research',
@@ -123,6 +127,6 @@ const pillars: Pillar[] = [
 				the music publishing industry, trends, and consumer behavior.
 			</>
 		),
-		icon: <Market2Icon className="h-auto w-10 md:w-14" />,
+		icon: <Market2Icon />,
 	},
 ];
