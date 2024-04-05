@@ -31,7 +31,7 @@ export default function Welcome() {
 					loading="eager"
 					src="/images/gradient.png"
 					alt=""
-					className="pointer-events-none absolute -top-2/3 right-0 -z-10 h-[170%] select-none object-contain opacity-40 dark:opacity-10"
+					className="pointer-events-none absolute -top-2/3 right-0 -z-10 h-[170%] select-none object-contain opacity-40 hue-rotate-30 dark:opacity-10"
 				/>
 
 				{/* <div className="absolute right-0 top-1/2 -z-10 size-[50rem] -translate-y-1/2 rounded-full border-[4rem] border-brand opacity-10 blur-[3px]" /> */}

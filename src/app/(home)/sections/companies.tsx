@@ -3,14 +3,14 @@ import Section from '@/components/section';
 export default function Companies() {
 	return (
 		<Section id="companies" className="relative py-20">
-			<div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" />
+			{/* <div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" /> */}
 
 			<div className="container">
-				<div className="relative grid gap-6 overflow-hidden rounded-3xl bg-black bg-gradient-to-br from-brand to-brand p-4 text-white md:grid-cols-2 md:p-12">
-					{/* <div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/grid.svg)] bg-center bg-repeat opacity-50 [background-size:80%] [mask:linear-gradient(to_top,black,transparent)]" /> */}
-					<div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/dot.svg)] bg-repeat opacity-50 [mask:linear-gradient(to_top,black,transparent)]" />
+				<div className="relative grid gap-6 overflow-hidden rounded-3xl bg-black bg-gradient-to-br from-brand-darker to-brand-darker p-4 text-white md:grid-cols-2 md:p-12">
+					<div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/grid.svg)] bg-center bg-repeat opacity-50 [background-size:80%] [mask:linear-gradient(to_top,black,transparent)]" />
+					{/* <div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/dot.svg)] bg-repeat opacity-50 [mask:linear-gradient(to_top,black,transparent)]" /> */}
 
-					<div
+					{/* <div
 						className="absolute inset-0 z-[1] opacity-100"
 						style={{
 							background: `radial-gradient(
@@ -20,7 +20,7 @@ export default function Companies() {
               )`,
 							backgroundAttachment: 'fixed',
 						}}
-					/>
+					/> */}
 
 					<div className="relative z-[2] flex flex-col justify-between">
 						<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">

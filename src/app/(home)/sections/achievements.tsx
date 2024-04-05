@@ -11,12 +11,6 @@ export default function Achievements() {
 			className="relative scroll-m-0 overflow-hidden py-20 md:scroll-m-20"
 		>
 			<div className="container relative">
-				<img
-					src="/images/06.png"
-					alt=""
-					className="pointer-events-none absolute top-0 z-0 w-96 rotate-[-40deg] select-none opacity-20 grayscale-[0.3] md:-left-40 md:opacity-90"
-				/>
-
 				<h2 className="relative mb-12 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					Achievements
 				</h2>
@@ -38,6 +32,12 @@ export default function Achievements() {
 						</div>
 					))}
 				</div>
+
+				<img
+					src="/images/06.png"
+					alt=""
+					className="pointer-events-none absolute top-0 z-0 w-96 rotate-[-40deg] select-none opacity-20 grayscale-[0.5] hue-rotate-30 md:-left-40 md:opacity-90"
+				/>
 			</div>
 		</Section>
 	);

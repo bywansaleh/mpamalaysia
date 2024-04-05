@@ -7,8 +7,7 @@ import { cn } from '@/lib/utils';
 
 import { $currentSection } from '@/app/store';
 
-import LogoText from './logo-text';
-import MyFlag from './my-flag';
+import LogoFull from './logo-full';
 
 const links = [
 	{ id: 'pillars', title: 'Pillars', href: '#pillars' },
@@ -22,8 +21,8 @@ export default function Nav() {
 
 	return (
 		<nav>
-			<div className="fixed inset-x-0 top-0 z-[999] flex h-20 items-center">
-				<div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-24">
+			<div className="fixed inset-x-0 top-0 z-[999] flex h-28 items-center">
+				<div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-32">
 					{Array.from({ length: 8 }).map((_, i) => {
 						return (
 							<div
@@ -47,10 +46,11 @@ export default function Nav() {
 				<div className="pointer-events-none absolute inset-x-0 top-0 block h-20 bg-background [mask:linear-gradient(to_top,transparent,black)] sm:hidden" />
 
 				<div className="container z-10">
-					<div className="flex items-center justify-between">
-						<div className="flex h-7 gap-1 sm:h-8 sm:gap-1">
-							<MyFlag className="hidden h-full sm:block" />
-							<LogoText className="h-full" />
+					<div className="flex items-end justify-between">
+						<div className="flex h-16 gap-1 sm:h-20 sm:gap-1">
+							{/* <MyFlag className="hidden h-full sm:block" />
+							<LogoText className="h-full" /> */}
+							<LogoFull className="h-full" />
 							<span className="sr-only">{siteTitle}</span>
 						</div>
 

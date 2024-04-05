@@ -2,7 +2,7 @@
 
 @layer base {
 	:root {
-		--brand: var(--hue) 70% 50%;
+		--brand: var(--hue) 80% 45%;
 		--brand-foreground: var(--hue) 80% 100%;
 		--background: var(--bg-light);
 		--foreground: var(--hue) 4% 3.9%;

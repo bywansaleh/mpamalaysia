@@ -10,14 +10,6 @@ import styles from './styles.module.css';
 export default function Council() {
 	return (
 		<Section id="council" className="relative py-20">
-			{/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand opacity-10" /> */}
-
-			<img
-				src="/images/gradient.png"
-				alt=""
-				className="pointer-events-none absolute -right-1/4 top-0 -z-10 h-[200%] select-none opacity-40 dark:opacity-10"
-			/>
-
 			<div className="container">
 				<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					Council <span className="text-muted-foreground">Members</span>
@@ -50,6 +42,14 @@ export default function Council() {
 					</Balancer>
 				</p>
 			</div>
+
+			{/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand opacity-10" /> */}
+
+			<img
+				src="/images/gradient.png"
+				alt=""
+				className="pointer-events-none absolute -right-1/4 top-0 -z-10 h-[200%] select-none opacity-40 grayscale-[0.6] hue-rotate-30 dark:opacity-10"
+			/>
 		</Section>
 	);
 }
