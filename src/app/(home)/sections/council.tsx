@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 
 export default function Council() {
 	return (
-		<Section id="council" className="relative py-20">
+		<Section id="council" className="relative scroll-m-10 py-20">
 			<div className="container">
 				<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					Council <span className="text-muted-foreground">Members</span>

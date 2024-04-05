@@ -6,10 +6,7 @@ import Section from '@/components/section';
 
 export default function Achievements() {
 	return (
-		<Section
-			id="achievements"
-			className="relative scroll-m-0 overflow-hidden py-20 md:scroll-m-20"
-		>
+		<Section id="achievements" className="relative scroll-m-10 py-20">
 			<div className="container relative">
 				<h2 className="relative mb-12 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
 					Achievements

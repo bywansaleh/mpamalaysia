@@ -2,7 +2,7 @@ import Section from '@/components/section';
 
 export default function Companies() {
 	return (
-		<Section id="companies" className="relative py-20">
+		<Section id="companies" className="relative scroll-m-10 py-20">
 			{/* <div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" /> */}
 
 			<div className="container">

@@ -6,7 +6,7 @@ import Section from '@/components/section';
 export default function Welcome() {
 	return (
 		<Section id="welcome" className="relative">
-			<div className="container relative py-10 pt-32">
+			<div className="container relative py-10 pt-48">
 				<div className="">
 					<h2 className="max-w-screen-lg text-pretty font-heading text-4xl font-medium tracking-tight md:text-5xl">
 						<Balancer>
@@ -16,7 +16,8 @@ export default function Welcome() {
 							the rights and interests of music publishers in Malaysia.
 						</Balancer>
 					</h2>
-					<p className="mt-40 max-w-screen-md text-pretty text-2xl font-light !leading-[1.1] tracking-tighter md:text-3xl">
+
+					<p className="mt-60 max-w-screen-md text-pretty text-2xl font-light !leading-[1.1] tracking-tighter md:text-3xl">
 						<Balancer>
 							Music Publishers Association of Malaysia safeguards the rights and
 							promotes the works of music publishers in the country.{' '}
