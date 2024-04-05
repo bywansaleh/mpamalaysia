@@ -88,10 +88,10 @@ function Member({ member }: { member: Member }) {
 						member.position === 'Council Member' && 'text-sm md:text-base'
 					)}
 				>
-					{member.name}
+					<Balancer>{member.name}</Balancer>
 				</h3>
-				<p className="line-clamp-1 text-xs font-medium tracking-tighter text-muted-foreground">
-					{member.company}
+				<p className="text-xs font-medium tracking-tighter text-muted-foreground">
+					<Balancer>{member.company}</Balancer>
 				</p>
 			</div>
 		</div>
@@ -133,7 +133,7 @@ const members: Member[] = [
 	{
 		name: 'Rosmin Hashim',
 		position: 'Council Member',
-		company: 'Nova Music Sdn Bhd',
+		company: 'Nova Music (M) Sdn Bhd',
 		image: '/images/council/rosmin-hashim.png',
 	},
 	{
@@ -163,7 +163,7 @@ const members: Member[] = [
 	{
 		name: 'Norkhayati Mohd Hashim',
 		position: 'Council Member',
-		company: 'Kelarai Sakti Sdn Bhd',
+		company: 'Kelarai Sakti Publishing Sdn Bhd',
 		image: '/images/council/baiduri.png',
 	},
 ];
