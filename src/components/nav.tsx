@@ -47,14 +47,14 @@ export default function Nav() {
 
 				<div className="container z-10">
 					<div className="flex items-end justify-between">
-						<div className="flex h-16 gap-1 sm:h-20 sm:gap-1">
+						<div className="flex h-14 gap-1 sm:h-20 sm:gap-1">
 							{/* <MyFlag className="hidden h-full sm:block" />
 							<LogoText className="h-full" /> */}
 							<LogoFull className="h-full" />
 							<span className="sr-only">{siteTitle}</span>
 						</div>
 
-						<ul className="flex h-8 items-center gap-0 rounded-full p-1 text-xs font-medium !leading-none tracking-tight ring-foreground/[7%] sm:h-9 sm:bg-card/50 sm:text-sm sm:ring-1 sm:backdrop-blur">
+						<ul className="-mb-1.5 flex h-8 items-center gap-0 rounded-full p-1 text-xs font-medium !leading-none tracking-tight ring-foreground/[7%] sm:mb-1.5 sm:h-9 sm:bg-card/50 sm:text-sm sm:ring-1 sm:backdrop-blur">
 							{links.map((link) => (
 								<li key={link.id} className="h-full">
 									<a
