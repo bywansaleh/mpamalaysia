@@ -15,9 +15,9 @@ export default function Pillars() {
 	return (
 		<Section id="pillars" className="relative scroll-m-20 py-10">
 			<div className="container relative">
-				<div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+				<div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
 					{pillars.map((pillar, i) => (
-						<RevealFade key={i} delay={i * 0.1} className="h-full">
+						<RevealFade key={i} className="h-full">
 							<div
 								key={i}
 								className={cn(

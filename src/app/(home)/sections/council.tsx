@@ -26,15 +26,13 @@ export default function Council() {
 						))}
 				</div> */}
 
-				<RevealFade>
-					<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-						{members
-							// .filter((member) => member.position === 'Council Member')
-							.map((member, i) => (
-								<MemberCard member={member} key={i} />
-							))}
-					</div>
-				</RevealFade>
+				<div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 md:gap-4">
+					{members
+						// .filter((member) => member.position === 'Council Member')
+						.map((member, i) => (
+							<MemberCard member={member} key={i} />
+						))}
+				</div>
 
 				<RevealFade>
 					<p className="mt-8 max-w-sm text-pretty text-sm font-normal">
@@ -63,49 +61,51 @@ export default function Council() {
 
 function MemberCard({ member }: { member: Member }) {
 	return (
-		<div
-			className={cn(
-				styles.card,
-				'group flex gap-2 !p-4',
-				// member.position === 'Council Member' &&
-				'flex-col items-start md:flex-row-reverse md:items-center',
-				styles.glow
-			)}
-		>
-			<div>
-				<div className="inline-block rounded-full p-1.5 ring-1 ring-foreground/20">
-					<img
-						src={member.image}
-						alt={member.name}
+		<RevealFade>
+			<div
+				className={cn(
+					styles.card,
+					'group flex gap-2 !p-4',
+					// member.position === 'Council Member' &&
+					'flex-col items-start md:flex-row-reverse md:items-center',
+					styles.glow
+				)}
+			>
+				<div>
+					<div className="inline-block rounded-full p-1.5 ring-1 ring-foreground/20">
+						<img
+							src={member.image}
+							alt={member.name}
+							className={cn(
+								'block aspect-square scale-110 rounded-full bg-foreground/20',
+								// member.position === 'Council Member' ? 'size-16' : 'size-20'
+								'size-14'
+							)}
+						/>
+					</div>
+				</div>
+
+				<div className="flex flex-1 flex-col gap-1">
+					<p className="text-xs font-semibold tracking-tighter text-brand/90">
+						{member.position}
+					</p>
+					<h3
 						className={cn(
-							'block aspect-square scale-110 rounded-full bg-foreground/20',
-							// member.position === 'Council Member' ? 'size-16' : 'size-20'
-							'size-14'
+							'font-semibold !leading-none tracking-tighter',
+							// member.position === 'Council Member' &&
+							'text-sm md:text-base'
 						)}
-					/>
+					>
+						<Balancer>{member.name}</Balancer>
+					</h3>
+					<p className="text-xs font-medium tracking-tighter opacity-55">
+						<Balancer>
+							{member.company.replace(/( \(M\))? Sdn Bhd$/, '')}
+						</Balancer>
+					</p>
 				</div>
 			</div>
-
-			<div className="flex flex-1 flex-col gap-1">
-				<p className="text-xs font-semibold tracking-tighter text-brand/90">
-					{member.position}
-				</p>
-				<h3
-					className={cn(
-						'font-semibold !leading-none tracking-tighter',
-						// member.position === 'Council Member' &&
-						'text-sm md:text-base'
-					)}
-				>
-					<Balancer>{member.name}</Balancer>
-				</h3>
-				<p className="text-xs font-medium tracking-tighter opacity-55">
-					<Balancer>
-						{member.company.replace(/( \(M\))? Sdn Bhd$/, '')}
-					</Balancer>
-				</p>
-			</div>
-		</div>
+		</RevealFade>
 	);
 }
 

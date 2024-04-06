@@ -15,10 +15,10 @@ export default function Achievements() {
 					</h2>
 				</RevealFade>
 
-				<RevealFade>
-					<div className="grid gap-10 md:ml-60 md:grid-cols-2 lg:grid-cols-3">
-						{achievements.map((achievement, i) => (
-							<div key={i} className="flex gap-6">
+				<div className="grid gap-10 md:ml-60 md:grid-cols-2 lg:grid-cols-3">
+					{achievements.map((achievement, i) => (
+						<RevealFade key={i}>
+							<div className="flex gap-6">
 								<div className="w-[10%] font-serif text-5xl font-extralight text-brand">
 									{achievement.number}
 								</div>
@@ -31,9 +31,9 @@ export default function Achievements() {
 									</p>
 								</div>
 							</div>
-						))}
-					</div>
-				</RevealFade>
+						</RevealFade>
+					))}
+				</div>
 
 				<img
 					src="/images/06.png"

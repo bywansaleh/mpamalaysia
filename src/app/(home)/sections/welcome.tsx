@@ -13,7 +13,7 @@ export default function Welcome() {
 							<span className="inline-block opacity-50">
 								Protecting and promoting
 							</span>{' '}
-							the rights and interests of music publishers in Malaysia.
+							the rights and interests of music publishers in&nbsp;Malaysia.
 						</Balancer>
 					</h2>
 					<p className="mt-60 max-w-screen-md text-pretty text-2xl font-light !leading-[1.1] tracking-tighter md:text-3xl">
