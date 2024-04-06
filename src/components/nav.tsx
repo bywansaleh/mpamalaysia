@@ -47,9 +47,7 @@ export default function Nav() {
 
 				<div className="container z-10">
 					<div className="flex items-end justify-between">
-						<div className="flex h-14 gap-1 sm:h-20 sm:gap-1">
-							{/* <MyFlag className="hidden h-full sm:block" />
-							<LogoText className="h-full" /> */}
+						<div className="h-14 sm:h-20">
 							<LogoFull className="h-full" />
 							<span className="sr-only">{siteTitle}</span>
 						</div>

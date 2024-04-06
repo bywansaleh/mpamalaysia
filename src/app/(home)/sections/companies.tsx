@@ -14,7 +14,15 @@ export default function Companies() {
 			{/* <div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" /> */}
 
 			<div className="container">
-				<div className="relative flex w-full flex-col overflow-hidden rounded-3xl bg-black bg-gradient-to-br from-brand to-brand/60 p-4 text-white md:grid-cols-2 md:p-12">
+				<div
+					className={cn(
+						'to relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-gradient-to-tr from-brand/20 to-brand/0 p-4 text-white md:grid-cols-2 md:p-12',
+
+						'shadow-[0_4px_8px_-2px_rgba(16,24,40,0.1),0_2px_4px_-2px_rgba(16,24,40,0.06),inset_0_1px_1px_rgba(255,255,255,0.1)]'
+					)}
+				>
+					{/* <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_0_0,rgba(255,255,255,0.3),rgba(255,255,255,0)_65%)] opacity-30" /> */}
+
 					{/* <div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/grid.svg)] -skew-y-3 bg-center bg-repeat opacity-50 [background-size:80%] [mask:linear-gradient(to_top,black,transparent)]" /> */}
 					{/* <div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/dot.svg)] bg-repeat opacity-50 [mask:linear-gradient(to_top,black,transparent)]" /> */}
 
@@ -31,7 +39,7 @@ export default function Companies() {
 					/> */}
 
 					<div className="relative z-[2] flex flex-col justify-between">
-						<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
+						<h2 className="mb-8 mt-6 text-pretty font-heading text-4xl tracking-tight md:mb-16 md:mt-0 md:text-5xl">
 							Publishing <span className="opacity-55">Companies</span>
 						</h2>
 
@@ -47,7 +55,7 @@ export default function Companies() {
 							{companies.map((company, i) => (
 								<div
 									key={i}
-									className="line-clamp-1 rounded-md text-xs md:text-sm"
+									className="line-clamp-1 rounded-md text-xs opacity-55 md:text-sm"
 								>
 									<h3>{company.name}</h3>
 								</div>
