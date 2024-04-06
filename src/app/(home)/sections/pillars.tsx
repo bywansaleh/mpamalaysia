@@ -1,17 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import {
+	IconAffiliate,
+	IconBooks,
+	IconChartHistogram,
+	IconComet,
+	IconShieldHeart,
+	IconUsersGroup,
+} from '@tabler/icons-react';
 import Balancer from 'react-wrap-balancer';
 
 import { cn } from '@/lib/utils';
 
 import Section from '@/components/section';
 
-import Advocacy2Icon from '../icons/advocacy-2';
-import Education2Icon from '../icons/education-2';
-import Industry2Icon from '../icons/industry-2';
-import JointRights2Icon from '../icons/joint-rights-2';
-import Market2Icon from '../icons/market-2';
-import Networking2Icon from '../icons/networking-2';
 import styles from './styles.module.css';
 
 export default function Pillars() {
@@ -29,20 +31,101 @@ export default function Pillars() {
 								'[&_a]:hover:underline'
 							)}
 						>
-							<div className="aspect-square rounded-lg p-1.5 ring-1 ring-foreground/10">
-								<div className="aspect-square rounded bg-card/40 p-3 shadow-lg ring-1 ring-foreground/10 [&>svg]:size-8 md:[&>svg]:size-10">
-									{pillar.icon}
-								</div>
+							<div className="relative z-10 aspect-square p-3 text-white [&>svg]:size-8 md:[&>svg]:size-10">
+								{pillar.icon}
+
+								{/* <div>
+										<svg
+											// width="64"
+											// height="64"
+											viewBox="0 0 64 64"
+											fill="none"
+											xmlns="http://www.w3.org/2000/svg"
+											className="absolute inset-0 size-full opacity-50"
+										>
+											<g clip-path="url(#clip0_462_411189)">
+												<circle
+													opacity="0.6"
+													cx="32"
+													cy="32"
+													r="26.25"
+													stroke="currentColor"
+													stroke-width="0.15"
+												/>
+												<circle
+													opacity="0.6"
+													cx="32"
+													cy="32"
+													r="28.875"
+													stroke="currentColor"
+													stroke-width="0.15"
+												/>
+												<circle
+													opacity="0.6"
+													cx="32"
+													cy="32"
+													r="13.125"
+													stroke="currentColor"
+													stroke-width="0.15"
+												/>
+												<rect
+													opacity="0.6"
+													x="8.375"
+													y="8.375"
+													width="47.25"
+													height="47.25"
+													rx="4"
+													stroke="currentColor"
+													stroke-width="0.15"
+												/>
+												<rect
+													opacity="0.6"
+													x="5.75"
+													y="11"
+													width="52.5"
+													height="42"
+													rx="4"
+													stroke="currentColor"
+													stroke-width="0.15"
+												/>
+												<rect
+													opacity="0.6"
+													x="53"
+													y="5.75"
+													width="52.5"
+													height="42"
+													rx="4"
+													transform="rotate(90 53 5.75)"
+													stroke="currentColor"
+													stroke-width="0.15"
+												/>
+												<path
+													opacity="0.6"
+													d="M-9.93037 -10.0698L74.0696 73.9302M73.9304 -10.0698L-10.0696 73.9302M21.5985 -10.0002L21.5985 73.9998M74 21.5982L-9.99998 21.5982M32.0985 -10.0002L32.0985 73.9998M74 32.0982L-9.99998 32.0982M42.5985 -10.0002L42.5985 73.9998M74 42.5982L-9.99998 42.5982"
+													stroke="currentColor"
+													stroke-width="0.15"
+												/>
+											</g>
+											<defs>
+												<clipPath id="clip0_462_411189">
+													<rect width="64" height="64" rx="16" fill="white" />
+												</clipPath>
+											</defs>
+										</svg>
+									</div> */}
+								<div className={styles.iconbg} />
 							</div>
 
 							<div className="flex-1">
-								<h3 className="relative z-10 mb-4 text-lg font-light !leading-tight tracking-tight text-brand-darker dark:text-brand md:text-xl">
+								<h3 className="relative z-10 mb-4 text-lg font-semibold !leading-tight tracking-tighter md:text-xl">
 									{pillar.title}
 								</h3>
 								<p className="relative z-10 max-w-sm text-balance text-xs !leading-normal md:text-sm">
 									<Balancer>{pillar.description}</Balancer>
 								</p>
 							</div>
+
+							<div className="pointer-events-none absolute inset-0 bg-[url(/images/icons-noise.png)] opacity-50 [mask:linear-gradient(to_bottom_left,black,transparent_60%)]" />
 						</div>
 					))}
 				</div>
@@ -74,7 +157,7 @@ const pillars: Pillar[] = [
 				and legislation.
 			</>
 		),
-		icon: <Advocacy2Icon />,
+		icon: <IconShieldHeart strokeWidth={1} />,
 	},
 	{
 		title: 'Education',
@@ -84,7 +167,7 @@ const pillars: Pillar[] = [
 				management, and royalty collection.
 			</>
 		),
-		icon: <Education2Icon />,
+		icon: <IconBooks strokeWidth={1} />,
 	},
 	{
 		title: 'Joint Rights Movement',
@@ -97,7 +180,7 @@ const pillars: Pillar[] = [
 				others.
 			</>
 		),
-		icon: <JointRights2Icon />,
+		icon: <IconUsersGroup strokeWidth={1} />,
 	},
 	{
 		title: 'Networking',
@@ -107,7 +190,7 @@ const pillars: Pillar[] = [
 				songwriters, composers, and other professional industry players.
 			</>
 		),
-		icon: <Networking2Icon />,
+		icon: <IconAffiliate strokeWidth={1} />,
 	},
 	{
 		title: 'Industry Standards',
@@ -118,7 +201,7 @@ const pillars: Pillar[] = [
 				fee alignment.
 			</>
 		),
-		icon: <Industry2Icon />,
+		icon: <IconComet strokeWidth={1} />,
 	},
 	{
 		title: 'Market Research',
@@ -128,6 +211,6 @@ const pillars: Pillar[] = [
 				the music publishing industry, trends, and consumer behavior.
 			</>
 		),
-		icon: <Market2Icon />,
+		icon: <IconChartHistogram strokeWidth={1} />,
 	},
 ];

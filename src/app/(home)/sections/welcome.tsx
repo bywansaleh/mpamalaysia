@@ -8,7 +8,7 @@ export default function Welcome() {
 		<Section id="welcome" className="relative">
 			<div className="container relative py-10 pt-48">
 				<div className="">
-					<h2 className="max-w-screen-lg text-pretty font-heading text-4xl font-medium tracking-tight md:text-5xl">
+					<h2 className="max-w-screen-lg text-pretty font-heading text-4xl font-medium tracking-tight md:text-6xl">
 						<Balancer>
 							<span className="inline-block text-muted-foreground">
 								Protecting and promoting
