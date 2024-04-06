@@ -12,7 +12,7 @@ export default function Council() {
 		<Section id="council" className="relative scroll-m-10 py-20">
 			<div className="container">
 				<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
-					Council <span className="text-muted-foreground">Members</span>
+					Council <span className="opacity-55">Members</span>
 				</h2>
 
 				{/* <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -35,9 +35,7 @@ export default function Council() {
 					<Balancer>
 						The council members boast extensive experience, particularly hailing
 						from music backgrounds, and are{' '}
-						<span className="text-muted-foreground">
-							recognized as prominent leaders
-						</span>{' '}
+						<span className="opacity-55">recognized as prominent leaders</span>{' '}
 						within the industry.
 					</Balancer>
 				</p>
@@ -92,7 +90,7 @@ function MemberCard({ member }: { member: Member }) {
 				>
 					<Balancer>{member.name}</Balancer>
 				</h3>
-				<p className="text-xs font-medium tracking-tighter text-muted-foreground">
+				<p className="text-xs font-medium tracking-tighter opacity-55">
 					<Balancer>{member.company}</Balancer>
 				</p>
 			</div>

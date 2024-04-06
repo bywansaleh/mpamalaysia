@@ -22,7 +22,7 @@ export default function Achievements() {
 								<h3 className="mb-2 text-xl font-medium tracking-tight">
 									<Balancer>{achievement.title}</Balancer>
 								</h3>
-								<p className="text-pretty text-xs !leading-relaxed md:text-sm">
+								<p className="text-pretty text-xs !leading-relaxed opacity-55 md:text-sm">
 									<Balancer>{achievement.description}</Balancer>
 								</p>
 							</div>

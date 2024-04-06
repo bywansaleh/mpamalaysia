@@ -31,7 +31,7 @@ export default function Companies() {
 
 					<div className="relative z-[2] flex flex-col justify-between">
 						<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
-							Publishing <span className="opacity-50">Companies</span>
+							Publishing <span className="opacity-55">Companies</span>
 						</h2>
 
 						{/* <img

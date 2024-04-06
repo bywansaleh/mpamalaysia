@@ -10,7 +10,7 @@ export default function Welcome() {
 				<div className="">
 					<h2 className="max-w-screen-lg text-pretty font-heading text-4xl font-medium tracking-tight md:text-6xl">
 						<Balancer>
-							<span className="inline-block text-muted-foreground">
+							<span className="inline-block opacity-50">
 								Protecting and promoting
 							</span>{' '}
 							the rights and interests of music publishers in Malaysia.
@@ -21,7 +21,7 @@ export default function Welcome() {
 						<Balancer>
 							Music Publishers Association of Malaysia safeguards the rights and
 							promotes the works of music publishers in the country.{' '}
-							<span className="text-muted-foreground">
+							<span className="opacity-50">
 								We focus on the following six pillars.
 							</span>
 						</Balancer>
