@@ -55,16 +55,36 @@ export default function Companies() {
 					</div>
 
 					<div className="relative z-[2] -mx-16 mt-8 [mask:linear-gradient(to_right,transparent,black,transparent)]">
-						<div className="flex w-full flex-nowrap gap-6 overflow-hidden">
+						<div className="flex flex-nowrap gap-6 overflow-hidden">
 							<div className="flex animate-marquee gap-6">
-								{companies
+								{shuffle(companies)
 									.filter((company) => company.logo !== undefined)
 									.map((company, i) => (
 										<CompanyLogo key={i} company={company} />
 									))}
 							</div>
 							<div className="flex animate-marquee gap-6" aria-hidden>
-								{companies
+								{shuffle(companies)
+									.filter((company) => company.logo !== undefined)
+									.map((company, i) => (
+										<CompanyLogo key={i} company={company} />
+									))}
+							</div>
+						</div>
+						<div className="mt-2 flex flex-nowrap gap-6 overflow-hidden md:mt-6">
+							<div className="flex animate-marquee gap-6 [animation-direction:reverse]">
+								{shuffle(companies)
+									.filter((company) => company.logo !== undefined)
+
+									.map((company, i) => (
+										<CompanyLogo key={i} company={company} />
+									))}
+							</div>
+							<div
+								className="flex animate-marquee gap-6 [animation-direction:reverse]"
+								aria-hidden
+							>
+								{shuffle(companies)
 									.filter((company) => company.logo !== undefined)
 									.map((company, i) => (
 										<CompanyLogo key={i} company={company} />
@@ -130,3 +150,7 @@ const companies: Company[] = [
 	{ name: 'VEEDU Production Sdn Bhd', logo: 'veedu' },
 	{ name: 'VMS Music Records & Publishing Sdn Bhd' },
 ];
+
+const shuffle = (array: string[]) => {
+	return array.sort(() => Math.random() - 0.5);
+};
