@@ -152,5 +152,5 @@ const companies: Company[] = [
 ];
 
 const shuffle = (array: Company[]) => {
-	return array.sort(() => Math.random() - 0.5);
+	return [...array].sort(() => Math.random() - 0.5);
 };
