@@ -151,6 +151,6 @@ const companies: Company[] = [
 	{ name: 'VMS Music Records & Publishing Sdn Bhd' },
 ];
 
-const shuffle = (array: string[]) => {
+const shuffle = (array: Company[]) => {
 	return array.sort(() => Math.random() - 0.5);
 };
