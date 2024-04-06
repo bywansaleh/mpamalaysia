@@ -46,11 +46,11 @@ export default function RootLayout({
 					<TailwindIndicator />
 				</Providers>
 
-				<script
+				{/* <script
 					defer
 					src="https://static.cloudflareinsights.com/beacon.min.js"
 					data-cf-beacon='{"token": "ed66009c46354b29a22c9ce5b12c61bd"}'
-				/>
+				/> */}
 			</body>
 		</html>
 	);
