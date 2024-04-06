@@ -54,14 +54,15 @@ export default function Nav() {
 							<span className="sr-only">{siteTitle}</span>
 						</div>
 
-						<ul className="-mb-1.5 flex h-8 items-center gap-0 rounded-full p-1 text-xs font-medium !leading-none tracking-tight ring-foreground/[7%] sm:mb-1.5 sm:h-9 sm:bg-card/50 sm:text-sm sm:ring-1 sm:backdrop-blur">
+						<ul className="-mb-1.5 flex h-8 items-center rounded-full p-1 text-xs font-medium !leading-none tracking-tight ring-foreground/[7%] sm:mb-1.5 sm:h-9 sm:gap-1 sm:bg-card/50 sm:text-sm sm:ring-1 sm:backdrop-blur">
 							{links.map((link) => (
 								<li key={link.id} className="h-full">
 									<a
 										href={link.href}
 										className={cn(
-											'relative flex h-full items-center justify-center rounded-full px-1.5 transition-all duration-100 hover:bg-foreground/10 sm:px-3',
-											section === link.id && '!bg-brand/20'
+											'relative flex h-full items-center justify-center rounded-full px-1.5 transition-all duration-100 hover:bg-brand hover:text-white sm:px-3',
+											section === link.id &&
+												'!bg-brand !text-white shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.3)]'
 										)}
 										onClick={(ev) => {
 											ev.preventDefault();
@@ -71,7 +72,7 @@ export default function Nav() {
 											}
 										}}
 									>
-										{link.title}
+										<span className="drop-shadow-md">{link.title}</span>
 									</a>
 								</li>
 							))}
