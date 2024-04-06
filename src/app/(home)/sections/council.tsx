@@ -27,7 +27,7 @@ export default function Council() {
 					{members
 						// .filter((member) => member.position === 'Council Member')
 						.map((member, i) => (
-							<Member member={member} key={i} />
+							<MemberCard member={member} key={i} />
 						))}
 				</div>
 
@@ -54,7 +54,7 @@ export default function Council() {
 	);
 }
 
-function Member({ member }: { member: Member }) {
+function MemberCard({ member }: { member: Member }) {
 	return (
 		<div
 			className={cn(

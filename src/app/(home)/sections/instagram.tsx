@@ -14,14 +14,14 @@ export default async function Instagram() {
 				<div className="grid grid-cols-2 gap-4 lg:grid-cols-6">
 					{posts?.data
 						?.slice(0, 6)
-						.map((post) => <Post key={post.id} post={post} />)}
+						.map((post) => <PostCard key={post.id} post={post} />)}
 				</div>
 			</div>
 		</div>
 	);
 }
 
-function Post({ post }: { post: Post }) {
+function PostCard({ post }: { post: Post }) {
 	return (
 		<a
 			href={post.permalink}

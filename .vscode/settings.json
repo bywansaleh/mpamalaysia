@@ -22,5 +22,5 @@
 	"peacock.color": "#26a761",
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"cSpell.enabled": true
+	"cSpell.enabled": false
 }
