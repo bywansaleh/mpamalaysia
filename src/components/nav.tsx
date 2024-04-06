@@ -62,7 +62,7 @@ export default function Nav() {
 										className={cn(
 											'relative flex h-full items-center justify-center rounded-full px-1.5 transition-all duration-100 hover:bg-brand hover:text-white sm:px-3',
 											section === link.id &&
-												'!bg-brand !text-white shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.3)]'
+												'!bg-brand !text-white shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.3),0_0_1px_0_rgba(0,0,0,0.3)]'
 										)}
 										onClick={(ev) => {
 											ev.preventDefault();
