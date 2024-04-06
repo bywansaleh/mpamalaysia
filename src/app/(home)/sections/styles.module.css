@@ -1,5 +1,5 @@
 .card {
-	@apply relative rounded-[--radius] bg-card/70 p-4 text-card-foreground shadow-lg shadow-black/5 ring-1 ring-border backdrop-blur-lg md:p-6;
+	@apply relative rounded-[--radius] bg-gradient-to-br from-card to-background/70 p-4 text-card-foreground shadow-lg shadow-black/5 ring-1 ring-border/50 backdrop-blur-lg md:p-6;
 }
 
 .glow {
