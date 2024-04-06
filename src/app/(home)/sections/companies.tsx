@@ -14,7 +14,7 @@ export default function Companies() {
 
 			<div className="container">
 				<div className="relative flex w-full flex-col overflow-hidden rounded-3xl bg-black bg-gradient-to-br from-brand to-brand/60 p-4 text-white md:grid-cols-2 md:p-12">
-					{/* <div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/grid.svg)] bg-center bg-repeat opacity-50 [background-size:80%] [mask:linear-gradient(to_top,black,transparent)]" /> */}
+					{/* <div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/grid.svg)] -skew-y-3 bg-center bg-repeat opacity-50 [background-size:80%] [mask:linear-gradient(to_top,black,transparent)]" /> */}
 					{/* <div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/dot.svg)] bg-repeat opacity-50 [mask:linear-gradient(to_top,black,transparent)]" /> */}
 
 					{/* <div
@@ -54,7 +54,7 @@ export default function Companies() {
 						</div>
 					</div>
 
-					<div className="relative z-[2] -mx-16 mt-8 [mask:linear-gradient(to_right,transparent,black,transparent)]">
+					<div className="relative z-[2] -mx-16 mt-8 -skew-y-3 [mask:linear-gradient(to_right,transparent,black,transparent)]">
 						<div className="flex flex-nowrap gap-6 overflow-hidden">
 							<div className="flex animate-marquee gap-6">
 								{shuffle(companies)
