@@ -16,7 +16,6 @@ export default function Welcome() {
 							the rights and interests of music publishers in Malaysia.
 						</Balancer>
 					</h2>
-
 					<p className="mt-60 max-w-screen-md text-pretty text-2xl font-light !leading-[1.1] tracking-tighter md:text-3xl">
 						<Balancer>
 							Music Publishers Association of Malaysia safeguards the rights and

@@ -3,6 +3,7 @@ import Balancer from 'react-wrap-balancer';
 
 import { cn } from '@/lib/utils';
 
+import { RevealFade } from '@/components/reveal-fade';
 import Section from '@/components/section';
 
 import styles from './styles.module.css';
@@ -11,9 +12,11 @@ export default function Council() {
 	return (
 		<Section id="council" className="relative scroll-m-10 py-20">
 			<div className="container">
-				<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
-					Council <span className="opacity-55">Members</span>
-				</h2>
+				<RevealFade>
+					<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
+						Council <span className="opacity-55">Members</span>
+					</h2>
+				</RevealFade>
 
 				{/* <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
 					{members
@@ -23,22 +26,28 @@ export default function Council() {
 						))}
 				</div> */}
 
-				<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-					{members
-						// .filter((member) => member.position === 'Council Member')
-						.map((member, i) => (
-							<MemberCard member={member} key={i} />
-						))}
-				</div>
+				<RevealFade>
+					<div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+						{members
+							// .filter((member) => member.position === 'Council Member')
+							.map((member, i) => (
+								<MemberCard member={member} key={i} />
+							))}
+					</div>
+				</RevealFade>
 
-				<p className="mt-8 max-w-sm text-pretty text-sm font-normal">
-					<Balancer>
-						The council members boast extensive experience, particularly hailing
-						from music backgrounds, and are{' '}
-						<span className="opacity-55">recognized as prominent leaders</span>{' '}
-						within the industry.
-					</Balancer>
-				</p>
+				<RevealFade>
+					<p className="mt-8 max-w-sm text-pretty text-sm font-normal">
+						<Balancer>
+							The council members boast extensive experience, particularly
+							hailing from music backgrounds, and are{' '}
+							<span className="opacity-55">
+								recognized as prominent leaders
+							</span>{' '}
+							within the industry.
+						</Balancer>
+					</p>
+				</RevealFade>
 			</div>
 
 			{/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand opacity-10" /> */}

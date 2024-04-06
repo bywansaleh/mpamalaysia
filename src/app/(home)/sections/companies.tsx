@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 
+import { RevealFade } from '@/components/reveal-fade';
 import Section from '@/components/section';
 
 export default function Companies() {
@@ -55,42 +56,46 @@ export default function Companies() {
 					</div>
 
 					<div className="relative z-[2] -mx-16 -mb-4 mt-8 -skew-y-3 [mask:linear-gradient(to_right,transparent,black,transparent)] md:-mb-10">
-						<div className="flex flex-nowrap gap-6 overflow-hidden">
-							<div className="flex animate-marquee gap-6">
-								{shuffle(companies)
-									.filter((company) => company.logo !== undefined)
-									.map((company, i) => (
-										<CompanyLogo key={i} company={company} />
-									))}
+						<RevealFade>
+							<div className="flex flex-nowrap gap-6 overflow-hidden">
+								<div className="flex animate-marquee gap-6">
+									{shuffle(companies)
+										.filter((company) => company.logo !== undefined)
+										.map((company, i) => (
+											<CompanyLogo key={i} company={company} />
+										))}
+								</div>
+								<div className="flex animate-marquee gap-6" aria-hidden>
+									{shuffle(companies)
+										.filter((company) => company.logo !== undefined)
+										.map((company, i) => (
+											<CompanyLogo key={i} company={company} />
+										))}
+								</div>
 							</div>
-							<div className="flex animate-marquee gap-6" aria-hidden>
-								{shuffle(companies)
-									.filter((company) => company.logo !== undefined)
-									.map((company, i) => (
-										<CompanyLogo key={i} company={company} />
-									))}
-							</div>
-						</div>
-						<div className="mt-2 flex flex-nowrap gap-6 overflow-hidden md:mt-6">
-							<div className="flex animate-marquee gap-6 [animation-direction:reverse]">
-								{shuffle(companies)
-									.filter((company) => company.logo !== undefined)
+						</RevealFade>
+						<RevealFade delay={0.5}>
+							<div className="mt-2 flex flex-nowrap gap-6 overflow-hidden md:mt-6">
+								<div className="flex animate-marquee gap-6 [animation-direction:reverse]">
+									{shuffle(companies)
+										.filter((company) => company.logo !== undefined)
 
-									.map((company, i) => (
-										<CompanyLogo key={i} company={company} />
-									))}
+										.map((company, i) => (
+											<CompanyLogo key={i} company={company} />
+										))}
+								</div>
+								<div
+									className="flex animate-marquee gap-6 [animation-direction:reverse]"
+									aria-hidden
+								>
+									{shuffle(companies)
+										.filter((company) => company.logo !== undefined)
+										.map((company, i) => (
+											<CompanyLogo key={i} company={company} />
+										))}
+								</div>
 							</div>
-							<div
-								className="flex animate-marquee gap-6 [animation-direction:reverse]"
-								aria-hidden
-							>
-								{shuffle(companies)
-									.filter((company) => company.logo !== undefined)
-									.map((company, i) => (
-										<CompanyLogo key={i} company={company} />
-									))}
-							</div>
-						</div>
+						</RevealFade>
 					</div>
 				</div>
 			</div>

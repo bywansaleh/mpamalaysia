@@ -2,33 +2,38 @@
 
 import Balancer from 'react-wrap-balancer';
 
+import { RevealFade } from '@/components/reveal-fade';
 import Section from '@/components/section';
 
 export default function Achievements() {
 	return (
 		<Section id="achievements" className="relative scroll-m-10 py-20">
 			<div className="container relative">
-				<h2 className="relative mb-12 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
-					Achievements
-				</h2>
+				<RevealFade>
+					<h2 className="relative mb-12 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
+						Achievements
+					</h2>
+				</RevealFade>
 
-				<div className="grid gap-10 md:ml-60 md:grid-cols-2 lg:grid-cols-3">
-					{achievements.map((achievement, i) => (
-						<div key={i} className="flex gap-6">
-							<div className="w-[10%] font-serif text-5xl font-extralight text-brand">
-								{achievement.number}
+				<RevealFade>
+					<div className="grid gap-10 md:ml-60 md:grid-cols-2 lg:grid-cols-3">
+						{achievements.map((achievement, i) => (
+							<div key={i} className="flex gap-6">
+								<div className="w-[10%] font-serif text-5xl font-extralight text-brand">
+									{achievement.number}
+								</div>
+								<div className="flex-1">
+									<h3 className="mb-2 text-xl font-medium tracking-tight">
+										<Balancer>{achievement.title}</Balancer>
+									</h3>
+									<p className="text-pretty text-xs !leading-relaxed opacity-55 md:text-sm">
+										<Balancer>{achievement.description}</Balancer>
+									</p>
+								</div>
 							</div>
-							<div className="flex-1">
-								<h3 className="mb-2 text-xl font-medium tracking-tight">
-									<Balancer>{achievement.title}</Balancer>
-								</h3>
-								<p className="text-pretty text-xs !leading-relaxed opacity-55 md:text-sm">
-									<Balancer>{achievement.description}</Balancer>
-								</p>
-							</div>
-						</div>
-					))}
-				</div>
+						))}
+					</div>
+				</RevealFade>
 
 				<img
 					src="/images/06.png"
