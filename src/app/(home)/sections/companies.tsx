@@ -119,7 +119,7 @@ function CompanyLogo({ company }: { company: Company }) {
 				alt={company.name}
 				className={cn(
 					'inline-block size-full max-w-none object-contain invert',
-					company.square && 'aspect-square size-3/4'
+					company.square && 'aspect-square size-4/5'
 				)}
 			/>
 		</div>
@@ -152,7 +152,7 @@ const companies: Company[] = [
 	{ name: 'NAR Publishing Sdn Bhd', logo: 'nar' },
 	{ name: 'Nova Music (M) Sdn Bhd', logo: 'nova' },
 	{ name: 'NSR Music Publishing Sdn Bhd', logo: 'nsr' },
-	{ name: 'Rock Records (M) Sdn Bhd', logo: 'rock' },
+	{ name: 'Rock Records (M) Sdn Bhd', logo: 'rock', square: true },
 	{ name: 'Rocketfuel Entertainment Sdn Bhd', logo: 'rocketfuel' },
 	{ name: 'RUSA Marketing Sdn Bhd', logo: 'rusa' },
 	{ name: 'Star Media Publishing Sdn Bhd', logo: 'star' },
