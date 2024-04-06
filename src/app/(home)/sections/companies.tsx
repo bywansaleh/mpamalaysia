@@ -54,7 +54,7 @@ export default function Companies() {
 						</div>
 					</div>
 
-					<div className="relative z-[2] -mx-16 -mb-10 mt-8 -skew-y-3 [mask:linear-gradient(to_right,transparent,black,transparent)]">
+					<div className="relative z-[2] -mx-16 -mb-4 mt-8 -skew-y-3 [mask:linear-gradient(to_right,transparent,black,transparent)] md:-mb-10">
 						<div className="flex flex-nowrap gap-6 overflow-hidden">
 							<div className="flex animate-marquee gap-6">
 								{shuffle(companies)
