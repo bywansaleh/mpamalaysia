@@ -45,6 +45,12 @@ export default function RootLayout({
 					</div>
 					<TailwindIndicator />
 				</Providers>
+
+				<script
+					defer
+					src="https://static.cloudflareinsights.com/beacon.min.js"
+					data-cf-beacon='{"token": "ed66009c46354b29a22c9ce5b12c61bd"}'
+				/>
 			</body>
 		</html>
 	);
