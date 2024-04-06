@@ -57,7 +57,7 @@ export default function Companies() {
 									key={i}
 									className="line-clamp-1 rounded-md text-xs opacity-55 md:text-sm"
 								>
-									<h3>{company.name}</h3>
+									<h3>{company.name.replace(/( \(M\))? Sdn Bhd$/, '')}</h3>
 								</div>
 							))}
 						</div>

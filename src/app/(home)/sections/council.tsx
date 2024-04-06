@@ -100,7 +100,9 @@ function MemberCard({ member }: { member: Member }) {
 					<Balancer>{member.name}</Balancer>
 				</h3>
 				<p className="text-xs font-medium tracking-tighter opacity-55">
-					<Balancer>{member.company}</Balancer>
+					<Balancer>
+						{member.company.replace(/( \(M\))? Sdn Bhd$/, '')}
+					</Balancer>
 				</p>
 			</div>
 		</div>
