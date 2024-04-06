@@ -16,9 +16,9 @@ export default function Companies() {
 			<div className="container">
 				<div
 					className={cn(
-						'to relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-gradient-to-tr from-brand/20 to-brand/0 to-40% p-4 text-white md:grid-cols-2 md:p-12',
+						'to relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-gradient-to-tr from-brand/20 to-brand/0 to-40% p-4 text-white [perspective:800px] md:grid-cols-2 md:p-12'
 
-						'shadow-[0_4px_8px_-2px_rgba(16,24,40,0.1),0_2px_4px_-2px_rgba(16,24,40,0.06),inset_0_1px_1px_rgba(255,255,255,0.1)]'
+						// 'shadow-[0_4px_8px_-2px_rgba(16,24,40,0.1),0_2px_4px_-2px_rgba(16,24,40,0.06),inset_0_1px_1px_rgba(255,255,255,0.07)]'
 					)}
 				>
 					{/* <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_0_0,rgba(255,255,255,0.3),rgba(255,255,255,0)_65%)] opacity-30" /> */}
@@ -113,7 +113,7 @@ export default function Companies() {
 
 function CompanyLogo({ company }: { company: Company }) {
 	return (
-		<div className="[background-image:radial-gradient(circle_at_0_0,rgba(148, 144, 144, 0.15),rgba(255,255,255,0)_65%)] flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/10 p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 hover:bg-white/30 max-md:-mx-2 md:size-28 md:rounded-3xl md:p-5">
+		<div className="[background-image:radial-gradient(circle_at_0_0,rgba(148, 144, 144, 0.15),rgba(255,255,255,0)_65%)] flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 hover:bg-white/30 max-md:-mx-2 md:size-28 md:rounded-3xl md:p-5">
 			<img
 				src={`/images/company/${company.logo}.svg`}
 				alt={company.name}
