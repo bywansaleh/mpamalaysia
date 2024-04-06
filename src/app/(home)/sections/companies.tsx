@@ -16,7 +16,7 @@ export default function Companies() {
 			<div className="container">
 				<div
 					className={cn(
-						'to relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-gradient-to-tr from-brand/20 to-brand/0 p-4 text-white md:grid-cols-2 md:p-12',
+						'to relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-gradient-to-tr from-brand/20 to-brand/0 to-40% p-4 text-white md:grid-cols-2 md:p-12',
 
 						'shadow-[0_4px_8px_-2px_rgba(16,24,40,0.1),0_2px_4px_-2px_rgba(16,24,40,0.06),inset_0_1px_1px_rgba(255,255,255,0.1)]'
 					)}
