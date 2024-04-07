@@ -93,7 +93,7 @@ function MemberCard({ member }: { member: Member }) {
 					</p>
 					<h3
 						className={cn(
-							'font-semibold !leading-none tracking-tighter',
+							'font-medium !leading-none tracking-tighter',
 							// member.position === 'Council Member' &&
 							'text-sm md:text-base'
 						)}

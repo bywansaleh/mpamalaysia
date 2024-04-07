@@ -33,7 +33,7 @@ export default function Pillars() {
 								</div>
 
 								<div className="flex-1">
-									<h3 className="relative z-10 mb-2 text-lg font-semibold !leading-tight tracking-tighter md:text-xl">
+									<h3 className="relative z-10 mb-2 text-lg font-light !leading-tight tracking-tighter md:text-xl">
 										{pillar.title}
 									</h3>
 									<p className="relative z-10 text-xs !leading-normal opacity-55 md:text-sm">
