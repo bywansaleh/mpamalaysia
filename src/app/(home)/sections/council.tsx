@@ -72,7 +72,7 @@ function MemberCard({ member }: { member: Member }) {
 				)}
 			>
 				<div>
-					<div className="inline-block rounded-full p-1.5 ring-1 ring-foreground/20">
+					<div className="inline-block rounded-full border border-dotted border-foreground/20 p-1.5">
 						<img
 							src={member.image}
 							alt={member.name}
