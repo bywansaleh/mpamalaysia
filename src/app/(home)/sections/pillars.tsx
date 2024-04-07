@@ -41,7 +41,7 @@ export default function Pillars() {
 									</p>
 								</div>
 
-								<div className="pointer-events-none absolute inset-0 bg-[url(/images/icons-noise.png)] opacity-50 [mask:linear-gradient(to_bottom_left,black,transparent_60%)]" />
+								{/* <div className="pointer-events-none absolute inset-0 bg-[url(/images/icons-noise.png)] opacity-50 [mask:linear-gradient(to_bottom_left,black,transparent_60%)]" /> */}
 							</div>
 						</RevealFade>
 					))}
