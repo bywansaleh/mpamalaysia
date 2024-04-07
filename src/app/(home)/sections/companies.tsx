@@ -11,33 +11,21 @@ export default function Companies() {
 			id="companies"
 			className="relative max-w-[100vw] scroll-m-10 py-20"
 		>
-			<RevealFade delay={1}>
-				<h2 className="-mb-3 mt-6 text-center text-7xl font-bold !leading-[0.7] tracking-[-0.075em] md:text-9xl">
-					<span className="from drop-shadow-vivid inline-block bg-gradient-to-b from-gray-800 to-gray-400 bg-clip-text p-1 text-transparent dark:from-gray-400 dark:to-gray-700">
-						Publishing Companies
-					</span>
-				</h2>
-			</RevealFade>
-
 			<div className="container">
+				<RevealFade delay={1}>
+					<h2 className="-mb-2 mt-6 text-center text-7xl font-semibold !leading-[0.7] tracking-[-0.08em] md:text-9xl">
+						<span className="from inline-block bg-gradient-to-b from-gray-800 to-gray-400 bg-clip-text p-1 text-transparent drop-shadow-vivid dark:from-gray-400 dark:to-gray-700">
+							Publishing Companies
+						</span>
+					</h2>
+				</RevealFade>
+
 				<div
 					className={cn(
-						'to relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-gradient-to-tr from-brand/20 to-brand/0 to-40% p-4 text-white [perspective:800px] md:grid-cols-2 md:p-12'
-
-						// 'shadow-[0_4px_8px_-2px_rgba(16,24,40,0.1),0_2px_4px_-2px_rgba(16,24,40,0.06),inset_0_1px_1px_rgba(255,255,255,0.07)]'
+						'relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-gradient-to-tr from-brand/20 to-brand/0 to-40% p-4 text-white [perspective:800px] md:grid-cols-2 md:p-12'
 					)}
 				>
-					<div className="relative z-[2] flex flex-col justify-between">
-						{/* <h2 className="mb-8 mt-6 text-pretty font-heading text-4xl tracking-tight md:mb-16 md:mt-0 md:text-5xl">
-							Publishing <span className="opacity-55">Companies</span>
-						</h2> */}
-
-						{/* <img
-							src="/images/head.svg"
-							alt=""
-							className="relative size-72 -scale-x-100 invert max-md:[mask:linear-gradient(to_bottom,black_80%,transparent)] md:-bottom-12"
-						/> */}
-					</div>
+					<div className="pointer-events-none absolute inset-0 z-0 bg-[url(/images/icons-noise.png)] opacity-40 [mask:linear-gradient(to_top_right,black,transparent)]" />
 
 					<div className="relative z-[2]">
 						<div className="grid grid-cols-2 gap-2 md:grid-cols-4">
@@ -102,7 +90,7 @@ export default function Companies() {
 
 function CompanyLogo({ company }: { company: Company }) {
 	return (
-		<div className="[background-image:radial-gradient(circle_at_0_0,rgba(148, 144, 144, 0.15),rgba(255,255,255,0)_65%)] flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 hover:bg-white/20 max-md:-mx-2 md:size-28 md:rounded-3xl md:p-4">
+		<div className="[background-image:radial-gradient(circle_at_0_0,rgba(148, 144, 144, 0.15),rgba(255,255,255,0)_65%)] flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 hover:bg-white/15 max-md:-mx-2 md:size-28 md:rounded-3xl md:p-4">
 			<img
 				src={`/images/company/${company.logo}.svg`}
 				alt={company.name}
