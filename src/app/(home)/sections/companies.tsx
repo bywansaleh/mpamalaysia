@@ -22,17 +22,17 @@ export default function Companies() {
 
 				<div
 					className={cn(
-						'relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-gradient-to-tr from-brand/20 to-brand/0 to-40% p-4 text-white [perspective:800px] md:grid-cols-2 md:p-12'
+						'relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-gradient-to-tr from-brand/20 to-brand/0 to-40% p-6 text-white [perspective:800px] max-md:pt-8 md:grid-cols-2 md:p-12'
 					)}
 				>
 					<div className="pointer-events-none absolute inset-0 z-0 bg-[url(/images/icons-noise.png)] opacity-40 [mask:linear-gradient(to_top_right,black,transparent)]" />
 
 					<div className="relative z-[2]">
-						<div className="grid grid-cols-2 gap-2 md:grid-cols-4">
+						<div className="flex flex-wrap gap-4 gap-x-5">
 							{companies.map((company, i) => (
 								<div
 									key={i}
-									className="line-clamp-1 rounded-md text-xs opacity-55 md:text-sm"
+									className="line-clamp-1 rounded-md text-sm !leading-tight opacity-55 md:text-base"
 								>
 									<h3>{company.name.replace(/( \(M\))? Sdn Bhd$/, '')}</h3>
 								</div>
