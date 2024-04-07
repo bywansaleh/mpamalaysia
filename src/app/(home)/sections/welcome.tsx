@@ -10,7 +10,7 @@ export default function Welcome() {
 				<div className="">
 					<h2 className="max-w-screen-lg text-pretty font-heading text-4xl font-medium tracking-tight md:text-6xl">
 						<Balancer>
-							<span className="inline-block opacity-50">
+							<span className="inline-block text-gray-500">
 								Protecting and promoting
 							</span>{' '}
 							the rights and interests of music publishers in&nbsp;Malaysia.

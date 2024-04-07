@@ -86,14 +86,14 @@
 		background-image: radial-gradient(
 			ellipse at 20% 0%,
 			theme(colors.gray.900) 0%,
-			theme(colors.gray.500 / 10%) 130%
+			theme(colors.gray.500 / 20%) 130%
 		);
 
 		:global(.dark) & {
 			background-image: radial-gradient(
 				ellipse at 20% 0%,
 				theme(colors.gray.400) 0%,
-				theme(colors.gray.800 / 10%) 130%
+				theme(colors.gray.800 / 20%) 130%
 			);
 		}
 	}

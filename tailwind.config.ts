@@ -43,7 +43,7 @@ export default {
 					lighter: 'color-mix(in hsl, hsl(var(--brand)), #fff 10%)',
 					darker: 'color-mix(in hsl, hsl(var(--brand)), #000 10%)',
 				},
-				gray: colors.zinc,
+				gray: colors.stone,
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
