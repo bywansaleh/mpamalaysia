@@ -13,8 +13,10 @@ export default function Council() {
 		<Section id="council" className="relative scroll-m-10 py-20">
 			<div className="container">
 				<RevealFade>
-					<h2 className="mb-8 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
-						Council <span className="opacity-55">Members</span>
+					<h2 className="mb-8 text-5xl font-semibold !leading-none tracking-tighter md:text-6xl">
+						<span className="-m-2 inline-block bg-gradient-to-b from-gray-400 to-gray-700 bg-clip-text p-2 text-transparent">
+							Council Members
+						</span>
 					</h2>
 				</RevealFade>
 

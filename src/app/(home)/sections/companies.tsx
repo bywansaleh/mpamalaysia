@@ -13,8 +13,8 @@ export default function Companies() {
 		>
 			<div className="container">
 				<RevealFade delay={1}>
-					<h2 className="-mb-2 mt-6 text-center text-7xl font-semibold !leading-[0.7] tracking-[-0.08em] md:text-9xl">
-						<span className="from inline-block bg-gradient-to-b from-gray-800 to-gray-400 bg-clip-text p-1 text-transparent drop-shadow-vivid dark:from-gray-400 dark:to-gray-700">
+					<h2 className="-mb-3 mt-6 text-center text-7xl font-semibold !leading-[0.7] tracking-[-0.08em] md:text-9xl">
+						<span className="from inline-block bg-gradient-to-b from-gray-800 to-gray-400 bg-clip-text p-2 text-transparent drop-shadow-vivid dark:from-gray-400 dark:to-gray-700">
 							Publishing Companies
 						</span>
 					</h2>
