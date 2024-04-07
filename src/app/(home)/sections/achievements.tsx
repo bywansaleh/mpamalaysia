@@ -21,8 +21,10 @@ export default function Achievements() {
 					{achievements.map((achievement, i) => (
 						<RevealFade key={i}>
 							<div className="flex gap-6">
-								<div className="w-[10%] font-serif text-5xl font-extralight text-brand">
-									{achievement.number}
+								<div className="w-[10%] font-serif text-5xl font-extralight">
+									<span className="-m-2 inline-block bg-gradient-to-b from-brand to-brand/50 bg-clip-text p-2 text-transparent">
+										{achievement.number}
+									</span>
 								</div>
 								<div className="flex-1">
 									<h3 className="mb-2 text-xl font-medium tracking-tight">
