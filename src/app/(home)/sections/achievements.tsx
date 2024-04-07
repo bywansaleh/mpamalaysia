@@ -17,24 +17,20 @@ export default function Achievements() {
 					</h2>
 				</RevealFade>
 
-				<div className="grid gap-10 md:ml-60 md:grid-cols-2 lg:grid-cols-3">
+				<div className="mt-16 grid grid-cols-2 gap-10 md:ml-60 lg:grid-cols-3">
 					{achievements.map((achievement, i) => (
 						<RevealFade key={i}>
-							<div className="flex gap-6">
-								<div className="w-[10%] font-serif text-5xl font-extralight">
-									<span className="-m-2 inline-block bg-gradient-to-b from-brand to-brand/50 bg-clip-text p-2 text-transparent">
+							<h3 className="relative mb-4 text-xl font-medium !leading-none tracking-tight">
+								<div className="bottom-0 right-[calc(100%+1rem)] mb-2 w-[10%] font-serif text-4xl font-extralight !leading-none md:absolute md:-mb-1 md:text-5xl">
+									<span className="inline-block bg-gradient-to-b from-brand to-brand/50 bg-clip-text text-transparent">
 										{achievement.number}
 									</span>
 								</div>
-								<div className="flex-1">
-									<h3 className="mb-2 text-xl font-medium tracking-tight">
-										<Balancer>{achievement.title}</Balancer>
-									</h3>
-									<p className="text-pretty text-xs !leading-relaxed opacity-55 md:text-sm">
-										<Balancer>{achievement.description}</Balancer>
-									</p>
-								</div>
-							</div>
+								<Balancer>{achievement.title}</Balancer>
+							</h3>
+							<p className="text-pretty text-xs !leading-relaxed opacity-55 md:text-sm">
+								<Balancer>{achievement.description}</Balancer>
+							</p>
 						</RevealFade>
 					))}
 				</div>
