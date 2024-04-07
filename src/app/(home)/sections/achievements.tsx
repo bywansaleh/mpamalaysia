@@ -10,7 +10,7 @@ export default function Achievements() {
 		<Section id="achievements" className="relative scroll-m-10 py-20">
 			<div className="container relative">
 				<RevealFade>
-					<h2 className="mb-8 text-5xl font-semibold !leading-none tracking-tighter md:text-6xl">
+					<h2 className="mb-8 text-4xl font-semibold !leading-none tracking-[-0.08em] md:text-5xl">
 						<span className="-m-2 inline-block bg-gradient-to-b from-gray-400 to-gray-700 bg-clip-text p-2 text-transparent">
 							Achievements
 						</span>
