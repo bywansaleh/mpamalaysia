@@ -84,10 +84,18 @@
 		@apply -m-2 inline-block bg-clip-text p-2 text-transparent;
 
 		background-image: radial-gradient(
-			ellipse at 20% 0,
-			oklch(from hsl(var(--brand)) l calc(c - 0.15) h) 0%,
-			rgba(255, 255, 255, 0) 110%
+			ellipse at 20% 0%,
+			theme(colors.gray.900) 0%,
+			theme(colors.gray.500 / 10%) 130%
 		);
+
+		:global(.dark) & {
+			background-image: radial-gradient(
+				ellipse at 20% 0%,
+				theme(colors.gray.400) 0%,
+				theme(colors.gray.800 / 10%) 130%
+			);
+		}
 	}
 }
 
@@ -99,8 +107,16 @@
 
 		background-image: radial-gradient(
 			ellipse at 50% -20%,
-			theme(colors.gray.500) 0%,
-			theme(colors.gray.800 / 10%) 120%
+			theme(colors.gray.600) 0%,
+			theme(colors.gray.600 / 20%) 110%
 		);
+
+		:global(.dark) & {
+			background-image: radial-gradient(
+				ellipse at 50% -20%,
+				theme(colors.gray.400) 0%,
+				theme(colors.gray.800 / 0%) 110%
+			);
+		}
 	}
 }
