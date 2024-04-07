@@ -96,7 +96,7 @@ export default {
 						transform: 'translateX(0)',
 					},
 					to: {
-						transform: 'translateX(calc(-100% - 2.5rem))',
+						transform: 'translateX(-100%)',
 					},
 				},
 			},
@@ -107,6 +107,13 @@ export default {
 			},
 			boxShadow: {
 				huge: '0 20px 40px 1px rgba(0,0,0,.12), inset 0 -10px 20px -5px rgba(0,0,0,.3), 0 150px 100px -80px rgba(0,0,0,.4), inset 0 1px 4px hsla(0,0%,100%,.6), inset 0 -1px 1px 1px rgba(0,0,0,.2)',
+			},
+			dropShadow: {
+				vivid: [
+					'0 20px 13px rgb(0 0 0 / 0.03))',
+					'0 8px 5px rgb(0 0 0 / 0.08))',
+					'0 1px 2px rgb(0 0 0 / 0.08))',
+				],
 			},
 		},
 	},

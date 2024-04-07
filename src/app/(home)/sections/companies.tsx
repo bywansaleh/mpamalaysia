@@ -11,7 +11,13 @@ export default function Companies() {
 			id="companies"
 			className="relative max-w-[100vw] scroll-m-10 py-20"
 		>
-			{/* <div className="absolute inset-0 z-0 bg-orange-900 opacity-10 [mask:linear-gradient(to_top,black,transparent)]" /> */}
+			<RevealFade delay={1}>
+				<h2 className="-mb-3 mt-6 text-center text-7xl font-bold !leading-[0.7] tracking-[-0.075em] md:text-9xl">
+					<span className="from drop-shadow-vivid inline-block bg-gradient-to-b from-gray-800 to-gray-400 bg-clip-text p-1 text-transparent dark:from-gray-400 dark:to-gray-700">
+						Publishing Companies
+					</span>
+				</h2>
+			</RevealFade>
 
 			<div className="container">
 				<div
@@ -21,27 +27,10 @@ export default function Companies() {
 						// 'shadow-[0_4px_8px_-2px_rgba(16,24,40,0.1),0_2px_4px_-2px_rgba(16,24,40,0.06),inset_0_1px_1px_rgba(255,255,255,0.07)]'
 					)}
 				>
-					{/* <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_0_0,rgba(255,255,255,0.3),rgba(255,255,255,0)_65%)] opacity-30" /> */}
-
-					{/* <div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/grid.svg)] -skew-y-3 bg-center bg-repeat opacity-50 [background-size:80%] [mask:linear-gradient(to_top,black,transparent)]" /> */}
-					{/* <div className="pointer-events-none absolute inset-0 z-0 size-full bg-[url(/images/dot.svg)] bg-repeat opacity-50 [mask:linear-gradient(to_top,black,transparent)]" /> */}
-
-					{/* <div
-						className="absolute inset-0 z-[1] opacity-100"
-						style={{
-							background: `radial-gradient(
-                circle at calc(var(--mx) * 1px) calc(var(--my) * 1px),
-                hsl(var(--brand)),
-                transparent 40vmin
-              )`,
-							backgroundAttachment: 'fixed',
-						}}
-					/> */}
-
 					<div className="relative z-[2] flex flex-col justify-between">
-						<h2 className="mb-8 mt-6 text-pretty font-heading text-4xl tracking-tight md:mb-16 md:mt-0 md:text-5xl">
+						{/* <h2 className="mb-8 mt-6 text-pretty font-heading text-4xl tracking-tight md:mb-16 md:mt-0 md:text-5xl">
 							Publishing <span className="opacity-55">Companies</span>
-						</h2>
+						</h2> */}
 
 						{/* <img
 							src="/images/head.svg"
@@ -113,7 +102,7 @@ export default function Companies() {
 
 function CompanyLogo({ company }: { company: Company }) {
 	return (
-		<div className="[background-image:radial-gradient(circle_at_0_0,rgba(148, 144, 144, 0.15),rgba(255,255,255,0)_65%)] flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 hover:bg-white/30 max-md:-mx-2 md:size-28 md:rounded-3xl md:p-4">
+		<div className="[background-image:radial-gradient(circle_at_0_0,rgba(148, 144, 144, 0.15),rgba(255,255,255,0)_65%)] flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 hover:bg-white/20 max-md:-mx-2 md:size-28 md:rounded-3xl md:p-4">
 			<img
 				src={`/images/company/${company.logo}.svg`}
 				alt={company.name}

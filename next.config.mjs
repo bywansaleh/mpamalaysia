@@ -2,9 +2,9 @@
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
-	experimental: {
-		ppr: true,
-	},
+	// experimental: {
+	// 	ppr: true,
+	// },
 };
 
 export default nextConfig;
