@@ -10,19 +10,19 @@ export default function Achievements() {
 		<Section id="achievements" className="relative scroll-m-10 py-20">
 			<div className="container relative">
 				<RevealFade>
-					<h2 className="mb-8 text-4xl font-semibold !leading-none tracking-[-0.08em] md:text-5xl">
+					<h2 className="relative z-10 mb-8 text-4xl font-semibold !leading-none tracking-[-0.08em] md:text-5xl">
 						<span className="-m-2 inline-block bg-gradient-to-b from-gray-400 to-gray-700 bg-clip-text p-2 text-transparent">
 							Achievements
 						</span>
 					</h2>
 				</RevealFade>
 
-				<div className="mt-16 grid grid-cols-2 gap-10 md:ml-60 lg:grid-cols-3">
+				<div className="mt-16 grid grid-cols-2 gap-4 md:ml-72 md:gap-20 lg:grid-cols-3">
 					{achievements.map((achievement, i) => (
 						<RevealFade key={i}>
-							<h3 className="relative mb-4 text-xl font-medium !leading-none tracking-tight">
+							<h3 className="relative mb-4 text-xl font-light !leading-none tracking-tight">
 								<div className="bottom-0 right-[calc(100%+1rem)] mb-2 w-[10%] font-serif text-4xl font-extralight !leading-none md:absolute md:-mb-1 md:text-5xl">
-									<span className="inline-block bg-gradient-to-b from-brand to-brand/50 bg-clip-text text-transparent">
+									<span className="inline-block bg-gradient-to-b from-brand to-brand-darker bg-clip-text text-transparent">
 										{achievement.number}
 									</span>
 								</div>
@@ -80,7 +80,7 @@ const achievements: Achievement[] = [
 		number: '5.',
 		title: 'Intellectual Property',
 		description:
-			'Consistent teamwork with MACP has been instrumental in crafting a compelling working paper for MyIPO, championing the extension of copyright duration to 70 years.',
+			'Consistent and collaborative teamwork with MACP has been undeniably instrumental in meticulously crafting a highly compelling and comprehensive working paper for MyIPO, steadfastly championing the extension of copyright duration to 70 years.',
 	},
 	{
 		number: '6.',
