@@ -17,33 +17,7 @@ export default function Pillars() {
 			<div className="container relative">
 				<div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
 					{pillars.map((pillar, i) => (
-						<RevealFade key={i} className="h-full">
-							<div
-								key={i}
-								className={cn(
-									styles.card,
-									styles.glow,
-									'flex h-full flex-col items-start gap-4',
-									'[&_a]:hover:underline'
-								)}
-							>
-								<div className="relative z-10 aspect-square p-3 text-white [&>svg]:size-12 [&>svg]:stroke-[0.75px] md:[&>svg]:size-16">
-									{pillar.icon}
-									<div className={styles.iconbg} />
-								</div>
-
-								<div className="flex-1">
-									<h3 className="relative z-10 mb-2 text-lg font-light !leading-tight tracking-tighter md:text-xl">
-										{pillar.title}
-									</h3>
-									<p className="relative z-10 text-xs !leading-normal opacity-55 md:text-sm">
-										<Balancer>{pillar.description}</Balancer>
-									</p>
-								</div>
-
-								{/* <div className="pointer-events-none absolute inset-0 bg-[url(/images/icons-noise.png)] opacity-50 [mask:linear-gradient(to_bottom_left,black,transparent_60%)]" /> */}
-							</div>
-						</RevealFade>
+						<PillarCard key={i} pillar={pillar} />
 					))}
 				</div>
 
@@ -55,6 +29,33 @@ export default function Pillars() {
 				/>
 			</div>
 		</Section>
+	);
+}
+
+function PillarCard({ pillar }: { pillar: Pillar }) {
+	return (
+		<RevealFade className="h-full">
+			<div
+				className={cn(
+					styles.card,
+					styles.glow,
+					'flex h-full flex-col items-start gap-4',
+					'[&_a]:hover:underline'
+				)}
+			>
+				<div className="aspect-square p-3 text-white [&>svg]:size-10 [&>svg]:stroke-[1px] [&>svg]:opacity-60 [&>svg]:mix-blend-color-dodge md:[&>svg]:size-12">
+					{pillar.icon}
+					<div className={styles.iconbg} />
+				</div>
+
+				<h3 className="text-lg font-light !leading-none tracking-tighter md:text-xl">
+					{pillar.title}
+				</h3>
+				<p className="text-xs !leading-normal opacity-55 md:text-sm">
+					<Balancer>{pillar.description}</Balancer>
+				</p>
+			</div>
+		</RevealFade>
 	);
 }
 

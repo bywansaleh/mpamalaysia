@@ -17,21 +17,9 @@ export default function Achievements() {
 					</h2>
 				</RevealFade>
 
-				<div className="mt-16 grid grid-cols-2 gap-4 md:ml-72 md:gap-20 lg:grid-cols-3">
+				<div className="mt-16 grid grid-cols-2 gap-4 md:ml-72 md:gap-10 lg:grid-cols-3">
 					{achievements.map((achievement, i) => (
-						<RevealFade key={i}>
-							<h3 className="relative mb-4 text-xl font-light !leading-none tracking-tight">
-								<div className="bottom-0 right-[calc(100%+1rem)] mb-2 w-[10%] font-serif text-4xl font-extralight !leading-none md:absolute md:-mb-1 md:text-5xl">
-									<span className="inline-block bg-gradient-to-b from-brand to-brand-darker bg-clip-text text-transparent">
-										{achievement.number}
-									</span>
-								</div>
-								<Balancer>{achievement.title}</Balancer>
-							</h3>
-							<p className="text-pretty text-xs !leading-relaxed opacity-55 md:text-sm">
-								<Balancer>{achievement.description}</Balancer>
-							</p>
-						</RevealFade>
+						<AchievementCard key={i} achievement={achievement} />
 					))}
 				</div>
 
@@ -42,6 +30,26 @@ export default function Achievements() {
 				/>
 			</div>
 		</Section>
+	);
+}
+
+function AchievementCard({ achievement }: { achievement: Achievement }) {
+	return (
+		<RevealFade>
+			<div className="flex flex-col gap-4">
+				<div className="w-[10%] font-serif text-4xl font-extralight !leading-none md:text-5xl">
+					<span className="inline-block bg-gradient-to-b from-brand to-brand-darker bg-clip-text text-transparent">
+						{achievement.number}
+					</span>
+				</div>
+				<h3 className="relative text-xl font-light !leading-none tracking-tight">
+					<Balancer>{achievement.title}</Balancer>
+				</h3>
+				<p className="text-pretty text-xs !leading-relaxed opacity-55 md:text-sm">
+					<Balancer>{achievement.description}</Balancer>
+				</p>
+			</div>
+		</RevealFade>
 	);
 }
 

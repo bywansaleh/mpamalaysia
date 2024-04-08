@@ -14,7 +14,7 @@ export default function Section({
 }: ComponentProps<'section'>) {
 	const { ref, inView } = useInView({
 		threshold: 0.1,
-		rootMargin: '-30% 0px -50%',
+		rootMargin: '-20% 0px -60%',
 		triggerOnce: false,
 	});
 

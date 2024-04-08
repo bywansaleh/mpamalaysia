@@ -70,9 +70,7 @@ export default function Nav() {
 											}
 										}}
 									>
-										<span className="relative z-10 drop-shadow-md">
-											{link.title}
-										</span>
+										<span className="relative z-10">{link.title}</span>
 										{section === link.id && (
 											<m.span
 												layoutId="nav-pill"
