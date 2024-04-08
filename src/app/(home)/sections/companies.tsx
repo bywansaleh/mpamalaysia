@@ -44,14 +44,14 @@ export default function Companies() {
 						<RevealFade>
 							<div className="flex flex-nowrap gap-6 overflow-hidden">
 								<div className="flex animate-marquee gap-6">
-									{shuffle(companies)
+									{companies
 										.filter((company) => company.logo !== undefined)
 										.map((company, i) => (
 											<CompanyLogo key={i} company={company} />
 										))}
 								</div>
 								<div className="flex animate-marquee gap-6" aria-hidden>
-									{shuffle(companies)
+									{companies
 										.filter((company) => company.logo !== undefined)
 										.map((company, i) => (
 											<CompanyLogo key={i} company={company} />
@@ -62,7 +62,8 @@ export default function Companies() {
 						<RevealFade delay={0.5}>
 							<div className="mt-2 flex flex-nowrap gap-6 overflow-hidden md:mt-6">
 								<div className="flex animate-marquee gap-6 [animation-direction:reverse]">
-									{shuffle(companies)
+									{[...companies]
+										.reverse()
 										.filter((company) => company.logo !== undefined)
 
 										.map((company, i) => (
@@ -73,7 +74,8 @@ export default function Companies() {
 									className="flex animate-marquee gap-6 [animation-direction:reverse]"
 									aria-hidden
 								>
-									{shuffle(companies)
+									{[...companies]
+										.reverse()
 										.filter((company) => company.logo !== undefined)
 										.map((company, i) => (
 											<CompanyLogo key={i} company={company} />
@@ -90,7 +92,7 @@ export default function Companies() {
 
 function CompanyLogo({ company }: { company: Company }) {
 	return (
-		<div className="[background-image:radial-gradient(circle_at_0_0,rgba(148, 144, 144, 0.15),rgba(255,255,255,0)_65%)] flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 hover:bg-white/15 max-md:-mx-2 md:size-28 md:p-4">
+		<div className="flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 [background-image:radial-gradient(circle_at_60%_0,hsla(var(--hue),8%,50%,0.5),rgba(0,0,0,0)_85%)] hover:bg-white/15 max-md:-mx-2 md:size-28 md:p-4">
 			<img
 				src={`/images/company/${company.logo}.svg`}
 				alt={company.name}
