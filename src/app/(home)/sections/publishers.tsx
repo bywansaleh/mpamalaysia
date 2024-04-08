@@ -7,10 +7,10 @@ import Section from '@/components/section';
 
 import styles from './styles.module.css';
 
-export default function Companies() {
+export default function Publishers() {
 	return (
 		<Section
-			id="companies"
+			id="publishers"
 			className="relative max-w-[100vw] scroll-m-10 py-20"
 		>
 			<div className="container">
@@ -29,12 +29,12 @@ export default function Companies() {
 
 					<div className="relative z-[2]">
 						<div className="flex flex-wrap gap-4 gap-x-5">
-							{companies.map((company, i) => (
+							{publishers.map((publisher, i) => (
 								<div
 									key={i}
 									className="line-clamp-1 rounded-md text-sm !leading-tight tracking-tight opacity-55 md:text-base"
 								>
-									<h3>{company.name.replace(/( \(M\))? Sdn Bhd$/, '')}</h3>
+									<h3>{publisher.name.replace(/( \(M\))? Sdn Bhd$/, '')}</h3>
 								</div>
 							))}
 						</div>
@@ -44,17 +44,17 @@ export default function Companies() {
 						<RevealFade>
 							<div className="flex flex-nowrap gap-6 overflow-hidden">
 								<div className="flex animate-marquee gap-6">
-									{companies
-										.filter((company) => company.logo !== undefined)
-										.map((company, i) => (
-											<CompanyLogo key={i} company={company} />
+									{publishers
+										.filter((publisher) => publisher.logo !== undefined)
+										.map((publisher, i) => (
+											<PublisherLogo key={i} publisher={publisher} />
 										))}
 								</div>
 								<div className="flex animate-marquee gap-6" aria-hidden>
-									{companies
-										.filter((company) => company.logo !== undefined)
-										.map((company, i) => (
-											<CompanyLogo key={i} company={company} />
+									{publishers
+										.filter((publisher) => publisher.logo !== undefined)
+										.map((publisher, i) => (
+											<PublisherLogo key={i} publisher={publisher} />
 										))}
 								</div>
 							</div>
@@ -62,23 +62,23 @@ export default function Companies() {
 						<RevealFade delay={0.5}>
 							<div className="mt-2 flex flex-nowrap gap-6 overflow-hidden md:mt-6">
 								<div className="flex animate-marquee gap-6 [animation-direction:reverse]">
-									{[...companies]
+									{[...publishers]
 										.reverse()
-										.filter((company) => company.logo !== undefined)
+										.filter((publisher) => publisher.logo !== undefined)
 
-										.map((company, i) => (
-											<CompanyLogo key={i} company={company} />
+										.map((publisher, i) => (
+											<PublisherLogo key={i} publisher={publisher} />
 										))}
 								</div>
 								<div
 									className="flex animate-marquee gap-6 [animation-direction:reverse]"
 									aria-hidden
 								>
-									{[...companies]
+									{[...publishers]
 										.reverse()
-										.filter((company) => company.logo !== undefined)
-										.map((company, i) => (
-											<CompanyLogo key={i} company={company} />
+										.filter((publisher) => publisher.logo !== undefined)
+										.map((publisher, i) => (
+											<PublisherLogo key={i} publisher={publisher} />
 										))}
 								</div>
 							</div>
@@ -90,28 +90,28 @@ export default function Companies() {
 	);
 }
 
-function CompanyLogo({ company }: { company: Company }) {
+function PublisherLogo({ publisher }: { publisher: Publisher }) {
 	return (
 		<div className="flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 [background-image:radial-gradient(circle_at_60%_0,hsla(var(--hue),8%,50%,0.5),rgba(0,0,0,0)_85%)] hover:bg-white/15 max-md:-mx-2 md:size-28 md:p-4">
 			<img
-				src={`/images/company/${company.logo}.svg`}
-				alt={company.name}
+				src={`/images/company/${publisher.logo}.svg`}
+				alt={publisher.name}
 				className={cn(
 					'inline-block size-full max-w-none object-contain opacity-60 invert sepia',
-					company.square && 'aspect-square size-4/5'
+					publisher.square && 'aspect-square size-4/5'
 				)}
 			/>
 		</div>
 	);
 }
 
-type Company = {
+type Publisher = {
 	name: string;
 	logo?: string;
 	square?: boolean;
 };
 
-const companies: Company[] = [
+const publishers: Publisher[] = [
 	{ name: 'Faithful Music Sdn Bhd', logo: 'faithful', square: true },
 	{ name: 'FMC Music Sdn Bhd', logo: 'fmc' },
 	{ name: 'Frequen-Z Records' },
@@ -143,6 +143,6 @@ const companies: Company[] = [
 	{ name: 'VMS Music Records & Publishing Sdn Bhd' },
 ];
 
-const shuffle = (array: Company[]) => {
+const shuffle = (array: Publisher[]) => {
 	return [...array].sort(() => Math.random() - 0.5);
 };

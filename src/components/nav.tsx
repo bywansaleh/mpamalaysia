@@ -12,7 +12,7 @@ import LogoFull from './logo-full';
 
 const links = [
 	{ id: 'pillars', title: 'Pillars', href: '#pillars' },
-	{ id: 'companies', title: 'Companies', href: '#companies' },
+	{ id: 'publishers', title: 'Publishers', href: '#publishers' },
 	{ id: 'council', title: 'Council', href: '#council' },
 	{ id: 'achievements', title: 'Achievements', href: '#achievements' },
 ];
