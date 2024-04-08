@@ -9,27 +9,37 @@ import styles from './styles.module.css';
 
 export default function Achievements() {
 	return (
-		<Section id="achievements" className="relative scroll-m-10 py-20">
-			<div className="container relative">
-				<RevealFade>
-					<h2 className={styles.sectionheader}>
-						<span>Achievements</span>
-					</h2>
-				</RevealFade>
-
-				<div className="mt-16 grid grid-cols-2 gap-4 md:ml-72 md:gap-10 lg:grid-cols-3">
-					{achievements.map((achievement, i) => (
-						<AchievementCard key={i} achievement={achievement} />
-					))}
-				</div>
-
+		<>
+			{/* <div>
 				<img
-					src="/images/06.png"
+					src="/images/waves.svg"
 					alt=""
-					className="pointer-events-none absolute top-0 z-0 w-96 rotate-[-40deg] select-none opacity-20 grayscale-[0.5] hue-rotate-30 md:-left-40 md:opacity-90"
+					className="relative -z-10 w-screen max-w-none opacity-50 mix-blend-soft-light [mask:linear-gradient(to_bottom,transparent_10%,black,transparent_90%)] md:-my-40"
 				/>
-			</div>
-		</Section>
+			</div> */}
+
+			<Section id="achievements" className="relative scroll-m-10 py-20">
+				<div className="container relative">
+					<RevealFade>
+						<h2 className={styles.sectionheader}>
+							<span>Achievements</span>
+						</h2>
+					</RevealFade>
+
+					<div className="mt-16 grid grid-cols-2 gap-4 md:ml-72 md:gap-10 lg:grid-cols-3">
+						{achievements.map((achievement, i) => (
+							<AchievementCard key={i} achievement={achievement} />
+						))}
+					</div>
+
+					<img
+						src="/images/06.png"
+						alt=""
+						className="pointer-events-none absolute top-0 z-0 w-96 rotate-[-40deg] select-none opacity-20 grayscale-[0.5] hue-rotate-30 md:-left-40 md:opacity-90"
+					/>
+				</div>
+			</Section>
+		</>
 	);
 }
 
