@@ -5,9 +5,9 @@ export default async function Instagram() {
 	const posts = await getInstagramPosts();
 
 	return (
-		<div className="z-100 relative bg-brand shadow-[0_0_100px_hsl(var(--brand)/40%)]">
-			<div className="relative p-4">
-				<div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+		<div className="z-100 relative bg-black bg-gradient-to-br from-brand to-brand/50 shadow-[0_0_100px_hsl(var(--brand)/40%)]">
+			<div className="relative p-6">
+				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
 					{posts?.data
 						?.slice(0, 6)
 						.map((post) => <PostCard key={post.id} post={post} />)}
@@ -25,7 +25,7 @@ function PostCard({ post }: { post: Post }) {
 			rel="noopener noreferrer"
 			className={cn(
 				// styles.card,
-				'group relative flex flex-col gap-4 overflow-hidden rounded-md bg-black text-white shadow-lg ring-2 ring-white'
+				'group relative flex flex-col gap-4 overflow-hidden rounded-md bg-black text-white shadow-md drop-shadow-md'
 			)}
 		>
 			<img
