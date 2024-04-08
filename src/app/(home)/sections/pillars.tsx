@@ -43,7 +43,7 @@ function PillarCard({ pillar }: { pillar: Pillar }) {
 					'[&_a]:hover:underline'
 				)}
 			>
-				<div className="aspect-square p-3 text-white [&>svg]:size-10 [&>svg]:stroke-[1px] [&>svg]:opacity-60 [&>svg]:mix-blend-color-dodge md:[&>svg]:size-12">
+				<div className="aspect-square p-3 text-white [&>svg]:size-10 [&>svg]:stroke-[1px] [&>svg]:opacity-60 [&>svg]:mix-blend-overlay md:[&>svg]:size-12">
 					{pillar.icon}
 					<div className={styles.iconbg} />
 				</div>
