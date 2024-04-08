@@ -1,6 +1,7 @@
 'use client';
 
 import { useStore } from '@nanostores/react';
+import { m } from 'framer-motion';
 
 import { siteTitle } from '@/lib/config';
 import { cn } from '@/lib/utils';
@@ -58,9 +59,8 @@ export default function Nav() {
 									<a
 										href={link.href}
 										className={cn(
-											'relative flex h-full items-center justify-center rounded-full px-1.5 transition-all duration-100 hover:bg-brand hover:text-white sm:px-3',
-											section === link.id &&
-												'!bg-brand !text-white shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.3),0_0_1px_0_rgba(0,0,0,0.3)]'
+											'relative flex h-full items-center justify-center px-1.5 transition-all duration-300 sm:px-3',
+											section === link.id && '!text-white'
 										)}
 										onClick={(ev) => {
 											ev.preventDefault();
@@ -70,7 +70,17 @@ export default function Nav() {
 											}
 										}}
 									>
-										<span className="drop-shadow-md">{link.title}</span>
+										<span className="relative z-10 drop-shadow-md">
+											{link.title}
+										</span>
+										{section === link.id && (
+											<m.span
+												layoutId="nav-pill"
+												className={cn(
+													'absolute inset-0 z-0 rounded-full !bg-brand !text-white'
+												)}
+											/>
+										)}
 									</a>
 								</li>
 							))}

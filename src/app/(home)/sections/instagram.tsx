@@ -7,10 +7,6 @@ export default async function Instagram() {
 	return (
 		<div className="z-100 relative bg-brand shadow-[0_0_100px_hsl(var(--brand)/40%)]">
 			<div className="relative p-4">
-				{/* <h2 className="relative mb-12 text-pretty font-heading text-4xl tracking-tight md:text-5xl">
-					From <span className="text-muted-foreground">Instagram</span>
-				</h2> */}
-
 				<div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
 					{posts?.data
 						?.slice(0, 6)

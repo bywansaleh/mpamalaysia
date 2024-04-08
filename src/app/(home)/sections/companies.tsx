@@ -32,7 +32,7 @@ export default function Companies() {
 							{companies.map((company, i) => (
 								<div
 									key={i}
-									className="line-clamp-1 rounded-md text-sm !leading-tight opacity-55 md:text-base"
+									className="line-clamp-1 rounded-md text-sm !leading-tight tracking-tight opacity-55 md:text-base"
 								>
 									<h3>{company.name.replace(/( \(M\))? Sdn Bhd$/, '')}</h3>
 								</div>
