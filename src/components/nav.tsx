@@ -31,8 +31,8 @@ export default function Nav() {
 								className="pointer-events-none absolute inset-0"
 								style={{
 									// zIndex: i + 1,
-									backdropFilter: `blur(${0.6 * (i + 1)}px)`,
-									WebkitBackdropFilter: `blur(${0.6 * (i + 1)}px)`,
+									backdropFilter: `blur(${(0.6 * (i + 1)).toPrecision(1)}px)`,
+									WebkitBackdropFilter: `blur(${(0.6 * (i + 1)).toPrecision(1)}px)`,
 									mask: `linear-gradient(to top,
                     transparent ${12.5 * i}%,
                     black ${12.5 * (i + 1)}%,

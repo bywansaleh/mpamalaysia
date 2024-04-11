@@ -27,22 +27,25 @@ export default function Publishers() {
 				>
 					{/* <div className="pointer-events-none absolute inset-0 z-0 bg-[url(/images/icons-noise.png)] opacity-40 [mask:linear-gradient(to_top_right,black,transparent)]" /> */}
 
-					<div className="relative z-[2]">
-						<div className="flex flex-wrap gap-4 gap-x-5">
-							{publishers.map((publisher, i) => (
-								<div
-									key={i}
-									className="line-clamp-1 rounded-md text-sm !leading-tight tracking-tight opacity-55 md:text-base"
-								>
-									<h3>{publisher.name.replace(/( \(M\))? Sdn Bhd$/, '')}</h3>
-								</div>
-							))}
-						</div>
+					<div className="flex flex-wrap gap-4 gap-x-5">
+						{publishers.map((publisher, i) => (
+							<div
+								key={i}
+								className="line-clamp-1 rounded-md text-sm !leading-tight tracking-tight opacity-55 md:text-base"
+							>
+								<h3>{publisher.name.replace(/( \(M\))? Sdn Bhd$/, '')}</h3>
+							</div>
+						))}
 					</div>
 
-					<div className="relative z-[2] -mx-16 -mb-4 mt-8 -skew-y-3 [mask:linear-gradient(to_right,transparent,black,transparent)] md:-mb-10">
+					<div
+						className={cn(
+							'-mx-20 -mb-4 mt-8 -skew-y-3 md:-mb-10',
+							'[mask:linear-gradient(to_right,transparent,black,transparent)]'
+						)}
+					>
 						<RevealFade>
-							<div className="flex flex-nowrap gap-6 overflow-hidden">
+							<div className="relative z-0 flex flex-nowrap gap-6 overflow-hidden">
 								<div className="flex animate-marquee gap-6">
 									{publishers
 										.filter((publisher) => publisher.logo !== undefined)
@@ -60,7 +63,7 @@ export default function Publishers() {
 							</div>
 						</RevealFade>
 						<RevealFade delay={0.5}>
-							<div className="mt-2 flex flex-nowrap gap-6 overflow-hidden md:mt-6">
+							<div className="relative z-0 mt-2 flex flex-nowrap gap-6 overflow-hidden md:mt-6">
 								<div className="flex animate-marquee gap-6 [animation-direction:reverse]">
 									{[...publishers]
 										.reverse()
@@ -97,7 +100,7 @@ function PublisherLogo({ publisher }: { publisher: Publisher }) {
 				src={`/images/company/${publisher.logo}.svg`}
 				alt={publisher.name}
 				className={cn(
-					'inline-block size-full max-w-none object-contain opacity-60 invert sepia',
+					'inline-block size-full max-w-none object-contain opacity-60 drop-shadow invert sepia',
 					publisher.square && 'aspect-square size-4/5'
 				)}
 			/>
