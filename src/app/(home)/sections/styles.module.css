@@ -1,5 +1,5 @@
 .card {
-	@apply relative rounded-[--radius] bg-gradient-to-br from-card/80 to-background/50 p-4 text-card-foreground backdrop-blur-lg transition-all duration-500 md:p-6;
+	@apply relative rounded-[--radius] bg-gradient-to-br from-card/90 to-background/70 p-4 text-card-foreground backdrop-blur-lg transition-all duration-500 md:p-6;
 
 	box-shadow:
 		0 4px 8px -2px rgba(16, 24, 40, 0.1),

@@ -20,7 +20,7 @@ export default {
 				// sm: '1rem',
 			},
 			screens: {
-				'2xl': '84rem',
+				'2xl': '86rem',
 			},
 		},
 		extend: {

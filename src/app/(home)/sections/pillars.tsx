@@ -15,7 +15,17 @@ export default function Pillars() {
 	return (
 		<Section id="pillars" className="relative scroll-m-20 py-10">
 			<div className="container relative">
-				<div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
+				<p className="mb-10 mt-20 max-w-screen-md text-pretty text-2xl font-light !leading-[1.1] tracking-tighter md:text-3xl">
+					<Balancer>
+						Music Publishers Association of Malaysia safeguards the rights and
+						promotes the works of music publishers in the country.{' '}
+						<span className="opacity-50">
+							We focus on the following six pillars.
+						</span>
+					</Balancer>
+				</p>
+
+				<div className="grid grid-cols-2 gap-2.5 md:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-6">
 					{pillars.map((pillar, i) => (
 						<PillarCard key={i} pillar={pillar} />
 					))}
@@ -39,21 +49,30 @@ function PillarCard({ pillar }: { pillar: Pillar }) {
 				className={cn(
 					styles.card,
 					styles.glow,
-					'flex h-full flex-col items-start gap-4',
+					'relative flex h-full flex-col items-start gap-4 !p-3 sm:!p-4',
 					'[&_a]:hover:underline'
 				)}
+				// style={{
+				// 	backgroundColor: pillar.bg,
+				// 	backgroundImage: 'none',
+				// 	color: pillar.text || '#fff',
+				// }}
 			>
 				<div className="aspect-square p-3 text-white [&>svg]:size-10 [&>svg]:stroke-[1px] [&>svg]:opacity-60 [&>svg]:mix-blend-overlay md:[&>svg]:size-12">
 					{pillar.icon}
 					<div className={styles.iconbg} />
 				</div>
 
-				<h3 className="text-lg font-light !leading-none tracking-tighter md:text-xl">
+				<h3 className="text-lg font-medium !leading-none tracking-tighter md:text-2xl">
 					{pillar.title}
 				</h3>
 				<p className="text-xs !leading-normal opacity-55 md:text-sm">
 					<Balancer>{pillar.description}</Balancer>
 				</p>
+
+				{/* <div className="!absolute -bottom-4 -right-4 -rotate-12 opacity-10 [&>svg]:size-32 [&>svg]:stroke-[0.5px]">
+					{pillar.icon}
+				</div> */}
 			</div>
 		</RevealFade>
 	);
@@ -63,6 +82,8 @@ type Pillar = {
 	title: string;
 	description: string | React.ReactNode;
 	icon: React.ReactNode;
+	bg?: string;
+	text?: string;
 };
 
 const pillars: Pillar[] = [
@@ -76,6 +97,7 @@ const pillars: Pillar[] = [
 			</>
 		),
 		icon: <IconShieldHeart />,
+		bg: 'hsl(var(--brand))',
 	},
 	{
 		title: 'Education',
@@ -86,6 +108,7 @@ const pillars: Pillar[] = [
 			</>
 		),
 		icon: <IconBooks />,
+		bg: '#3f37c9',
 	},
 	{
 		title: 'Joint Rights Movement',
@@ -99,6 +122,8 @@ const pillars: Pillar[] = [
 			</>
 		),
 		icon: <Speech />,
+		bg: '#f7b52b',
+		text: '#000',
 	},
 	{
 		title: 'Networking',
@@ -109,6 +134,8 @@ const pillars: Pillar[] = [
 			</>
 		),
 		icon: <IconAffiliate />,
+		bg: '#2ec4b6',
+		text: '#000',
 	},
 	{
 		title: 'Industry Standards',
@@ -120,6 +147,8 @@ const pillars: Pillar[] = [
 			</>
 		),
 		icon: <Handshake />,
+		bg: '#ff928b',
+		text: '#000',
 	},
 	{
 		title: 'Market Research',
@@ -130,5 +159,7 @@ const pillars: Pillar[] = [
 			</>
 		),
 		icon: <TrendingUp />,
+		bg: '#caffbf',
+		text: '#000',
 	},
 ];
