@@ -50,7 +50,7 @@ function PillarCard({ pillar, index }: { pillar: Pillar; index: number }) {
 					styles.card,
 					styles.glow,
 					'group relative flex h-full flex-col items-start gap-5 !p-3 sm:!p-4',
-					'origin-top-left hover:scale-[103%] [&_a]:hover:underline'
+					'origin-top hover:scale-[103%] [&_a]:hover:underline'
 				)}
 				style={
 					{
