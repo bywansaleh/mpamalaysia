@@ -26,7 +26,7 @@
 
 		border-radius: calc(var(--radius) + 1px);
 		background: radial-gradient(
-			ellipse at 60% 0,
+			ellipse at 20% 0,
 			var(--rays-1) 0%,
 			var(--rays-2) 40%
 		);
