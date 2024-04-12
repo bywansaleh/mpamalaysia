@@ -49,24 +49,34 @@ function PillarCard({ pillar }: { pillar: Pillar }) {
 				className={cn(
 					styles.card,
 					styles.glow,
-					'relative flex h-full flex-col items-start gap-4 !p-3 sm:!p-4',
-					'[&_a]:hover:underline'
+					'group relative flex h-full flex-col items-start gap-5 !p-3 sm:!p-4',
+					'origin-top-left hover:scale-[103%] [&_a]:hover:underline'
 				)}
-				// style={{
-				// 	backgroundColor: pillar.bg,
-				// 	backgroundImage: 'none',
-				// 	color: pillar.text || '#fff',
-				// }}
+				style={
+					{
+						'--color': pillar.bg,
+					} as React.CSSProperties
+				}
 			>
-				<div className="aspect-square p-3 text-white [&>svg]:size-10 [&>svg]:stroke-[1px] [&>svg]:opacity-60 [&>svg]:mix-blend-overlay md:[&>svg]:size-12">
+				<div
+					className="aspect-square origin-top-left p-3 text-white transition-all duration-500 group-hover:scale-110 [&>svg]:size-10 [&>svg]:stroke-[1px] [&>svg]:opacity-90 md:[&>svg]:size-12"
+					// style={{
+					// 	color: pillar.text || '#fff',
+					// }}
+				>
 					{pillar.icon}
-					<div className={styles.iconbg} />
+					<div
+						className={styles.iconbg}
+						style={{
+							backgroundColor: pillar.bg,
+						}}
+					/>
 				</div>
 
 				<h3 className="text-lg font-medium !leading-none tracking-tighter md:text-2xl">
 					{pillar.title}
 				</h3>
-				<p className="text-xs !leading-normal opacity-55 md:text-sm">
+				<p className="mt-auto text-xs !leading-snug opacity-55 md:text-sm">
 					<Balancer>{pillar.description}</Balancer>
 				</p>
 
@@ -103,12 +113,13 @@ const pillars: Pillar[] = [
 		title: 'Education',
 		description: (
 			<>
-				Providing information resources and seminars on copyright, license
-				management, and royalty collection.
+				Providing comprehensive information resources and educational seminars
+				on the topics of copyright, license management, and royalty collection
+				for interested parties.
 			</>
 		),
 		icon: <IconBooks />,
-		bg: '#3f37c9',
+		bg: '#1aa786',
 	},
 	{
 		title: 'Joint Rights Movement',
@@ -122,19 +133,20 @@ const pillars: Pillar[] = [
 			</>
 		),
 		icon: <Speech />,
-		bg: '#f7b52b',
+		bg: '#2245d1',
 		text: '#000',
 	},
 	{
 		title: 'Networking',
 		description: (
 			<>
-				Facilitating networking opportunities among music publishers,
-				songwriters, composers, and other professional industry players.
+				Facilitating valuable networking opportunities among music publishers,
+				songwriters, composers, and other key professional industry players
+				within the creative arts sector.
 			</>
 		),
 		icon: <IconAffiliate />,
-		bg: '#2ec4b6',
+		bg: '#6e2be1',
 		text: '#000',
 	},
 	{
@@ -147,19 +159,20 @@ const pillars: Pillar[] = [
 			</>
 		),
 		icon: <Handshake />,
-		bg: '#ff928b',
+		bg: '#db4848',
 		text: '#000',
 	},
 	{
 		title: 'Market Research',
 		description: (
 			<>
-				Conducting or supporting research initiatives to gather information on
-				the music publishing industry, trends, and consumer behavior.
+				Conducting or supporting research initiatives to gather insightful
+				information on the current state of the music publishing industry,
+				emerging trends, and consumer behavior.
 			</>
 		),
 		icon: <TrendingUp />,
-		bg: '#caffbf',
+		bg: '#e62bb7',
 		text: '#000',
 	},
 ];

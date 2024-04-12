@@ -1,6 +1,11 @@
 .card {
 	@apply relative rounded-[--radius] bg-gradient-to-br from-card/90 to-background/70 p-4 text-card-foreground backdrop-blur-lg transition-all duration-500 md:p-6;
 
+	--clr: from var(--color, hsl(var(--brand)));
+
+	--rays-1: oklch(var(--clr) l calc(c - 0.02) h);
+	--rays-2: oklch(var(--clr) l calc(c - 0.1) h / 20%);
+
 	box-shadow:
 		0 4px 8px -2px rgba(16, 24, 40, 0.1),
 		0 2px 4px -2px rgba(16, 24, 40, 0.06),
@@ -12,8 +17,8 @@
 		border-radius: calc(var(--radius) + 1px);
 		background: radial-gradient(
 			circle at 50% 0,
-			oklch(from hsl(var(--brand)) l calc(c - 0.1) h) 0%,
-			oklch(from hsl(var(--brand)) l calc(c - 0.2) h / 20%) 80%
+			var(--rays-1) 0%,
+			oklch(from hsl(var(--foreground)) l c h / 6%) 50%
 		);
 	}
 	&:before {
@@ -22,8 +27,8 @@
 		border-radius: calc(var(--radius) + 1px);
 		background: radial-gradient(
 			ellipse at 60% 0,
-			oklch(from hsl(var(--brand)) l calc(c - 0.1) h) 0%,
-			oklch(from hsl(var(--brand)) l calc(c - 0.2) h / 0%) 40%
+			var(--rays-1) 0%,
+			var(--rays-2) 40%
 		);
 	}
 
@@ -32,8 +37,6 @@
 	}
 
 	&:hover {
-		@apply -translate-y-1;
-
 		&:after {
 			@apply opacity-80;
 		}
@@ -61,7 +64,7 @@
 	@apply absolute inset-0 -z-10 flex items-center justify-center overflow-hidden rounded-xl bg-brand backdrop-blur;
 
 	background-image: radial-gradient(
-			circle at 0 0,
+			circle at 80% 0,
 			rgba(255, 255, 255, 0.3),
 			rgba(255, 255, 255, 0) 65%
 		),
@@ -69,12 +72,12 @@
 	background-position:
 		0 0,
 		50%;
-	background-repeat: repeat, repeat;
+	background-repeat: no-repeat, repeat;
 	background-size: auto, auto;
 	box-shadow:
 		0 4px 8px -2px rgba(16, 24, 40, 0.1),
 		0 2px 4px -2px rgba(16, 24, 40, 0.06),
-		inset 0 1px 1px rgba(255, 255, 255, 0.5);
+		inset 0 1px 1px rgba(255, 255, 255, 0.35);
 }
 
 .sectionheader {
