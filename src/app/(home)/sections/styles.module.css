@@ -11,6 +11,17 @@
 		0 2px 4px -2px rgba(16, 24, 40, 0.06),
 		inset 0 1px 1px rgba(255, 255, 255, 0.05);
 
+	&:before {
+		@apply pointer-events-none absolute -inset-px z-[0] opacity-0 transition-all duration-500 content-[''];
+
+		border-radius: calc(var(--radius) + 1px);
+		background: radial-gradient(
+			ellipse at 20% 100%,
+			var(--rays-1) 0%,
+			var(--rays-2) 40%
+		);
+	}
+
 	&:after {
 		@apply pointer-events-none absolute -inset-px z-[0] opacity-0 transition-all duration-500 content-[''] p-mask-px;
 
@@ -21,27 +32,17 @@
 			oklch(from hsl(var(--foreground)) l c h / 6%) 50%
 		);
 	}
-	&:before {
-		@apply pointer-events-none absolute -inset-px z-[0] opacity-0 transition-all duration-500 content-[''];
-
-		border-radius: calc(var(--radius) + 1px);
-		background: radial-gradient(
-			ellipse at 20% 0,
-			var(--rays-1) 0%,
-			var(--rays-2) 40%
-		);
-	}
 
 	& > * {
 		@apply relative z-10;
 	}
 
 	&:hover {
+		&:before {
+			@apply opacity-30;
+		}
 		&:after {
 			@apply opacity-80;
-		}
-		&:before {
-			@apply opacity-20;
 		}
 	}
 }
@@ -61,7 +62,7 @@
 }
 
 .iconbg {
-	@apply absolute inset-0 -z-10 flex items-center justify-center overflow-hidden rounded-xl bg-brand backdrop-blur;
+	@apply absolute inset-0 -z-10 flex items-center justify-center overflow-hidden rounded-2xl bg-brand backdrop-blur;
 
 	background-image: radial-gradient(
 			circle at 80% 0,
