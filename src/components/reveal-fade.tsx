@@ -3,7 +3,6 @@
 import { m, Variants } from 'framer-motion';
 
 export function RevealFade({
-	duration = 0.4,
 	delay = 0.25,
 	once = true,
 	amount = 0.25,
@@ -11,7 +10,6 @@ export function RevealFade({
 	children,
 	...props
 }: {
-	duration?: number;
 	delay?: number;
 	once?: boolean;
 	amount?: number | 'some' | 'all' | undefined;
@@ -21,19 +19,20 @@ export function RevealFade({
 	const variants: Variants = {
 		initial: {
 			opacity: 0,
+			// x: sliding ? -20 : 0,
 			y: sliding ? 20 : 0,
 			// scale: sliding ? 0.95 : 1,
 		},
 		reveal: {
 			opacity: 1,
+			x: 0,
 			y: 0,
 			// scale: 1,
 			transition: {
 				delay,
-				duration,
 				type: 'spring',
-				damping: 40,
-				stiffness: 160,
+				damping: 30,
+				stiffness: 100,
 			},
 		},
 	};

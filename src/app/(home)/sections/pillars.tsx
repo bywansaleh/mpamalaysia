@@ -27,7 +27,7 @@ export default function Pillars() {
 
 				<div className="grid grid-cols-2 gap-2.5 md:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-6">
 					{pillars.map((pillar, i) => (
-						<PillarCard key={i} pillar={pillar} />
+						<PillarCard key={i} pillar={pillar} index={i} />
 					))}
 				</div>
 
@@ -42,9 +42,9 @@ export default function Pillars() {
 	);
 }
 
-function PillarCard({ pillar }: { pillar: Pillar }) {
+function PillarCard({ pillar, index }: { pillar: Pillar; index: number }) {
 	return (
-		<RevealFade className="h-full">
+		<RevealFade delay={index * 0.1} className="h-full">
 			<div
 				className={cn(
 					styles.card,
