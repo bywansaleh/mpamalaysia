@@ -12,36 +12,6 @@ import Section from '@/components/section';
 import styles from './styles.module.css';
 
 export default function Publishers() {
-	const [ref, { width }] = useMeasure();
-
-	const marqueeVariants: Variants = {
-		animate: {
-			x: [0, -(width ?? 0) / 2],
-			transition: {
-				x: {
-					repeat: Infinity,
-					repeatType: 'loop',
-					duration: 60,
-					ease: 'linear',
-				},
-			},
-		},
-	};
-
-	const marqueeReversedVariants: Variants = {
-		animate: {
-			x: [-(width ?? 0) / 2, 0],
-			transition: {
-				x: {
-					repeat: Infinity,
-					repeatType: 'loop',
-					duration: 60,
-					ease: 'linear',
-				},
-			},
-		},
-	};
-
 	return (
 		<Section
 			id="publishers"
@@ -49,7 +19,7 @@ export default function Publishers() {
 		>
 			<div className="container">
 				<RevealFade delay={1}>
-					<h2 className={styles.publishersheader}>
+					<h2 className={styles.publishers_header}>
 						<span>Publishing Companies</span>
 					</h2>
 				</RevealFade>
@@ -59,8 +29,6 @@ export default function Publishers() {
 						'relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-gradient-to-tr from-brand/20 to-brand/0 to-40% p-6 text-white [perspective:800px] max-md:pt-8 md:grid-cols-2 md:p-12'
 					)}
 				>
-					{/* <div className="pointer-events-none absolute inset-0 z-0 bg-[url(/images/icons-noise.png)] opacity-40 [mask:linear-gradient(to_top_right,black,transparent)]" /> */}
-
 					<div className="flex flex-wrap gap-4 gap-x-5">
 						{publishers.map((publisher, i) => (
 							<div
@@ -80,27 +48,25 @@ export default function Publishers() {
 					>
 						<RevealFade>
 							<div className="relative z-0 flex flex-nowrap gap-6 overflow-hidden">
-								<m.div
-									ref={ref}
-									className="flex gap-6"
-									variants={marqueeVariants}
-									animate="animate"
-								>
+								<div className="flex animate-marquee gap-6">
 									{publishers
 										.filter((publisher) => publisher.logo !== undefined)
 										.map((publisher, i) => (
 											<PublisherLogo key={i} publisher={publisher} />
 										))}
-								</m.div>
+								</div>
+								<div className="flex animate-marquee gap-6" aria-hidden>
+									{publishers
+										.filter((publisher) => publisher.logo !== undefined)
+										.map((publisher, i) => (
+											<PublisherLogo key={i} publisher={publisher} />
+										))}
+								</div>
 							</div>
 						</RevealFade>
 						<RevealFade delay={0.5}>
 							<div className="relative z-0 mt-2 flex flex-nowrap gap-6 overflow-hidden md:mt-6">
-								<m.div
-									className="flex gap-6"
-									variants={marqueeReversedVariants}
-									animate="animate"
-								>
+								<div className="flex animate-marquee gap-6 [animation-direction:reverse]">
 									{[...publishers]
 										.reverse()
 										.filter((publisher) => publisher.logo !== undefined)
@@ -108,7 +74,18 @@ export default function Publishers() {
 										.map((publisher, i) => (
 											<PublisherLogo key={i} publisher={publisher} />
 										))}
-								</m.div>
+								</div>
+								<div
+									className="flex animate-marquee gap-6 [animation-direction:reverse]"
+									aria-hidden
+								>
+									{[...publishers]
+										.reverse()
+										.filter((publisher) => publisher.logo !== undefined)
+										.map((publisher, i) => (
+											<PublisherLogo key={i} publisher={publisher} />
+										))}
+								</div>
 							</div>
 						</RevealFade>
 					</div>
@@ -120,7 +97,7 @@ export default function Publishers() {
 
 function PublisherLogo({ publisher }: { publisher: Publisher }) {
 	return (
-		<div className={styles.publishericon}>
+		<div className={styles.publisher_icon}>
 			<img
 				src={`/images/company/${publisher.logo}.svg`}
 				alt={publisher.name}

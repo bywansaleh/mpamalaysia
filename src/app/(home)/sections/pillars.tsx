@@ -66,7 +66,7 @@ function PillarCard({ pillar, index }: { pillar: Pillar; index: number }) {
 				>
 					{pillar.icon}
 					<div
-						className={styles.iconbg}
+						className={styles.icon_bg}
 						style={{
 							backgroundColor: pillar.bg,
 						}}

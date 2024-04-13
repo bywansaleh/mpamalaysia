@@ -95,6 +95,7 @@ export default {
 		require('tailwindcss-animate'),
 		require('@tailwindcss/typography'),
 		require('tailwindcss-easing'),
+		require('tailwindcss-mixins'),
 
 		plugin(function ({ addVariant, matchUtilities, theme }) {
 			addVariant('firefox', '@supports (-moz-appearance: none)');

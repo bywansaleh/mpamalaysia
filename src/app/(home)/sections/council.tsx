@@ -13,7 +13,7 @@ export default function Council() {
 		<Section id="council" className="relative scroll-m-10 py-20">
 			<div className="container">
 				<RevealFade>
-					<h2 className={styles.sectionheader}>
+					<h2 className={styles.section_header}>
 						<span>Council Members</span>
 					</h2>
 				</RevealFade>
@@ -72,14 +72,14 @@ function MemberCard({ member }: { member: Member }) {
 				)}
 			>
 				<div>
-					<div className="inline-block rounded-full border border-dotted border-foreground/20 p-1.5">
+					<div className="relative inline-block overflow-hidden rounded-full border border-foreground/10 p-1.5 transition-all duration-500 group-hover:border-brand">
 						<img
 							src={member.image}
 							alt={member.name}
 							className={cn(
-								'block aspect-square scale-110 rounded-full bg-foreground/20',
+								'block aspect-square scale-110 rounded-full bg-gradient-to-t from-brand/30 to-card',
 								// member.position === 'Council Member' ? 'size-16' : 'size-20'
-								'size-14'
+								'size-16'
 							)}
 						/>
 					</div>
@@ -127,7 +127,7 @@ const members: Member[] = [
 		name: 'Jennifah Johari',
 		position: 'Secretary',
 		company: 'Luncai Emas Sdn Bhd',
-		image: '/images/council/jennifah.png',
+		image: '/images/council/jennifah2.png',
 	},
 	{
 		name: 'Edwin Tan',

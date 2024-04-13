@@ -21,7 +21,7 @@ export default function Achievements() {
 			<Section id="achievements" className="relative scroll-m-10 py-20">
 				<div className="container relative">
 					<RevealFade>
-						<h2 className={styles.sectionheader}>
+						<h2 className={styles.section_header}>
 							<span>Achievements</span>
 						</h2>
 					</RevealFade>
