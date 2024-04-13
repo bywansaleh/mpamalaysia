@@ -50,7 +50,7 @@ function PillarCard({ pillar, index }: { pillar: Pillar; index: number }) {
 					styles.card,
 					styles.glow,
 					'group relative flex h-full flex-col items-start gap-5 !p-3 sm:!p-4',
-					'origin-bottom hover:scale-[103%] [&_a]:hover:underline'
+					'origin-top hover:scale-[103%] [&_a]:hover:underline'
 				)}
 				style={
 					{
@@ -58,19 +58,8 @@ function PillarCard({ pillar, index }: { pillar: Pillar; index: number }) {
 					} as React.CSSProperties
 				}
 			>
-				<h3 className="text-lg font-medium !leading-none tracking-tighter md:text-2xl">
-					{pillar.title}
-				</h3>
-				<p className="mt-auto text-xs !leading-snug opacity-55 md:text-sm">
-					<Balancer>{pillar.description}</Balancer>
-				</p>
-
-				{/* <div className="!absolute -bottom-4 -right-4 -rotate-12 opacity-10 [&>svg]:size-32 [&>svg]:stroke-[0.5px]">
-					{pillar.icon}
-				</div> */}
-
 				<div
-					className="aspect-square origin-bottom-left p-3 text-white transition-all duration-500 group-hover:scale-110 [&>svg]:size-10 [&>svg]:stroke-[1px] [&>svg]:opacity-90 md:[&>svg]:size-14"
+					className="aspect-square origin-top-left p-3 text-white transition-all duration-500 group-hover:scale-105 [&>svg]:size-10 [&>svg]:stroke-[1px] [&>svg]:opacity-90 md:[&>svg]:size-14"
 					// style={{
 					// 	color: pillar.text || '#fff',
 					// }}
@@ -83,6 +72,17 @@ function PillarCard({ pillar, index }: { pillar: Pillar; index: number }) {
 						}}
 					/>
 				</div>
+
+				<h3 className="text-lg font-medium !leading-none tracking-tighter md:text-2xl">
+					{pillar.title}
+				</h3>
+				<p className="mt-auto text-xs !leading-snug opacity-55 md:text-sm">
+					<Balancer>{pillar.description}</Balancer>
+				</p>
+
+				{/* <div className="!absolute -bottom-4 -right-4 -rotate-12 opacity-10 [&>svg]:size-32 [&>svg]:stroke-[0.5px]">
+					{pillar.icon}
+				</div> */}
 			</div>
 		</RevealFade>
 	);
