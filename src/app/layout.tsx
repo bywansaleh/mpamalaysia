@@ -37,8 +37,8 @@ export default function RootLayout({
 				<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 				<script
 					defer
-					data-domain="mpamalaysia.com"
-					src="https://plausible.wansaleh.com/js/script.js"
+					src="https://umami.wslh.org/script.js"
+					data-website-id="c099fd30-b44e-4766-9717-a1196080c1c0"
 				></script>
 			</head>
 			<body>
