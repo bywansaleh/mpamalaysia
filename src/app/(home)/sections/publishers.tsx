@@ -1,9 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { useMeasure } from '@uidotdev/usehooks';
-import { m, Variants } from 'framer-motion';
-
 import { cn } from '@/lib/utils';
 
 import { RevealFade } from '@/components/reveal-fade';
@@ -148,6 +145,6 @@ const publishers: Publisher[] = [
 	{ name: 'VMS Music Records & Publishing Sdn Bhd' },
 ];
 
-const shuffle = (array: Publisher[]) => {
-	return [...array].sort(() => Math.random() - 0.5);
-};
+// const shuffle = (array: Publisher[]) => {
+// 	return [...array].sort(() => Math.random() - 0.5);
+// };

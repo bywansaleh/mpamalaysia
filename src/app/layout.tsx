@@ -39,7 +39,7 @@ export default function RootLayout({
 					defer
 					src="https://umami.wslh.org/script.js"
 					data-website-id="c099fd30-b44e-4766-9717-a1196080c1c0"
-				></script>
+				/>
 			</head>
 			<body>
 				<Providers>
