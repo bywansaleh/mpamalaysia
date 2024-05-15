@@ -143,6 +143,7 @@ const publishers: Publisher[] = [
 	{ name: 'Universal Music Publishing Sdn Bhd', logo: 'universal' },
 	{ name: 'VEEDU Production Sdn Bhd', logo: 'veedu' },
 	{ name: 'VMS Music Records & Publishing Sdn Bhd' },
+	{ name: 'Voxytune Entertainment', logo: 'voxytune' },
 ];
 
 // const shuffle = (array: Publisher[]) => {
