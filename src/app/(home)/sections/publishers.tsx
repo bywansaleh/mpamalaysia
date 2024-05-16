@@ -125,7 +125,7 @@ const publishers: Publisher[] = [
 	{ name: 'Indah Karya Publishing Sdn Bhd', logo: 'indah-karya', square: true },
 	{ name: 'Insichtech Musicland Sdn Bhd', logo: 'musicland' },
 	{ name: 'Irama Bayu Production', logo: 'ibp' },
-	{ name: 'Kelarai Sakti Publishing Sdn Bhd', logo: 'kelarai', square: true },
+	{ name: 'Kelarai Sakti Publishing Sdn Bhd', logo: 'kelarai2', square: true },
 	{ name: 'KRU Music Sdn Bhd', logo: 'kru' },
 	{ name: 'Luncai Emas Sdn Bhd', logo: 'luncai', square: true },
 	{ name: 'Mixology Music Sdn Bhd', logo: 'mixology', square: true },
