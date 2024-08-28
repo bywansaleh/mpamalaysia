@@ -11,7 +11,7 @@ import {
 	companyPhone,
 } from '@/app/company';
 
-export default async function Footer() {
+export default function Footer() {
 	return (
 		<footer
 			className={cn('relative overflow-hidden py-10', 'hover:[&_a]:underline')}

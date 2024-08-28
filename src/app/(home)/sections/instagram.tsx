@@ -2,7 +2,13 @@ import { cn } from '@/lib/utils';
 
 /* eslint-disable @next/next/no-img-element */
 export default async function Instagram() {
-	const posts = await getInstagramPosts();
+	let posts;
+	try {
+		posts = await getInstagramPosts();
+	} catch (error) {
+		console.error('Error fetching Instagram posts:', error);
+		posts = { data: [] }; // Provide a default empty array if fetching fails
+	}
 
 	return (
 		<div className="z-100 relative bg-black bg-gradient-to-br from-brand to-brand/50 shadow-[0_0_100px_hsl(var(--brand)/40%)]">
@@ -88,9 +94,19 @@ type Cursors = {
 };
 
 async function getInstagramPosts() {
-	const result: Result = await fetch(
-		`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,username&access_token=${process.env.IG_ACCESS_TOKEN}`
-	).then((res) => res.json());
+	try {
+		const response = await fetch(
+			`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,username&access_token=${process.env.IG_ACCESS_TOKEN}`
+		);
 
-	return result;
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`);
+		}
+
+		const result: Result = await response.json();
+		return result;
+	} catch (error) {
+		console.error('Error fetching Instagram posts:', error);
+		throw error; // Re-throw the error for the caller to handle
+	}
 }

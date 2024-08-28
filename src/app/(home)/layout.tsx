@@ -1,6 +1,6 @@
-import Providers from './providers';
+import Providers from '@/app/providers';
 
-import '../styles/globals.css';
+import '@/styles/globals.css';
 
 import { CSSProperties } from 'react';
 
@@ -10,9 +10,9 @@ import { TailwindIndicator } from '@/components/tailwind-indicator';
 
 import { bgDark, bgLight, hue } from '@/styles/colors';
 
-import fontClassNames from './fonts';
+import fontClassNames from '@/app/fonts';
 
-export * from './metadata';
+export * from '@/app/metadata';
 
 export default function RootLayout({
 	children,
