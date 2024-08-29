@@ -4,47 +4,47 @@ import { baseUrl, siteDescription, siteTitle } from '@/lib/config';
 
 import { bgDark, bgLight } from '@/styles/colors';
 
-const siteImage = '/opengraph';
+// const siteImage = '/opengraph';
 // const siteImage = `${baseUrl}/opengraph`;
 
-const openGraphMetadata = ({
-	title = siteTitle,
-	description = siteDescription,
-	imageUrl = siteImage,
-}: {
-	title?: string;
-	description?: string;
-	imageUrl?: string;
-} = {}) => ({
-	title,
-	description,
-	type: 'website',
-	url: baseUrl,
-	images: [
-		{
-			url: imageUrl,
-			width: 1200,
-			height: 675,
-			alt: siteTitle,
-			type: 'image/png',
-		},
-	],
-});
-const twitterMetadata = ({
-	title = siteTitle,
-	description = siteDescription,
-	imageUrl = siteImage,
-}: {
-	title?: string;
-	description?: string;
-	imageUrl?: string;
-} = {}) => ({
-	card: 'summary_large_image',
-	title,
-	description,
-	creator: '@wansaleh',
-	images: [imageUrl],
-});
+// const openGraphMetadata = ({
+// 	title = siteTitle,
+// 	description = siteDescription,
+// 	imageUrl = siteImage,
+// }: {
+// 	title?: string;
+// 	description?: string;
+// 	imageUrl?: string;
+// } = {}) => ({
+// 	title,
+// 	description,
+// 	type: 'website',
+// 	url: baseUrl,
+// 	images: [
+// 		{
+// 			url: imageUrl,
+// 			width: 1200,
+// 			height: 675,
+// 			alt: siteTitle,
+// 			type: 'image/png',
+// 		},
+// 	],
+// });
+// const twitterMetadata = ({
+// 	title = siteTitle,
+// 	description = siteDescription,
+// 	imageUrl = siteImage,
+// }: {
+// 	title?: string;
+// 	description?: string;
+// 	imageUrl?: string;
+// } = {}) => ({
+// 	card: 'summary_large_image',
+// 	title,
+// 	description,
+// 	creator: '@wansaleh',
+// 	images: [imageUrl],
+// });
 
 export const metadata: Metadata = {
 	metadataBase: new URL(baseUrl),
@@ -78,8 +78,8 @@ export const metadata: Metadata = {
 		},
 	],
 
-	openGraph: openGraphMetadata(),
-	twitter: twitterMetadata(),
+	// openGraph: openGraphMetadata(),
+	// twitter: twitterMetadata(),
 };
 
 export const viewport: Viewport = {
