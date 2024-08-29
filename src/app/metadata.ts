@@ -4,7 +4,8 @@ import { baseUrl, siteDescription, siteTitle } from '@/lib/config';
 
 import { bgDark, bgLight } from '@/styles/colors';
 
-const siteImage = `${baseUrl}/opengraph`;
+const siteImage = '/opengraph';
+// const siteImage = `${baseUrl}/opengraph`;
 
 const openGraphMetadata = ({
 	title = siteTitle,
