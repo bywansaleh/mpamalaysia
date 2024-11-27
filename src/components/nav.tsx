@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 
 import { $currentSection } from '@/app/store';
 
-import LogoFull from './logo-full';
+import LogoFullNew from './logo-full-new';
 
 const links = [
 	{ id: 'pillars', title: 'Pillars', href: '#pillars' },
@@ -49,7 +49,7 @@ export default function Nav() {
 				<div className="container z-10">
 					<div className="flex items-end justify-between">
 						<div className="h-14 sm:h-20">
-							<LogoFull className="h-full" />
+							<LogoFullNew className="h-full" />
 							<span className="sr-only">{siteTitle}</span>
 						</div>
 
