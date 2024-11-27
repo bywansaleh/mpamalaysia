@@ -2,7 +2,6 @@
 
 import Achievements from './sections/achievements';
 import Council from './sections/council';
-import Instagram from './sections/instagram';
 import Pillars from './sections/pillars';
 import Publishers from './sections/publishers';
 import Welcome from './sections/welcome';
@@ -19,7 +18,7 @@ export default function Home() {
 			<Publishers />
 			<Council />
 			<Achievements />
-			<Instagram />
+			{/* <Instagram /> */}
 		</div>
 	);
 }
