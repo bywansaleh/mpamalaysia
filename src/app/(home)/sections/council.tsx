@@ -38,7 +38,7 @@ export default function Council() {
 						<Balancer>
 							The council members boast extensive experience, particularly
 							hailing from music backgrounds, and are{' '}
-							<span className="opacity-55">
+							<span className="text-brand">
 								recognized as prominent leaders
 							</span>{' '}
 							within the industry.
