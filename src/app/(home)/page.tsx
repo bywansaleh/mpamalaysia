@@ -9,14 +9,14 @@ export const revalidate = 60;
 // export const runtime = 'edge';
 
 export default function Home() {
-	return (
-		<div>
-			<Welcome />
-			<Pillars />
-			<Publishers />
-			<Council />
-			<Achievements />
-			{/* <Instagram /> */}
-		</div>
-	);
+  return (
+    <div>
+      <Welcome />
+      <Pillars />
+      <Publishers />
+      <Council />
+      <Achievements />
+      {/* <Instagram /> */}
+    </div>
+  );
 }

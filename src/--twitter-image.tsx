@@ -8,7 +8,7 @@ export const size = { width: 1200, height: 675 };
 export const contentType = 'image/png';
 
 export default async function OG() {
-	return generateOpenGraph({
-		title: siteDescription,
-	});
+  return generateOpenGraph({
+    title: siteDescription
+  });
 }

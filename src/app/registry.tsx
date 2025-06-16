@@ -1,24 +1,22 @@
 'use client';
 
 import React, { useState } from 'react';
+
 import { useServerInsertedHTML } from 'next/navigation';
-import { createStyleRegistry, StyleRegistry } from 'styled-jsx';
 
-export default function StyledJsxRegistry({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
-	// Only create stylesheet once with lazy initial state
-	// x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
-	const [jsxStyleRegistry] = useState(() => createStyleRegistry());
+import { StyleRegistry, createStyleRegistry } from 'styled-jsx';
 
-	useServerInsertedHTML(() => {
-		const styles = jsxStyleRegistry.styles();
-		jsxStyleRegistry.flush();
+export default function StyledJsxRegistry({ children }: { children: React.ReactNode }) {
+  // Only create stylesheet once with lazy initial state
+  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
+  const [jsxStyleRegistry] = useState(() => createStyleRegistry());
 
-		return <>{styles}</>;
-	});
+  useServerInsertedHTML(() => {
+    const styles = jsxStyleRegistry.styles();
+    jsxStyleRegistry.flush();
 
-	return <StyleRegistry registry={jsxStyleRegistry}>{children}</StyleRegistry>;
+    return <>{styles}</>;
+  });
+
+  return <StyleRegistry registry={jsxStyleRegistry}>{children}</StyleRegistry>;
 }

@@ -1,7 +1,6 @@
 import { Metadata, Viewport } from 'next';
 
 import { baseUrl, siteDescription, siteTitle } from '@/lib/config';
-
 import { bgDark, bgLight } from '@/styles/colors';
 
 // const siteImage = '/opengraph';
@@ -47,44 +46,36 @@ import { bgDark, bgLight } from '@/styles/colors';
 // });
 
 export const metadata: Metadata = {
-	metadataBase: new URL(baseUrl),
+  metadataBase: new URL(baseUrl),
 
-	title: {
-		default: siteTitle,
-		template: `${siteTitle} — %s`,
-	},
-	robots: {
-		index: true,
-		follow: true,
-	},
-	description: siteDescription,
-	keywords: [
-		'malaysia',
-		'music',
-		'publishers',
-		'mpa',
-		'rights',
-		'royalties',
-		'copyright',
-	],
-	// icons: [
-	// 	{ media: '(prefers-color-scheme: light)', url: '/icon-dark.svg' },
-	// 	{ media: '(prefers-color-scheme: dark)', url: '/icon-light.svg' },
-	// ],
-	authors: [
-		{
-			name: 'Wan Saleh',
-			url: 'https://wansaleh.com',
-		},
-	],
+  title: {
+    default: siteTitle,
+    template: `${siteTitle} — %s`
+  },
+  robots: {
+    index: true,
+    follow: true
+  },
+  description: siteDescription,
+  keywords: ['malaysia', 'music', 'publishers', 'mpa', 'rights', 'royalties', 'copyright'],
+  // icons: [
+  // 	{ media: '(prefers-color-scheme: light)', url: '/icon-dark.svg' },
+  // 	{ media: '(prefers-color-scheme: dark)', url: '/icon-light.svg' },
+  // ],
+  authors: [
+    {
+      name: 'Wan Saleh',
+      url: 'https://wansaleh.com'
+    }
+  ]
 
-	// openGraph: openGraphMetadata(),
-	// twitter: twitterMetadata(),
+  // openGraph: openGraphMetadata(),
+  // twitter: twitterMetadata(),
 };
 
 export const viewport: Viewport = {
-	themeColor: [
-		{ media: '(prefers-color-scheme: light)', color: bgLight },
-		{ media: '(prefers-color-scheme: dark)', color: bgDark },
-	],
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: bgLight },
+    { media: '(prefers-color-scheme: dark)', color: bgDark }
+  ]
 };

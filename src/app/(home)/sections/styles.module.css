@@ -1,119 +1,90 @@
 @reference "../../../styles/globals.css";
 
 .card {
-	@apply from-card/90 to-background/70 text-card-foreground relative rounded-(--radius) bg-gradient-to-br p-4 backdrop-blur-lg transition-all duration-500 md:p-6;
+  @apply from-card/90 to-background/70 text-card-foreground relative rounded-(--radius) bg-gradient-to-br p-4 backdrop-blur-lg transition-all duration-500 md:p-6;
 
-	--clr: from var(--color, hsl(var(--brand)));
+  --clr: from var(--color, hsl(var(--brand)));
 
-	--rays-1: oklch(var(--clr) l calc(c - 0.02) h);
-	--rays-2: oklch(var(--clr) l calc(c - 0.1) h / 20%);
+  --rays-1: oklch(var(--clr) l calc(c - 0.02) h);
+  --rays-2: oklch(var(--clr) l calc(c - 0.1) h / 20%);
 
-	box-shadow:
-		0 4px 8px -2px rgba(16, 24, 40, 0.1),
-		0 2px 4px -2px rgba(16, 24, 40, 0.06),
-		inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0 2px 4px -2px rgba(16, 24, 40, 0.06),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
 
-	&:before {
-		@apply pointer-events-none absolute -inset-px z-[0] opacity-0 transition-all duration-500 content-[''];
+  &:before {
+    @apply pointer-events-none absolute -inset-px z-[0] opacity-0 transition-all duration-500 content-[''];
 
-		border-radius: calc(var(--radius) + 1px);
-		background: radial-gradient(
-			ellipse at 30% 10%,
-			var(--rays-1) 0%,
-			var(--rays-2) 70%
-		);
-	}
+    border-radius: calc(var(--radius) + 1px);
+    background: radial-gradient(ellipse at 30% 10%, var(--rays-1) 0%, var(--rays-2) 70%);
+  }
 
-	&:after {
-		@apply p-mask-1 pointer-events-none absolute -inset-px z-[0] opacity-0 transition-all duration-500 content-[''];
+  &:after {
+    @apply p-mask-1 pointer-events-none absolute -inset-px z-[0] opacity-0 transition-all duration-500 content-[''];
 
-		border-radius: calc(var(--radius) + 1px);
-		background: radial-gradient(
-			circle at 50% 0,
-			var(--rays-1) 0%,
-			oklch(from hsl(var(--foreground)) l c h / 6%) 50%
-		);
-	}
+    border-radius: calc(var(--radius) + 1px);
+    background: radial-gradient(circle at 50% 0, var(--rays-1) 0%, oklch(from hsl(var(--foreground)) l c h / 6%) 50%);
+  }
 
-	& > * {
-		@apply relative z-10;
-	}
+  & > * {
+    @apply relative z-10;
+  }
 
-	&:hover {
-		&:before {
-			@apply opacity-20;
-		}
-		&:after {
-			@apply opacity-80;
-		}
-	}
+  &:hover {
+    &:before {
+      @apply opacity-20;
+    }
+    &:after {
+      @apply opacity-80;
+    }
+  }
 }
 
 .icon_bg {
-	@apply bg-brand absolute inset-0 -z-10 flex items-center justify-center overflow-hidden rounded-2xl backdrop-blur;
+  @apply bg-brand absolute inset-0 -z-10 flex items-center justify-center overflow-hidden rounded-2xl backdrop-blur;
 
-	background-image:
-		radial-gradient(
-			circle at 80% 0,
-			rgba(255, 255, 255, 0.3),
-			rgba(255, 255, 255, 0) 65%
-		),
-		url(/images/icons-noise.png);
-	background-position:
-		0 0,
-		50%;
-	background-repeat: no-repeat, repeat;
-	background-size: auto, auto;
-	box-shadow:
-		0 4px 8px -2px rgba(16, 24, 40, 0.1),
-		0 2px 4px -2px rgba(16, 24, 40, 0.06),
-		inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  background-image:
+    radial-gradient(circle at 80% 0, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 65%), url(/images/icons-noise.png);
+  background-position:
+    0 0,
+    50%;
+  background-repeat: no-repeat, repeat;
+  background-size: auto, auto;
+  box-shadow:
+    0 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0 2px 4px -2px rgba(16, 24, 40, 0.06),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
 }
 
 .section_header {
-	@apply relative z-10 mb-8 text-4xl !leading-none font-semibold tracking-[-0.08em] md:text-5xl;
+  @apply relative z-10 mb-8 text-4xl !leading-none font-semibold tracking-[-0.08em] md:text-5xl;
 
-	& > span {
-		@apply -m-2 inline-block bg-clip-text p-2 text-transparent;
+  & > span {
+    @apply -m-2 inline-block bg-clip-text p-2 text-transparent;
 
-		background-image: radial-gradient(
-			ellipse at 20% 0%,
-			var(--color-gray-900) 0%,
-			var(--color-gray-400) 130%
-		);
+    background-image: radial-gradient(ellipse at 20% 0%, var(--color-gray-900) 0%, var(--color-gray-400) 130%);
 
-		:global(.dark) & {
-			background-image: radial-gradient(
-				ellipse at 20% 0%,
-				var(--color-gray-400) 0%,
-				var(--color-gray-800) 130%
-			);
-		}
-	}
+    :global(.dark) & {
+      background-image: radial-gradient(ellipse at 20% 0%, var(--color-gray-400) 0%, var(--color-gray-800) 130%);
+    }
+  }
 }
 
 .publishers_header {
-	@apply mt-6 -mb-3 text-center text-7xl !leading-[0.7] font-semibold tracking-[-0.08em] md:text-9xl;
+  @apply mt-6 -mb-3 text-center text-7xl !leading-[0.7] font-semibold tracking-[-0.08em] md:text-9xl;
 
-	& > span {
-		@apply inline-block bg-clip-text p-2 text-transparent;
+  & > span {
+    @apply inline-block bg-clip-text p-2 text-transparent;
 
-		background-image: radial-gradient(
-			ellipse at 50% -20%,
-			var(--color-gray-600) 0%,
-			var(--color-gray-400) 110%
-		);
+    background-image: radial-gradient(ellipse at 50% -20%, var(--color-gray-600) 0%, var(--color-gray-400) 110%);
 
-		:global(.dark) & {
-			background-image: radial-gradient(
-				ellipse at 50% -20%,
-				var(--color-gray-400) 0%,
-				var(--color-gray-800) 110%
-			);
-		}
-	}
+    :global(.dark) & {
+      background-image: radial-gradient(ellipse at 50% -20%, var(--color-gray-400) 0%, var(--color-gray-800) 110%);
+    }
+  }
 }
 
 .publisher_icon {
-	@apply flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 [background-image:radial-gradient(circle_at_60%_0,hsla(var(--hue),8%,50%,0.5),rgba(0,0,0,0)_85%)] p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 hover:bg-white/15 max-md:-mx-2 md:size-28 md:p-4;
+  @apply flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 [background-image:radial-gradient(circle_at_60%_0,hsla(var(--hue),8%,50%,0.5),rgba(0,0,0,0)_85%)] p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 hover:bg-white/15 max-md:-mx-2 md:size-28 md:p-4;
 }
