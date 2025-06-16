@@ -2,13 +2,12 @@ import Balancer from 'react-wrap-balancer';
 
 import Section from '@/components/section';
 
-/* eslint-disable @next/next/no-img-element */
 export default function Welcome() {
 	return (
 		<Section id="welcome" className="relative">
-			<div className="container relative py-10 pt-48">
+			<div className="relative container py-10 pt-48">
 				<div className="">
-					<h2 className="max-w-screen-xl text-pretty font-heading text-4xl font-medium tracking-tight md:text-6xl">
+					<h2 className="font-heading max-w-(--breakpoint-xl) text-4xl font-medium tracking-tight text-pretty md:text-6xl">
 						<Balancer>
 							<span className="inline-block text-gray-500">
 								Protecting and promoting
@@ -22,7 +21,7 @@ export default function Welcome() {
 					loading="eager"
 					src="/images/gradient.png"
 					alt=""
-					className="pointer-events-none absolute -top-2/3 right-0 -z-10 h-[170%] select-none object-contain opacity-40 hue-rotate-30 dark:opacity-10"
+					className="pointer-events-none absolute -top-2/3 right-0 -z-10 h-[170%] object-contain opacity-40 hue-rotate-30 select-none dark:opacity-10"
 				/>
 
 				{/* <div className="absolute right-0 top-1/2 -z-10 size-[50rem] -translate-y-1/2 rounded-full border-[4rem] border-brand opacity-10 blur-[3px]" /> */}

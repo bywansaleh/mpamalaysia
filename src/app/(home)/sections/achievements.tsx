@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 import Balancer from 'react-wrap-balancer';
 
 import { RevealFade } from '@/components/reveal-fade';
@@ -19,7 +17,7 @@ export default function Achievements() {
 			</div> */}
 
 			<Section id="achievements" className="relative scroll-m-10 py-20">
-				<div className="container relative">
+				<div className="relative container">
 					<RevealFade>
 						<h2 className={styles.section_header}>
 							<span>Achievements</span>
@@ -35,7 +33,7 @@ export default function Achievements() {
 					<img
 						src="/images/06.png"
 						alt=""
-						className="pointer-events-none absolute top-0 z-0 w-96 rotate-[-40deg] select-none opacity-20 grayscale-[0.5] hue-rotate-30 md:-left-40 md:opacity-90"
+						className="pointer-events-none absolute top-0 z-0 w-96 rotate-[-40deg] opacity-20 grayscale-[0.5] hue-rotate-30 select-none md:-left-40 md:opacity-90"
 					/>
 				</div>
 			</Section>
@@ -47,15 +45,15 @@ function AchievementCard({ achievement }: { achievement: Achievement }) {
 	return (
 		<RevealFade>
 			<div className="flex flex-col gap-4">
-				<div className="w-[10%] font-serif text-4xl font-extralight !leading-none md:text-5xl">
-					<span className="inline-block bg-gradient-to-b from-brand to-brand-darker bg-clip-text text-transparent">
+				<div className="w-[10%] font-serif text-4xl leading-none! font-extralight md:text-5xl">
+					<span className="from-brand to-brand-darker inline-block bg-linear-to-b bg-clip-text text-transparent">
 						{achievement.number}
 					</span>
 				</div>
-				<h3 className="relative text-xl font-light !leading-none tracking-tight">
+				<h3 className="relative text-xl leading-none! font-light tracking-tight">
 					<Balancer>{achievement.title}</Balancer>
 				</h3>
-				<p className="text-pretty text-xs !leading-relaxed opacity-55 md:text-sm">
+				<p className="text-xs leading-relaxed! text-pretty opacity-55 md:text-sm">
 					<Balancer>{achievement.description}</Balancer>
 				</p>
 			</div>
@@ -63,11 +61,11 @@ function AchievementCard({ achievement }: { achievement: Achievement }) {
 	);
 }
 
-type Achievement = {
+interface Achievement {
 	number: string;
 	title: string;
 	description: string;
-};
+}
 
 const achievements: Achievement[] = [
 	{

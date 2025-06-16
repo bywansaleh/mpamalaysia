@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Balancer from 'react-wrap-balancer';
 
 import { siteTitle } from '@/lib/config';
@@ -14,13 +13,13 @@ import {
 export default function Footer() {
 	return (
 		<footer
-			className={cn('relative overflow-hidden py-10', 'hover:[&_a]:underline')}
+			className={cn('relative overflow-hidden py-10', '[&_a]:hover:underline')}
 		>
-			<div className="container relative flex flex-col items-start gap-4">
+			<div className="relative container flex flex-col items-start gap-4">
 				<div
 					className={cn(
 						'grid grid-cols-1 gap-6 text-xs font-medium md:grid-cols-4',
-						'[&_h4]:col-span-4 [&_h4]:mb-2 [&_h4]:text-2xs [&_h4]:font-bold [&_h4]:uppercase [&_h4]:tracking-widest [&_h4]:text-muted-foreground'
+						'[&_h4]:text-2xs [&_h4]:text-muted-foreground [&_h4]:col-span-4 [&_h4]:mb-2 [&_h4]:font-bold [&_h4]:tracking-widest [&_h4]:uppercase'
 					)}
 				>
 					<div className="col-span-2">
@@ -38,7 +37,7 @@ export default function Footer() {
 						<div className="mt-4 flex gap-2">
 							<a
 								href="https://www.instagram.com/mpa.my/"
-								className="flex size-8 items-center justify-center rounded-full bg-foreground p-0 text-background"
+								className="bg-foreground text-background flex size-8 items-center justify-center rounded-full p-0"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +52,7 @@ export default function Footer() {
 							</a>
 							<a
 								href={`mailto:${companyEmail}`}
-								className="flex h-8 items-center rounded-full bg-foreground px-4 text-background !no-underline"
+								className="bg-foreground text-background flex h-8 items-center rounded-full px-4 no-underline!"
 							>
 								{companyEmail}
 							</a>
@@ -91,7 +90,7 @@ export default function Footer() {
 					</div>
 				</div>
 
-				<p className="text-xs font-medium text-muted-foreground">
+				<p className="text-muted-foreground text-xs font-medium">
 					{siteTitle} &copy; {new Date().getFullYear()}
 				</p>
 			</div>

@@ -22,7 +22,7 @@ export default function Nav() {
 
 	return (
 		<nav>
-			<div className="fixed inset-x-0 top-0 z-[999] flex h-28 items-center">
+			<div className="fixed inset-x-0 top-0 z-999 flex h-28 items-center">
 				<div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-32">
 					{Array.from({ length: 8 }).map((_, i) => {
 						return (
@@ -44,23 +44,23 @@ export default function Nav() {
 					})}
 				</div>
 
-				<div className="pointer-events-none absolute inset-x-0 top-0 block h-20 bg-background [mask:linear-gradient(to_top,transparent,black)] sm:hidden" />
+				<div className="bg-background pointer-events-none absolute inset-x-0 top-0 block h-20 [mask:linear-gradient(to_top,transparent,black)] sm:hidden" />
 
-				<div className="container z-10">
+				<div className="z-10 container">
 					<div className="flex items-end justify-between">
 						<div className="h-14 sm:h-20">
 							<LogoFullNew className="h-full" />
 							<span className="sr-only">{siteTitle}</span>
 						</div>
 
-						<ul className="-mb-1.5 flex h-8 items-center rounded-full p-1 text-xs font-medium !leading-none tracking-tight ring-foreground/[7%] sm:mb-1.5 sm:h-9 sm:gap-1 sm:bg-card/50 sm:text-sm sm:ring-1 sm:backdrop-blur">
+						<ul className="ring-foreground/[7%] sm:bg-card/50 -mb-1.5 flex h-8 items-center rounded-full p-1 text-xs leading-none! font-medium tracking-tight sm:mb-1.5 sm:h-9 sm:gap-1 sm:text-sm sm:ring-1 sm:backdrop-blur-sm">
 							{links.map((link) => (
 								<li key={link.id} className="h-full">
 									<a
 										href={link.href}
 										className={cn(
 											'relative flex h-full items-center justify-center px-1.5 transition-all duration-300 sm:px-3',
-											section === link.id && '!text-white'
+											section === link.id && 'text-white!'
 										)}
 										onClick={(ev) => {
 											ev.preventDefault();
@@ -75,7 +75,7 @@ export default function Nav() {
 											<m.span
 												layoutId="nav-pill"
 												className={cn(
-													'absolute inset-0 z-0 rounded-full !bg-brand !text-white'
+													'bg-brand! absolute inset-0 z-0 rounded-full text-white!'
 												)}
 											/>
 										)}
@@ -86,7 +86,7 @@ export default function Nav() {
 					</div>
 				</div>
 
-				{/* <div className="absolute inset-x-0 top-0 z-0 h-[200%] bg-gradient-to-b from-foreground from-20% opacity-10" /> */}
+				{/* <div className="absolute inset-x-0 top-0 z-0 h-[200%] bg-linear-to-b from-foreground from-20% opacity-10" /> */}
 			</div>
 		</nav>
 	);

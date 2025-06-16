@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { IconAffiliate, IconBooks, IconShieldHeart } from '@tabler/icons-react';
 import { Handshake, Speech, TrendingUp } from 'lucide-react';
@@ -14,8 +13,8 @@ import styles from './styles.module.css';
 export default function Pillars() {
 	return (
 		<Section id="pillars" className="relative scroll-m-20 py-10">
-			<div className="container relative">
-				<p className="mb-10 mt-20 max-w-screen-md text-pretty text-2xl font-light !leading-[1.1] tracking-tighter md:text-3xl">
+			<div className="relative container">
+				<p className="mt-20 mb-10 max-w-(--breakpoint-md) text-2xl leading-[1.1]! font-light tracking-tighter text-pretty md:text-3xl">
 					<Balancer>
 						Music Publishers Association of Malaysia safeguards the rights and
 						promotes the works of music publishers in the country.{' '}
@@ -35,7 +34,7 @@ export default function Pillars() {
 					loading="eager"
 					src="/images/16.png"
 					alt=""
-					className="pointer-events-none absolute -bottom-40 -right-20 -z-10 w-2/3 min-w-[30vw] rotate-[50deg] select-none opacity-40 grayscale-[0.2] hue-rotate-[37deg] sm:w-1/4 md:opacity-90"
+					className="pointer-events-none absolute -right-20 -bottom-40 -z-10 w-2/3 min-w-[30vw] rotate-[50deg] opacity-40 grayscale-[0.2] hue-rotate-[37deg] select-none sm:w-1/4 md:opacity-90"
 				/>
 			</div>
 		</Section>
@@ -48,9 +47,8 @@ function PillarCard({ pillar, index }: { pillar: Pillar; index: number }) {
 			<div
 				className={cn(
 					styles.card,
-					styles.glow,
-					'group relative flex h-full flex-col items-start gap-5 !p-3 sm:!p-4',
-					'origin-top hover:scale-[103%] [&_a]:hover:underline'
+					'group relative flex h-full flex-col items-start gap-5 p-3! sm:p-4!',
+					'origin-top hover:scale-[103%] hover:[&_a]:underline'
 				)}
 				style={
 					{
@@ -73,14 +71,14 @@ function PillarCard({ pillar, index }: { pillar: Pillar; index: number }) {
 					/>
 				</div>
 
-				<h3 className="text-lg font-medium !leading-none tracking-tighter md:text-2xl">
+				<h3 className="text-lg leading-none! font-medium tracking-tighter md:text-2xl">
 					{pillar.title}
 				</h3>
-				<p className="mt-auto text-xs !leading-snug opacity-55 md:text-sm">
+				<p className="mt-auto text-xs leading-snug! opacity-55 md:text-sm">
 					<Balancer>{pillar.description}</Balancer>
 				</p>
 
-				{/* <div className="!absolute -bottom-4 -right-4 -rotate-12 opacity-10 [&>svg]:size-32 [&>svg]:stroke-[0.5px]">
+				{/* <div className="absolute! -bottom-4 -right-4 -rotate-12 opacity-10 [&>svg]:size-32 [&>svg]:stroke-[0.5px]">
 					{pillar.icon}
 				</div> */}
 			</div>
@@ -88,13 +86,13 @@ function PillarCard({ pillar, index }: { pillar: Pillar; index: number }) {
 	);
 }
 
-type Pillar = {
+interface Pillar {
 	title: string;
 	description: string | React.ReactNode;
 	icon: React.ReactNode;
 	bg?: string;
 	text?: string;
-};
+}
 
 const pillars: Pillar[] = [
 	{
@@ -107,7 +105,7 @@ const pillars: Pillar[] = [
 			</>
 		),
 		icon: <IconShieldHeart />,
-		bg: 'hsl(var(--brand))',
+		bg: 'var(--brand)',
 	},
 	{
 		title: 'Education',

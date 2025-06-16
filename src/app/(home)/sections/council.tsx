@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Balancer from 'react-wrap-balancer';
 
 import { cn } from '@/lib/utils';
@@ -35,7 +34,7 @@ export default function Council() {
 				</div>
 
 				<RevealFade>
-					<p className="mt-8 max-w-sm text-pretty text-sm font-normal">
+					<p className="mt-8 max-w-sm text-sm font-normal text-pretty">
 						<Balancer>
 							The council members boast extensive experience, particularly
 							hailing from music backgrounds, and are{' '}
@@ -48,12 +47,12 @@ export default function Council() {
 				</RevealFade>
 			</div>
 
-			{/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-brand opacity-10" /> */}
+			{/* <div className="absolute inset-0 z-0 bg-linear-to-b from-brand opacity-10" /> */}
 
 			<img
 				src="/images/gradient.png"
 				alt=""
-				className="pointer-events-none absolute -right-1/4 top-0 -z-10 h-[200%] select-none opacity-40 grayscale-[0.6] hue-rotate-30 dark:opacity-10"
+				className="pointer-events-none absolute top-0 -right-1/4 -z-10 h-[200%] opacity-40 grayscale-[0.6] hue-rotate-30 select-none dark:opacity-10"
 			/>
 		</Section>
 	);
@@ -65,19 +64,18 @@ function MemberCard({ member }: { member: Member }) {
 			<div
 				className={cn(
 					styles.card,
-					'group flex gap-2 !p-4',
+					'group flex gap-2 p-4!',
 					// member.position === 'Council Member' &&
-					'flex-col items-start md:flex-row-reverse md:items-center',
-					styles.glow
+					'flex-col items-start md:flex-row-reverse md:items-center'
 				)}
 			>
 				<div>
-					<div className="relative inline-block overflow-hidden rounded-full border border-foreground/10 p-1.5 transition-all duration-500 group-hover:border-brand">
+					<div className="border-foreground/10 group-hover:border-brand relative inline-block overflow-hidden rounded-full border p-1.5 transition-all duration-500">
 						<img
 							src={member.image}
 							alt={member.name}
 							className={cn(
-								'block aspect-square scale-110 rounded-full bg-gradient-to-t from-brand/30 to-card',
+								'from-brand/30 to-card block aspect-square scale-110 rounded-full bg-linear-to-t',
 								// member.position === 'Council Member' ? 'size-16' : 'size-20'
 								'size-16'
 							)}
@@ -86,12 +84,12 @@ function MemberCard({ member }: { member: Member }) {
 				</div>
 
 				<div className="flex flex-1 flex-col gap-1">
-					<p className="text-xs font-semibold tracking-tighter text-brand/90">
+					<p className="text-brand/90 text-xs font-semibold tracking-tighter">
 						{member.position}
 					</p>
 					<h3
 						className={cn(
-							'font-medium !leading-none tracking-tighter',
+							'leading-none! font-medium tracking-tighter',
 							// member.position === 'Council Member' &&
 							'text-sm md:text-base'
 						)}
@@ -109,12 +107,12 @@ function MemberCard({ member }: { member: Member }) {
 	);
 }
 
-type Member = {
+interface Member {
 	name: string;
 	position: string;
 	company: string;
 	image: string;
-};
+}
 
 const members: Member[] = [
 	{
@@ -136,10 +134,10 @@ const members: Member[] = [
 		image: '/images/council/edwin-tan.png',
 	},
 	{
-		name: 'Chong Yi',
+		name: 'Janice Foong',
 		position: 'Council Member',
-		company: 'Rock Records Sdn Bhd',
-		image: '/images/council/chongyi.png',
+		company: 'Sony Music Publishing Sdn Bhd',
+		image: '/images/council/janice.png',
 	},
 	{
 		name: 'Rosmin Hashim',

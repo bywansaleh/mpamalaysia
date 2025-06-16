@@ -1,5 +1,7 @@
+@reference "../../../styles/globals.css";
+
 .card {
-	@apply relative rounded-[--radius] bg-gradient-to-br from-card/90 to-background/70 p-4 text-card-foreground backdrop-blur-lg transition-all duration-500 md:p-6;
+	@apply from-card/90 to-background/70 text-card-foreground relative rounded-(--radius) bg-gradient-to-br p-4 backdrop-blur-lg transition-all duration-500 md:p-6;
 
 	--clr: from var(--color, hsl(var(--brand)));
 
@@ -23,7 +25,7 @@
 	}
 
 	&:after {
-		@apply pointer-events-none absolute -inset-px z-[0] opacity-0 transition-all duration-500 content-[''] p-mask-px;
+		@apply p-mask-1 pointer-events-none absolute -inset-px z-[0] opacity-0 transition-all duration-500 content-[''];
 
 		border-radius: calc(var(--radius) + 1px);
 		background: radial-gradient(
@@ -47,24 +49,11 @@
 	}
 }
 
-.glow {
-	/* &:after {
-		@apply pointer-events-none absolute -inset-px z-10 bg-gradient-to-b from-border to-border/50 opacity-50 content-[''] p-mask-px;
-
-		border-radius: calc(var(--radius) + 1px);
-		background: radial-gradient(
-			circle at calc(var(--mx) * 1px) calc(var(--my) * 1px),
-			hsl(var(--brand) / 100%),
-			transparent 30vmin
-		);
-		background-attachment: fixed;
-	} */
-}
-
 .icon_bg {
-	@apply absolute inset-0 -z-10 flex items-center justify-center overflow-hidden rounded-2xl bg-brand backdrop-blur;
+	@apply bg-brand absolute inset-0 -z-10 flex items-center justify-center overflow-hidden rounded-2xl backdrop-blur;
 
-	background-image: radial-gradient(
+	background-image:
+		radial-gradient(
 			circle at 80% 0,
 			rgba(255, 255, 255, 0.3),
 			rgba(255, 255, 255, 0) 65%
@@ -82,49 +71,49 @@
 }
 
 .section_header {
-	@apply relative z-10 mb-8 text-4xl font-semibold !leading-none tracking-[-0.08em] md:text-5xl;
+	@apply relative z-10 mb-8 text-4xl !leading-none font-semibold tracking-[-0.08em] md:text-5xl;
 
 	& > span {
 		@apply -m-2 inline-block bg-clip-text p-2 text-transparent;
 
 		background-image: radial-gradient(
 			ellipse at 20% 0%,
-			theme(colors.gray.900) 0%,
-			theme(colors.gray.500 / 20%) 130%
+			var(--color-gray-900) 0%,
+			var(--color-gray-400) 130%
 		);
 
 		:global(.dark) & {
 			background-image: radial-gradient(
 				ellipse at 20% 0%,
-				theme(colors.gray.400) 0%,
-				theme(colors.gray.800 / 20%) 130%
+				var(--color-gray-400) 0%,
+				var(--color-gray-800) 130%
 			);
 		}
 	}
 }
 
 .publishers_header {
-	@apply -mb-3 mt-6 text-center text-7xl font-semibold !leading-[0.7] tracking-[-0.08em] md:text-9xl;
+	@apply mt-6 -mb-3 text-center text-7xl !leading-[0.7] font-semibold tracking-[-0.08em] md:text-9xl;
 
 	& > span {
 		@apply inline-block bg-clip-text p-2 text-transparent;
 
 		background-image: radial-gradient(
 			ellipse at 50% -20%,
-			theme(colors.gray.600) 0%,
-			theme(colors.gray.600 / 20%) 110%
+			var(--color-gray-600) 0%,
+			var(--color-gray-400) 110%
 		);
 
 		:global(.dark) & {
 			background-image: radial-gradient(
 				ellipse at 50% -20%,
-				theme(colors.gray.400) 0%,
-				theme(colors.gray.800 / 0%) 110%
+				var(--color-gray-400) 0%,
+				var(--color-gray-800) 110%
 			);
 		}
 	}
 }
 
 .publisher_icon {
-	@apply flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 [background-image:radial-gradient(circle_at_60%_0,hsla(var(--hue),8%,50%,0.5),rgba(0,0,0,0)_85%)] hover:bg-white/15 max-md:-mx-2 md:size-28 md:p-4;
+	@apply flex aspect-square size-20 items-center justify-center rounded-2xl bg-white/5 [background-image:radial-gradient(circle_at_60%_0,hsla(var(--hue),8%,50%,0.5),rgba(0,0,0,0)_85%)] p-3 text-center shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.05)] transition-all duration-500 hover:bg-white/15 max-md:-mx-2 md:size-28 md:p-4;
 }

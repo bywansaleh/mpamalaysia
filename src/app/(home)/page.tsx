@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 import Achievements from './sections/achievements';
 import Council from './sections/council';
 import Pillars from './sections/pillars';

@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils';
 
-/* eslint-disable @next/next/no-img-element */
 export default async function Instagram() {
 	let posts;
 	try {
@@ -11,7 +10,7 @@ export default async function Instagram() {
 	}
 
 	return (
-		<div className="z-100 relative bg-black bg-gradient-to-br from-brand to-brand/50 shadow-[0_0_100px_hsl(var(--brand)/40%)]">
+		<div className="from-brand to-brand/50 relative z-100 bg-black bg-linear-to-br shadow-[0_0_100px_hsl(var(--brand)/40%)]">
 			<div className="relative p-6">
 				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
 					{posts?.data
@@ -37,13 +36,13 @@ function PostCard({ post }: { post: Post }) {
 			<img
 				src={post.media_type === 'VIDEO' ? post.thumbnail_url : post.media_url}
 				alt={post.caption}
-				className="aspect-square w-full object-cover transition-all duration-300 ease-in-out [mask:linear-gradient(to_bottom,black,rgba(0,0,0,0.3)_80%)] group-hover:scale-105 group-hover:opacity-60 group-hover:blur"
+				className="aspect-square w-full object-cover transition-all duration-300 ease-in-out [mask:linear-gradient(to_bottom,black,rgba(0,0,0,0.3)_80%)] group-hover:scale-105 group-hover:opacity-60 group-hover:blur-sm"
 			/>
 			<div className="absolute inset-0 flex flex-col justify-end gap-2 p-2">
-				<p className="line-clamp-[8] text-pretty text-2xs font-medium !leading-tight opacity-0 blur transition-all duration-300 group-hover:opacity-100 group-hover:blur-0">
+				<p className="text-2xs group-hover:blur-0 line-clamp-8 leading-tight! font-medium text-pretty opacity-0 blur-sm transition-all duration-300 group-hover:opacity-100">
 					{post.caption}
 				</p>
-				<div className="flex w-full flex-row-reverse items-center justify-between gap-1 text-2xs font-semibold tracking-tighter">
+				<div className="text-2xs flex w-full flex-row-reverse items-center justify-between gap-1 font-semibold tracking-tighter">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 256 256"
@@ -55,7 +54,7 @@ function PostCard({ post }: { post: Post }) {
 						/>
 					</svg>
 
-					<span className="opacity-0 blur transition-all duration-300 group-hover:opacity-100 group-hover:blur-0">
+					<span className="group-hover:blur-0 opacity-0 blur-sm transition-all duration-300 group-hover:opacity-100">
 						{new Intl.DateTimeFormat('en-GB', {
 							dateStyle: 'medium',
 							// timeStyle: 'short',
@@ -68,12 +67,12 @@ function PostCard({ post }: { post: Post }) {
 	);
 }
 
-type Result = {
+interface Result {
 	data: Post[];
 	paging: Paging;
-};
+}
 
-type Post = {
+interface Post {
 	id: string;
 	caption: string;
 	media_type: string;
@@ -82,16 +81,16 @@ type Post = {
 	timestamp: string;
 	username: string;
 	thumbnail_url?: string;
-};
+}
 
-type Paging = {
+interface Paging {
 	cursors: Cursors;
-};
+}
 
-type Cursors = {
+interface Cursors {
 	before: string;
 	after: string;
-};
+}
 
 async function getInstagramPosts() {
 	try {
@@ -104,6 +103,7 @@ async function getInstagramPosts() {
 		}
 
 		const result: Result = await response.json();
+
 		return result;
 	} catch (error) {
 		console.error('Error fetching Instagram posts:', error);

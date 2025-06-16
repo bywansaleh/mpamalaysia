@@ -16,6 +16,7 @@ export default function StyledJsxRegistry({
 	useServerInsertedHTML(() => {
 		const styles = jsxStyleRegistry.styles();
 		jsxStyleRegistry.flush();
+
 		return <>{styles}</>;
 	});
 

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { CSSProperties, useEffect } from 'react';
 import { useMotionTemplate, useMotionValue } from 'framer-motion';
 
@@ -20,10 +19,10 @@ export default function useMousePosition({
 		const updateMousePosition = (ev: MouseEvent | TouchEvent) => {
 			let x: number, y: number;
 			if ('touches' in ev) {
-				const touch = (ev as TouchEvent).touches[0];
+				const touch = ev.touches[0];
 				[x, y] = [touch.clientX, touch.clientY];
 			} else {
-				[x, y] = [(ev as MouseEvent).clientX, (ev as MouseEvent).clientY];
+				[x, y] = [ev.clientX, ev.clientY];
 			}
 			motionX.set(x);
 			motionY.set(y);

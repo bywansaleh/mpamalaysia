@@ -5,9 +5,7 @@
 		"allowJs": true,
 		"skipLibCheck": true,
 		"baseUrl": ".",
-		"paths": {
-			"@/*": ["./src/*"]
-		},
+		"paths": { "@/*": ["./src/*"] },
 		"strict": true,
 		"forceConsistentCasingInFileNames": true,
 		"noEmit": true,

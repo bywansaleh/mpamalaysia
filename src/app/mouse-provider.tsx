@@ -35,13 +35,13 @@ export default function MouseProvider() {
 		if (includeTouch) {
 			window.addEventListener('touchmove', updateMousePosition);
 		}
+
 		return () => {
 			window.removeEventListener('pointermove', updateMousePosition);
 			if (includeTouch) {
 				window.removeEventListener('touchmove', updateMousePosition);
 			}
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	// const springmvx = useSpring(mvx, { damping: 40, stiffness: 500 });
