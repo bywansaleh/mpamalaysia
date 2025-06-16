@@ -113,7 +113,7 @@ interface Publisher {
 }
 
 const publishers: Publisher[] = [
-	{ name: 'Faithful Music Sdn Bhd', logo: 'faithful', square: true },
+	{ name: 'Faithful Publishing Sdn Bhd', logo: 'faithful', square: true },
 	{ name: 'FMC Music Sdn Bhd', logo: 'fmc' },
 	{ name: 'Frequen-Z Records' },
 	{
