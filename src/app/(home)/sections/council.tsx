@@ -34,7 +34,7 @@ export default function Council() {
 				</div>
 
 				<RevealFade>
-					<p className="mt-8 max-w-sm text-sm font-normal text-pretty">
+					<p className="mt-8 max-w-lg text-sm font-normal text-pretty">
 						<Balancer>
 							The council members boast extensive experience, particularly
 							hailing from music backgrounds, and are{' '}
