@@ -13,7 +13,9 @@ export default async function Instagram() {
     <div className='from-brand to-brand/50 relative z-100 bg-black bg-linear-to-br shadow-[0_0_100px_hsl(var(--brand)/40%)]'>
       <div className='relative p-6'>
         <div className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6'>
-          {posts?.data?.slice(0, 6).map((post) => <PostCard key={post.id} post={post} />)}
+          {posts?.data?.slice(0, 6).map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
         </div>
       </div>
     </div>
