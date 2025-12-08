@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
-const includeTouch = true;
+const includeTouch = true
 
 export default function MouseProvider() {
   // const mvx = useMotionValue(0);
@@ -10,33 +10,34 @@ export default function MouseProvider() {
 
   useEffect(() => {
     const updateMousePosition: EventListener = (ev) => {
-      let x: number, y: number;
+      let x: number, y: number
       if ('touches' in ev) {
         const touch = (ev as TouchEvent).touches[0];
-        [x, y] = [touch.clientX, touch.clientY];
-      } else {
-        [x, y] = [(ev as MouseEvent).clientX, (ev as MouseEvent).clientY];
+        [x, y] = [touch.clientX, touch.clientY]
+      }
+      else {
+        [x, y] = [(ev as MouseEvent).clientX, (ev as MouseEvent).clientY]
       }
 
-      document.documentElement.style.setProperty('--mx', Math.round(x).toString());
-      document.documentElement.style.setProperty('--my', Math.round(y).toString());
+      document.documentElement.style.setProperty('--mx', Math.round(x).toString())
+      document.documentElement.style.setProperty('--my', Math.round(y).toString())
 
       // mvx.set(x);
       // mvy.set(y);
-    };
+    }
 
-    window.addEventListener('pointermove', updateMousePosition);
+    window.addEventListener('pointermove', updateMousePosition)
     if (includeTouch) {
-      window.addEventListener('touchmove', updateMousePosition);
+      window.addEventListener('touchmove', updateMousePosition)
     }
 
     return () => {
-      window.removeEventListener('pointermove', updateMousePosition);
+      window.removeEventListener('pointermove', updateMousePosition)
       if (includeTouch) {
-        window.removeEventListener('touchmove', updateMousePosition);
+        window.removeEventListener('touchmove', updateMousePosition)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   // const springmvx = useSpring(mvx, { damping: 40, stiffness: 500 });
   // const springmvy = useSpring(mvy, { damping: 40, stiffness: 500 });
@@ -48,5 +49,5 @@ export default function MouseProvider() {
   //   document.documentElement.style.setProperty('--my', `${Math.round(y)}px`);
   // });
 
-  return null;
+  return null
 }

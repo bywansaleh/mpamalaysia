@@ -1,15 +1,17 @@
-import { NextRequest, NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server'
 
-export async function GET(request: NextRequest) {
+import { NextResponse } from 'next/server'
+
+export async function GET(_request: NextRequest) {
   const response = await fetch(
-    `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${process.env.IG_ACCESS_TOKEN}`
-  );
+    `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${process.env.IG_ACCESS_TOKEN}`,
+  )
 
   if (!response.ok) {
-    throw new Error('Failed to refresh Instagram token');
+    throw new Error('Failed to refresh Instagram token')
   }
 
-  const data = await response.json();
+  const data = await response.json()
 
-  return NextResponse.json({ message: data });
+  return NextResponse.json({ message: data })
 }

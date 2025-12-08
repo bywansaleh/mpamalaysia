@@ -1,12 +1,12 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next'
 
-import { baseUrl } from '@/lib/config';
+import { baseUrl } from '@/lib/config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date()
-    }
-  ];
+      lastModified: new Date(),
+    },
+  ]
 }

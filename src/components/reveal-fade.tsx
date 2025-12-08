@@ -1,6 +1,8 @@
-'use client';
+'use client'
 
-import { Variants, m } from 'framer-motion';
+import type { Variants } from 'framer-motion'
+
+import { m } from 'framer-motion'
 
 export function RevealFade({
   delay = 0.25,
@@ -10,17 +12,17 @@ export function RevealFade({
   children,
   ...props
 }: {
-  delay?: number;
-  once?: boolean;
-  amount?: number | 'some' | 'all' | undefined;
-  sliding?: boolean;
-  children: React.ReactNode;
+  delay?: number
+  once?: boolean
+  amount?: number | 'some' | 'all' | undefined
+  sliding?: boolean
+  children: React.ReactNode
 } & React.ComponentProps<typeof m.div>) {
   const variants: Variants = {
     initial: {
       opacity: 0,
       // x: sliding ? -20 : 0,
-      y: sliding ? 20 : 0
+      y: sliding ? 20 : 0,
       // scale: sliding ? 0.95 : 1,
     },
     reveal: {
@@ -32,22 +34,23 @@ export function RevealFade({
         delay,
         type: 'spring',
         damping: 30,
-        stiffness: 100
-      }
-    }
-  };
+        stiffness: 100,
+      },
+    },
+  }
 
   return (
     <m.div
       variants={variants}
-      initial='initial'
-      whileInView='reveal'
+      initial="initial"
+      whileInView="reveal"
       viewport={{
         amount,
-        once
+        once,
       }}
-      {...props}>
+      {...props}
+    >
       {children}
     </m.div>
-  );
+  )
 }

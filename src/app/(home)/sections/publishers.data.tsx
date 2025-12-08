@@ -1,7 +1,7 @@
-export interface Publisher {
-  name: string;
-  logo?: string;
-  square?: boolean;
+export type Publisher = {
+  name: string
+  logo?: string
+  square?: boolean
 }
 export const publishers: Publisher[] = [
   { name: 'Faithful Publishing Sdn Bhd', logo: 'faithful', square: true },
@@ -10,7 +10,7 @@ export const publishers: Publisher[] = [
   {
     name: 'Goodsound Music Publishing Sdn Bhd',
     logo: 'goodsound',
-    square: true
+    square: true,
   },
   { name: 'Indah Karya Publishing Sdn Bhd', logo: 'indah-karya', square: true },
   { name: 'Insichtech Musicland Sdn Bhd', logo: 'musicland' },
@@ -35,5 +35,5 @@ export const publishers: Publisher[] = [
   { name: 'Tropic Jaya Entertainment Sdn Bhd', logo: 'tropic' },
   { name: 'Universal Music Publishing Sdn Bhd', logo: 'universal' },
   { name: 'VEEDU Production Sdn Bhd', logo: 'veedu' },
-  { name: 'VMS Music Records & Publishing Sdn Bhd' }
-];
+  { name: 'VMS Music Records & Publishing Sdn Bhd' },
+]
