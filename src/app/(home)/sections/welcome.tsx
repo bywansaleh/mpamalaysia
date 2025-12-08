@@ -5,7 +5,7 @@ import Balancer from 'react-wrap-balancer';
 export default function Welcome() {
   return (
     <Section id='welcome' className='relative'>
-      <div className='relative container py-10 pt-48'>
+      <div className='relative container pb-10 pt-48'>
         <div className=''>
           <h2 className='font-heading max-w-(--breakpoint-xl) text-4xl font-medium tracking-tight text-pretty md:text-6xl'>
             <Balancer>

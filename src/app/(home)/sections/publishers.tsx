@@ -19,7 +19,7 @@ export default function Publishers() {
 
         <div
           className={cn(
-            'from-brand/20 to-brand/0 relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-linear-to-tr to-40% p-6 text-white [perspective:800px] max-md:pt-8 md:grid-cols-2 md:p-12'
+            'from-brand/20 to-brand/0 relative flex w-full flex-col overflow-hidden rounded-3xl bg-gray-900 bg-linear-to-tr to-40% p-6 text-white perspective-midrange max-md:pt-8 md:grid-cols-2 md:p-12'
           )}>
           <div className='flex flex-wrap gap-4 gap-x-5'>
             {publishers.map((publisher, i) => (
@@ -31,7 +31,7 @@ export default function Publishers() {
 
           <div
             className={cn(
-              '-mx-20 mt-8 -mb-4 -skew-y-3 md:-mb-10',
+              '-mx-20 -mb-4 mt-8 -skew-y-3 md:-mb-10',
               '[mask:linear-gradient(to_right,transparent,black,transparent)]'
             )}>
             <RevealFade>

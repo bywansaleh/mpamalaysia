@@ -27,7 +27,7 @@ export default function Footer() {
             <div className='mt-4 flex gap-2'>
               <a
                 href='https://www.instagram.com/mpa.my/'
-                className='bg-foreground text-background flex size-8 items-center justify-center rounded-full p-0'>
+                className='bg-foreground text-background grid size-8 place-items-center rounded-full p-0'>
                 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' className='size-5'>
                   <path
                     fill='currentColor'

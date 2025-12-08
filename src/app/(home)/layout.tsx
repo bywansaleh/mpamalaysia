@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Providers>
-          <div className='grid min-h-screen w-screen grid-rows-[auto_1fr_auto] overflow-hidden'>
+          <div className='grid size-screen min-h-screen grid-rows-[auto_1fr_auto] overflow-hidden'>
             <Nav />
             <main>{children}</main>
             <Footer />

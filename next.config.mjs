@@ -2,9 +2,9 @@
 const nextConfig = {
 	reactStrictMode: true,
 	// swcMinify: true,
+	reactCompiler: true,
 	experimental: {
 		// ppr: true,
-		reactCompiler: true,
 	},
 };
 
