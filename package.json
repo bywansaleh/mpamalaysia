@@ -10,8 +10,8 @@
     "lint": "eslint --ignore-pattern '.claude'",
     "lint:fix": "eslint --fix --ignore-pattern '.claude'",
     "tsc": "tsc",
-    "update": "pnpx npm-check-updates -u --target semver && pnpm i",
-    "update:major": "pnpx npm-check-updates -u && pnpm i",
+    "update": "pnpx npm-check-updates -u --target semver -x @eslint-react/eslint-plugin && pnpm i",
+    "update:major": "pnpx npm-check-updates -u -x @eslint-react/eslint-plugin && pnpm i",
     "ngrok": "ngrok http 2656"
   },
   "dependencies": {
