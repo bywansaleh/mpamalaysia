@@ -1,5 +1,3 @@
-import Balancer from 'react-wrap-balancer'
-
 import Section from '@/components/section'
 
 export default function Welcome() {
@@ -9,16 +7,14 @@ export default function Welcome() {
         <div className="">
           <h2 className={`
             max-w-(--breakpoint-xl) font-heading text-4xl font-medium
-            tracking-tight text-pretty
+            tracking-tight text-balance
             md:text-6xl
           `}
           >
-            <Balancer>
-              <span className="inline-block text-gray-500">Protecting and promoting</span>
-              {' '}
-              the rights and interests of
-              music publishers in&nbsp;Malaysia.
-            </Balancer>
+            <span className="inline-block text-gray-500">Protecting and promoting</span>
+            {' '}
+            the rights and interests of
+            music publishers in&nbsp;Malaysia.
           </h2>
         </div>
 

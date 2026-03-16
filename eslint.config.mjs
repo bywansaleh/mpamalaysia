@@ -71,13 +71,13 @@ export default antfu(
         {
           groups: [
             'type',
-            ['parent-type', 'sibling-type', 'index-type', 'internal-type'],
+            ['parent', 'sibling', 'index', 'internal'],
             'builtin',
             'external',
-            'internal',
-            ['parent', 'sibling', 'index'],
+            // 'internal',
+            // ['parent', 'sibling', 'index'],
             'side-effect',
-            'object',
+            // 'object',
             'unknown',
           ],
           newlinesBetween: 1,
@@ -89,17 +89,22 @@ export default antfu(
   },
 
   {
-    plugins: {
-      'better-tailwindcss': betterTailwind,
-    },
+    // plugins: {
+    //   'better-tailwindcss': betterTailwind,
+    // },
+
+    // enable all recommended rules
+    extends: [
+      betterTailwind.configs.recommended,
+    ],
     rules: {
-      // enable all recommended rules to report a warning
-      ...betterTailwind.configs['recommended-warn'].rules,
-      // enable all recommended rules to report an error
-      ...betterTailwind.configs['recommended-error'].rules,
+      // // enable all recommended rules to report a warning
+      // ...betterTailwind.configs['recommended-warn'].rules,
+      // // enable all recommended rules to report an error
+      // ...betterTailwind.configs['recommended-error'].rules,
 
       // or configure rules individually
-      'better-tailwindcss/no-unregistered-classes': [
+      'better-tailwindcss/no-unknown-classes': [
         'error',
         {
           ignore: ['dark'],

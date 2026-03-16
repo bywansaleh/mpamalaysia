@@ -1,128 +1,86 @@
-# Instagram Integration Setup Guide (2025)
+# Instagram Integration Setup Guide (2026)
 
-This guide explains how to set up the Instagram integration to display the latest posts from @mpa.my on your website using the current Instagram API.
+Displays the 5 most recent posts from @mpa.my using the **Instagram API with Instagram Login** — the recommended method as of 2026 (no Facebook Page required).
 
-## Important Update for 2025
+---
 
-⚠️ **The Instagram Basic Display API was deprecated on December 4, 2024.**
+## Requirements
 
-As of 2025, you must use either:
-- **Instagram API with Instagram Login** (recommended - no Facebook Page required)
-- **Instagram Graph API with Facebook Login** (requires Facebook Page)
+- **Instagram Business or Creator account** (personal accounts are not supported)
+- **Meta Developer account** — free at [developers.facebook.com](https://developers.facebook.com/)
 
-This guide covers the **Instagram API with Instagram Login** method as it's simpler and doesn't require a Facebook Page.
+---
 
-## Overview
-
-The website uses the **Instagram Graph API** to fetch and display the latest 6 posts from your Instagram account. The integration includes:
-- Automatic caching (1 hour)
-- Error handling with graceful fallbacks
-- Support for both images and videos
-- Hover animations and interactions
-
-## Prerequisites
-
-1. **Instagram Business or Creator Account** (required)
-   - Personal accounts can no longer access the API
-   - Convert your account in Instagram Settings → Account → Switch to Professional Account
-
-2. **Facebook/Meta Developer Account** (free)
-   - Sign up at [developers.facebook.com](https://developers.facebook.com/)
-
-3. **Business Verification** (required)
-   - Your app must be connected to a verified business
-   - Complete Meta's [Business Verification](https://www.facebook.com/business/help/2058515294227817)
-
-## Step-by-Step Setup
-
-### Step 1: Create a Meta App
+## Step 1: Create a Meta App
 
 1. Go to [Meta for Developers](https://developers.facebook.com/)
-2. Click **My Apps** → **Create App**
-3. Select **Other** as the use case
-4. Choose **Business** as the app type
-5. Fill in the details:
-   - **App Name**: "MPA Malaysia Website" (or your preferred name)
-   - **App Contact Email**: Your email
-   - **Business Account**: Connect or create one (required for verification)
-6. Click **Create App**
+2. Click **My Apps → Create App**
+3. Select **Other** as the use case → **Business** as the app type
+4. Fill in the app name (e.g. "MPA Malaysia Website") and your email
+5. Click **Create App**
 
-### Step 2: Add Instagram Product
+---
 
-1. In your app dashboard, find **Add products to your app**
-2. Locate **Instagram** product
-3. Click **Set up**
-4. **IMPORTANT**: Choose **API Setup with Instagram Login**
-   - Do NOT choose "API Setup with Facebook Login"
-   - This is the new method that doesn't require a Facebook Page
+## Step 2: Add the Instagram Product
 
-### Step 3: Generate Access Token
+1. In your app dashboard, under **Add products to your app**, find **Instagram**
+2. Click **Set up**
+3. Choose **API Setup with Instagram Login** (not "API Setup with Facebook Login")
 
-1. In the Instagram product settings, go to **API Setup with Instagram Login**
-2. Click **Add an Instagram Account**
-3. Log in with your Instagram Business/Creator account (@mpa.my)
-4. Authorize the app to access your account
-5. **Important**: Make sure your Instagram account is set to **Public**
-6. Copy the **Access Token** that appears
+---
 
-The token will look something like:
-```
-IGQWRObVpPUU83eTBSYnVXQ3NaSDhFVmdtczNBd3g5...
-```
+## Step 3: Generate an Access Token
 
-### Step 4: Add Token to Environment Variables
+1. Go to **Instagram → API Setup with Instagram Login** in the left sidebar
+2. Under **Generate access tokens**, click **Add Instagram Account**
+3. Log in with the @mpa.my Instagram Business/Creator account
+4. Authorize the app
+5. Copy the **Access Token** that appears — it looks like:
 
-1. Create or edit `.env.local` in your project root:
+   ```text
+   IGQWRObVpPUU83eTBSYnVXQ3NaSDhFVmdtczNBd3g5...
+   ```
+
+> **Note:** Tokens expire after **60 days**. See [Token Refresh](#token-refresh) below.
+
+---
+
+## Step 4: Add Token to Environment Variables
+
+Create or edit `.env.local` in the project root:
 
 ```env
 IG_ACCESS_TOKEN=your_access_token_here
 ```
 
-2. Restart your development server:
+Then restart the dev server:
 
 ```bash
 bun run dev
 ```
 
-3. Visit http://localhost:2656 to see your Instagram posts!
+---
 
-## Token Management
+## Token Refresh
 
-### Token Expiration
+### Manual refresh (recommended every 30 days)
 
-Access tokens from the Instagram API with Instagram Login typically expire after **60 days**.
+**Option A — Meta Dashboard:**
 
-### Refresh Your Token
+1. Go to your app → **Instagram → API Setup with Instagram Login**
+2. Find your connected account and click **Generate Token**
+3. Copy the new token and update `.env.local`
 
-#### Option 1: Regenerate in Meta Dashboard (Recommended)
-
-1. Go to your app in Meta for Developers
-2. Navigate to **Instagram** → **API Setup with Instagram Login**
-3. Find your connected Instagram account
-4. Click **Generate Token** next to your account
-5. Copy the new token
-6. Update your `.env.local` file
-
-#### Option 2: Use the Built-in Refresh API
-
-Visit this URL while your app is running:
-
-```
-http://localhost:2656/api/refresh-ig-token
-```
-
-Or use cURL:
+**Option B — API endpoint (while app is running):**
 
 ```bash
 curl http://localhost:2656/api/refresh-ig-token
 ```
 
-This endpoint will attempt to refresh your token using the Instagram Graph API.
-
-#### Option 3: Manual Refresh via API
+**Option C — Direct API call:**
 
 ```bash
-curl -X GET "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=YOUR_CURRENT_TOKEN"
+curl "https://graph.instagram.com/v22.0/refresh_access_token?grant_type=ig_refresh_token&access_token=YOUR_TOKEN"
 ```
 
 Response:
@@ -134,145 +92,52 @@ Response:
 }
 ```
 
-### Automated Token Refresh (Production)
+### Automated refresh (production)
 
-For production deployment, set up a cron job to refresh the token every 30 days:
+Use [Vercel Cron Jobs](https://vercel.com/docs/cron-jobs) to call `/api/refresh-ig-token` every 30 days automatically.
 
-1. Use a service like [cron-job.org](https://cron-job.org) or [EasyCron](https://www.easycron.com/)
-2. Schedule a GET request to: `https://yourdomain.com/api/refresh-ig-token`
-3. Set frequency: Once every 30 days
-4. Monitor the response and update environment variables if needed
-
-For Vercel, you can use [Vercel Cron Jobs](https://vercel.com/docs/cron-jobs) to automate this process.
+---
 
 ## Production Deployment
 
-### Environment Variables
+Set `IG_ACCESS_TOKEN` as an environment variable in your hosting platform:
 
-Set your Instagram access token in your hosting platform:
+- **Vercel**: Project Settings → Environment Variables
+- **Netlify**: Site Settings → Build & Deploy → Environment
 
-**Vercel:**
-1. Go to Project Settings → Environment Variables
-2. Add `IG_ACCESS_TOKEN` with your token value
-3. Redeploy your application
+Never commit `.env.local` to version control — it's already in `.gitignore`.
 
-**Netlify:**
-1. Go to Site Settings → Build & Deploy → Environment
-2. Add `IG_ACCESS_TOKEN` with your token value
-3. Trigger a new deploy
+---
 
-**Other Platforms:**
-Consult your hosting provider's documentation for setting environment variables.
+## 2026 API Notes
 
-### Security Notes
+| Topic | Detail |
+| --- | --- |
+| API endpoint | `https://graph.instagram.com/v22.0/me/media` |
+| Fields used | `id, caption, media_type, media_url, thumbnail_url, permalink, timestamp` |
+| Removed fields (Jan 21, 2026) | `filter_name`, `location`, `latitude`, `longitude` |
+| Token lifetime | 60 days (long-lived) |
+| Rate limit | 200 calls/hour per user |
+| Cache | Responses cached for 1 hour via Next.js fetch |
+| Supported media types | `IMAGE`, `VIDEO`, `CAROUSEL_ALBUM` |
 
-1. **Never commit** `.env.local` to version control
-2. `.env.local` is already in `.gitignore` - keep it there
-3. Only set tokens in environment variables, never hardcode them
-4. Rotate tokens regularly (every 60 days minimum)
+---
 
 ## Troubleshooting
 
-### "Error validating application" (Code 190)
+| Error | Cause | Fix |
+| --- | --- | --- |
+| Code 190 / "Error validating application" | Token expired or invalid | Generate a new token in Meta dashboard |
+| Code 400 / "Invalid OAuth access token" | Wrong permissions or personal account | Switch to Business/Creator account; re-generate token |
+| No posts shown | Token missing, expired, or account is private | Check `IG_ACCESS_TOKEN` in `.env.local`; ensure account is public |
+| "Personal accounts are not supported" | Account is personal type | Settings → Account → Switch to Professional Account |
 
-**Cause**: Token has expired or is invalid
+---
 
-**Solution**:
-1. Generate a new token in Meta for Developers
-2. Update `.env.local` with the new token
-3. Restart your server
-
-### "Invalid OAuth access token" (Code 400)
-
-**Cause**: Token doesn't have the required permissions or account is not Business/Creator
-
-**Solution**:
-1. Verify your Instagram account is set to Business or Creator (not Personal)
-2. Ensure your Instagram account is public
-3. Regenerate the token with correct permissions
-4. Make sure you selected "Instagram Login" not "Facebook Login"
-
-### No Posts Showing
-
-**Possible causes and solutions**:
-
-1. **Token not set**: Check that `IG_ACCESS_TOKEN` exists in `.env.local`
-2. **Token expired**: Regenerate a new token
-3. **Account is private**: Make your Instagram account public
-4. **No recent posts**: Ensure @mpa.my has public posts
-5. **API errors**: Check browser console and server logs for detailed errors
-
-The section will gracefully hide itself if no posts are available.
-
-### "Personal accounts are not supported"
-
-**Cause**: Your Instagram account is a personal account
-
-**Solution**:
-1. Open Instagram app/website
-2. Go to Settings → Account
-3. Select "Switch to Professional Account"
-4. Choose either "Creator" or "Business"
-5. Complete the setup
-6. Regenerate your access token
-
-### Rate Limiting
-
-The Instagram API has rate limits:
-- **200 calls per hour per user**
-- The website caches posts for **1 hour** to stay within limits
-- Monitor your API usage in Meta for Developers dashboard
-
-## API Endpoints
-
-### Fetch Media
+## Verify your token
 
 ```bash
-GET https://graph.instagram.com/me/media
-  ?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,username
-  &access_token={access-token}
-  &limit=12
-```
-
-### Refresh Token
-
-```bash
-GET https://graph.instagram.com/refresh_access_token
-  ?grant_type=ig_refresh_token
-  &access_token={access-token}
-```
-
-## Features
-
-The Instagram section includes:
-
-- **Responsive Grid**: 2 columns (mobile) → 3 (tablet) → 6 (desktop)
-- **Media Types**: Supports both images and videos
-- **Video Indicator**: Play icon overlay for video posts
-- **Hover Effects**:
-  - Image zoom and overlay on hover
-  - Caption reveal with blur-to-clear animation
-  - Timestamp display
-- **Smart Caching**: 1-hour cache to minimize API calls
-- **Error Handling**: Graceful degradation if API fails
-- **Auto-hide**: Section doesn't display if no posts available
-
-## Testing
-
-### Local Testing
-
-1. Set your `IG_ACCESS_TOKEN` in `.env.local`
-2. Run `bun run dev`
-3. Visit http://localhost:2656
-4. Scroll to the Instagram section
-5. Check browser console for any errors
-
-### Verify API Connection
-
-Test your token directly:
-
-```bash
-curl "https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink&access_token=YOUR_TOKEN&limit=1"
+curl "https://graph.instagram.com/v22.0/me/media?fields=id,caption,media_url,permalink&access_token=YOUR_TOKEN&limit=1"
 ```
 
 Expected response:
@@ -289,40 +154,6 @@ Expected response:
 }
 ```
 
-## Additional Resources
-
-- [Instagram API with Instagram Login Documentation](https://developers.facebook.com/docs/instagram-api/overview)
-- [Meta Business Verification Guide](https://www.facebook.com/business/help/2058515294227817)
-- [Instagram Account Types Guide](https://help.instagram.com/502981923235522)
-- [Meta for Developers](https://developers.facebook.com/)
-
-## Need Help?
-
-If you encounter issues:
-
-1. Check the server console for detailed error messages
-2. Verify your Instagram account is Business/Creator and public
-3. Ensure Business Verification is complete
-4. Check that token hasn't expired (regenerate if needed)
-5. Review Meta for Developers dashboard for app status
-
-## Changes from Previous Version
-
-**What Changed in 2025:**
-- Instagram Basic Display API is deprecated (no longer works)
-- Must use "Instagram API with Instagram Login" instead
-- No longer requires a Facebook Page (simplified!)
-- Still requires Business/Creator Instagram account
-- Business Verification is now mandatory
-- Token generation is simpler through Meta dashboard
-
-**Migration**: If you had the old setup, just follow the new steps above to generate a fresh token using the new Instagram Login method.
-
 ---
 
-**Last Updated**: December 2025
-
-**Sources:**
-- [How to get your Instagram Access Token – Bricks Academy](https://academy.bricksbuilder.io/article/instagram-access-token/)
-- [Instagram API changes 2025](https://elfsight.com/blog/instagram-graph-api-changes/)
-- [Instagram Basic Display API Deprecated](https://stackoverflow.com/questions/78977319/what-is-the-alternative-for-instagram-basic-display-api-since-its-deprecated)
+**Last updated:** March 2026

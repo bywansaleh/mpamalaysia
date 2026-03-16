@@ -1,13 +1,12 @@
-import { IconAffiliate, IconBooks, IconShieldHeart } from '@tabler/icons-react'
-import { Handshake, Speech, TrendingUp } from 'lucide-react'
-import React from 'react'
-import Balancer from 'react-wrap-balancer'
-
+import styles from './styles.module.css'
 import { RevealFade } from '@/components/reveal-fade'
 import Section from '@/components/section'
 import { cn } from '@/lib/utils'
 
-import styles from './styles.module.css'
+import { IconAffiliate, IconBooks, IconShieldHeart } from '@tabler/icons-react'
+import { Handshake, Speech, TrendingUp } from 'lucide-react'
+import * as React from 'react'
+import Balancer from 'react-wrap-balancer'
 
 export default function Pillars() {
   return (
@@ -15,16 +14,14 @@ export default function Pillars() {
       <div className="relative container">
         <p className={`
           mt-20 mb-10 max-w-(--breakpoint-md) text-2xl leading-[1.1]! font-light
-          tracking-tighter text-pretty
+          tracking-tighter text-balance
           md:text-3xl
         `}
         >
-          <Balancer>
-            Music Publishers Association of Malaysia safeguards the rights and promotes the works of music publishers in
-            the country.
-            {' '}
-            <span className="opacity-50">We focus on the following six pillars.</span>
-          </Balancer>
+          Music Publishers Association of Malaysia safeguards the rights and promotes the works of music publishers in
+          the country.
+          {' '}
+          <span className="opacity-50">We focus on the following six pillars.</span>
         </p>
 
         <div className={`
@@ -68,7 +65,8 @@ function PillarCard({ pillar, index }: { pillar: Pillar, index: number }) {
           `,
           `
             origin-top
-            hover:scale-[103%] hover:[&_a]:underline
+            hover:scale-[103%]
+            hover:[&_a]:underline
           `,
         )}
         style={

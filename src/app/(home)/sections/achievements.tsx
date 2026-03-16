@@ -1,9 +1,8 @@
-import Balancer from 'react-wrap-balancer'
-
+import styles from './styles.module.css'
 import { RevealFade } from '@/components/reveal-fade'
 import Section from '@/components/section'
 
-import styles from './styles.module.css'
+import Balancer from 'react-wrap-balancer'
 
 export default function Achievements() {
   return (
