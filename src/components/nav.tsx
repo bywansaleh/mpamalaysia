@@ -63,7 +63,7 @@ export default function Nav() {
 
             <ul className={`
               -mb-1.5 flex h-8 items-center rounded-full p-1 text-xs
-              leading-none! font-medium tracking-tight ring-foreground/[7%]
+              leading-none! font-medium tracking-tight ring-foreground/7
               sm:mb-1.5 sm:h-9 sm:gap-1 sm:bg-card/50 sm:text-sm sm:ring-1
               sm:backdrop-blur-sm
             `}

@@ -1,7 +1,5 @@
 import type { Member } from './council.data'
 
-import Balancer from 'react-wrap-balancer'
-
 import { RevealFade } from '@/components/reveal-fade'
 import Section from '@/components/section'
 import { cn } from '@/lib/utils'
@@ -33,14 +31,12 @@ export default function Council() {
         </div>
 
         <RevealFade>
-          <p className="mt-8 max-w-lg text-sm font-normal text-pretty">
-            <Balancer>
-              The council members boast extensive experience, particularly hailing from music backgrounds, and are
-              {' '}
-              <span className="text-brand">recognized as prominent leaders</span>
-              {' '}
-              within the industry.
-            </Balancer>
+          <p className="mt-8 max-w-lg text-sm font-normal text-balance">
+            The council members boast extensive experience, particularly hailing from music backgrounds, and are
+            {' '}
+            <span className="text-brand">recognized as prominent leaders</span>
+            {' '}
+            within the industry.
           </p>
         </RevealFade>
       </div>
@@ -59,6 +55,8 @@ export default function Council() {
     </Section>
   )
 }
+
+const sdnBhdRegex = /( \(M\))? Sdn Bhd$/
 
 function MemberCard({ member }: { member: Member }) {
   return (
@@ -100,7 +98,7 @@ function MemberCard({ member }: { member: Member }) {
           <p className="text-xs font-semibold tracking-tighter text-brand/90">{member.position}</p>
           <h3
             className={cn(
-              'leading-none! font-medium tracking-tighter',
+              'text-base leading-none! font-medium tracking-tighter',
               // member.position === 'Council Member' &&
               `
                 text-sm
@@ -108,10 +106,13 @@ function MemberCard({ member }: { member: Member }) {
               `,
             )}
           >
-            <Balancer>{member.name}</Balancer>
+            {member.name}
           </h3>
-          <p className="text-xs font-medium tracking-tighter opacity-55">
-            <Balancer>{member.company.replace(/( \(M\))? Sdn Bhd$/, '')}</Balancer>
+          <p className="
+            text-xs font-medium tracking-tighter text-balance opacity-55
+          "
+          >
+            {member.company.replace(sdnBhdRegex, '')}
           </p>
         </div>
       </div>

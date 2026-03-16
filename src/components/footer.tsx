@@ -1,5 +1,3 @@
-import Balancer from 'react-wrap-balancer'
-
 import { companyAddress, companyEmail, companyFax, companyPhone } from '@/app/company'
 import { siteTitle } from '@/lib/config'
 import { cn } from '@/lib/utils'
@@ -27,18 +25,16 @@ export default function Footer() {
           <div className="col-span-2">
             <h3 className="mb-2 text-2xl font-light">Contact</h3>
             <p className="text-balance">
-              <Balancer>{companyAddress}</Balancer>
+              {companyAddress}
             </p>
             <p className="text-balance">
-              <Balancer>
-                Phone:
-                {' '}
-                <a href={`tel:${companyPhone}`}>{companyPhone}</a>
-                {' '}
-                &middot; Fax:
-                {' '}
-                {companyFax}
-              </Balancer>
+              Phone:
+              {' '}
+              <a href={`tel:${companyPhone}`}>{companyPhone}</a>
+              {' '}
+              &middot; Fax:
+              {' '}
+              {companyFax}
             </p>
 
             <div className="mt-4 flex gap-2">
@@ -73,19 +69,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4>About</h4>
-            <p className="text-pretty">
-              <Balancer>
-                <span className="text-brand">Music Publishers Association of Malaysia</span>
-                {' '}
-                safeguards the rights and
-                promotes the works of music publishers in the country.
-              </Balancer>
+            <h3 className="mb-2 text-2xl font-light">About</h3>
+            <p className="text-balance">
+              <span className="font-bold">Music Publishers Association of Malaysia</span>
+              {' '}
+              safeguards the rights and
+              promotes the works of music publishers in the country.
             </p>
           </div>
 
           <div>
-            <h4>Links</h4>
+            <h3 className="mb-2 text-2xl font-light">Links</h3>
             <ul>
               <li>
                 <a href="https://macp.com.my/">Music Authors Copyright Protection</a>

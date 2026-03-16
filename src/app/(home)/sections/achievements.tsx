@@ -1,8 +1,7 @@
-import styles from './styles.module.css'
 import { RevealFade } from '@/components/reveal-fade'
 import Section from '@/components/section'
 
-import Balancer from 'react-wrap-balancer'
+import styles from './styles.module.css'
 
 export default function Achievements() {
   return (
@@ -44,7 +43,7 @@ export default function Achievements() {
 function AchievementCard({ achievement }: { achievement: Achievement }) {
   return (
     <RevealFade>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col">
         <div className={`
           w-[10%] font-serif text-4xl leading-none! font-extralight
           md:text-5xl
@@ -58,15 +57,20 @@ function AchievementCard({ achievement }: { achievement: Achievement }) {
             {achievement.number}
           </span>
         </div>
-        <h3 className="relative text-xl leading-none! font-light tracking-tight">
-          <Balancer>{achievement.title}</Balancer>
+        <h3 className="
+          relative mt-1 text-xl leading-none! font-light tracking-tight
+          text-balance
+        "
+        >
+          {achievement.title}
         </h3>
+
         <p className={`
-          text-xs leading-relaxed! text-pretty opacity-55
+          mt-6 text-xs text-balance opacity-55
           md:text-sm
         `}
         >
-          <Balancer>{achievement.description}</Balancer>
+          {achievement.description}
         </p>
       </div>
     </RevealFade>

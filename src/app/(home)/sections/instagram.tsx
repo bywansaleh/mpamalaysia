@@ -1,6 +1,6 @@
-import styles from './styles.module.css'
 import { RevealFade } from '@/components/reveal-fade'
 import { cn } from '@/lib/utils'
+import styles from './styles.module.css'
 
 const POSTS_LIMIT = 6
 const IG_API_VERSION = 'v22.0'
@@ -102,17 +102,17 @@ function PostCard({ post }: { post: Post }) {
           alt={caption}
           loading="lazy"
           className="
-            absolute inset-0 size-full object-cover transition-transform
-            duration-500 ease-out
-            group-hover:scale-105
+            absolute inset-0 size-full object-cover transition-all duration-500
+            ease-out
+            group-hover:scale-105 group-hover:blur-xs
           "
         />
       )}
 
       {/* Gradient overlay */}
       <div className="
-        absolute inset-0 bg-linear-to-t from-black/90 via-black/30
-        to-transparent opacity-70 transition-opacity duration-300
+        absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent
+        opacity-70 transition-opacity duration-300
         group-hover:opacity-95
       "
       />
@@ -129,24 +129,24 @@ function PostCard({ post }: { post: Post }) {
       <div className="absolute inset-0 z-10 flex flex-col justify-end p-4">
         <p
           className={cn(
-            'mb-2 leading-snug font-medium text-white',
+            'mb-2 font-medium text-white',
             `
-              opacity-0 blur-sm transition-all duration-300
-              group-hover:opacity-100 group-hover:blur-none
+              opacity-0 transition-all duration-300
+              group-hover:opacity-100
             `,
-            'line-clamp-3 text-xs',
+            'line-clamp-5 text-xs text-balance',
           )}
         >
           {caption}
         </p>
 
         <div className="
-          flex items-center justify-between gap-2 text-xs text-white/80
+          flex items-center justify-between gap-2 text-xs text-white/70
         "
         >
           <span className="
-            opacity-0 blur-sm transition-all duration-300
-            group-hover:opacity-100 group-hover:blur-none
+            opacity-0 transition-all duration-300
+            group-hover:opacity-100
           "
           >
             {new Intl.DateTimeFormat('en-GB', {

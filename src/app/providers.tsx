@@ -1,7 +1,6 @@
 'use client'
 
 import { domMax, LazyMotion } from 'framer-motion'
-import { Provider } from 'react-wrap-balancer'
 
 import { ThemeProvider } from '@/components/theme-provider'
 
@@ -15,7 +14,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         // defaultTheme="dark"
         enableSystem
       >
-        <Provider>{children}</Provider>
+        {children}
       </ThemeProvider>
       <MouseProvider />
     </LazyMotion>

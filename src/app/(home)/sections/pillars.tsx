@@ -1,12 +1,11 @@
-import styles from './styles.module.css'
-import { RevealFade } from '@/components/reveal-fade'
-import Section from '@/components/section'
-import { cn } from '@/lib/utils'
-
 import { IconAffiliate, IconBooks, IconShieldHeart } from '@tabler/icons-react'
 import { Handshake, Speech, TrendingUp } from 'lucide-react'
 import * as React from 'react'
-import Balancer from 'react-wrap-balancer'
+
+import { RevealFade } from '@/components/reveal-fade'
+import Section from '@/components/section'
+import { cn } from '@/lib/utils'
+import styles from './styles.module.css'
 
 export default function Pillars() {
   return (
@@ -104,11 +103,11 @@ function PillarCard({ pillar, index }: { pillar: Pillar, index: number }) {
           {pillar.title}
         </h3>
         <p className={`
-          mt-auto text-xs leading-snug! opacity-55
+          mt-auto text-xs leading-snug! text-balance opacity-55
           md:text-sm
         `}
         >
-          <Balancer>{pillar.description}</Balancer>
+          {pillar.description}
         </p>
       </div>
     </RevealFade>

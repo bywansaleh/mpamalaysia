@@ -9,6 +9,8 @@ import { cn } from '@/lib/utils'
 import { publishers } from './publishers.data'
 import styles from './styles.module.css'
 
+const sdnBhdRegex = /( \(M\))? Sdn Bhd$/
+
 export default function Publishers() {
   return (
     <Section
@@ -42,7 +44,7 @@ export default function Publishers() {
                   md:text-base
                 `}
               >
-                <h3>{publisher.name.replace(/( \(M\))? Sdn Bhd$/, '')}</h3>
+                <h3>{publisher.name.replace(sdnBhdRegex, '')}</h3>
               </div>
             ))}
           </div>
@@ -83,13 +85,8 @@ export default function Publishers() {
                 md:mt-6
               `}
               >
-                <div className={`
-                  flex animate-marquee gap-6
-                  [animation-direction:reverse]
-                `}
-                >
-                  {[...publishers]
-                    .reverse()
+                <div className="flex animate-marquee gap-6 direction-[reverse]">
+                  {publishers.toReversed()
                     .filter(publisher => publisher.logo !== undefined)
 
                     .map((publisher, i) => (
@@ -97,14 +94,10 @@ export default function Publishers() {
                     ))}
                 </div>
                 <div
-                  className={`
-                    flex animate-marquee gap-6
-                    [animation-direction:reverse]
-                  `}
+                  className="flex animate-marquee gap-6 direction-[reverse]"
                   aria-hidden
                 >
-                  {[...publishers]
-                    .reverse()
+                  {publishers.toReversed()
                     .filter(publisher => publisher.logo !== undefined)
                     .map((publisher, i) => (
                       <PublisherLogo key={i} publisher={publisher} />

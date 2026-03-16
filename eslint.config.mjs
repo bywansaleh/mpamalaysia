@@ -65,26 +65,26 @@ export default antfu(
       'next/no-img-element': 'off',
       'react/prefer-use-state-lazy-initialization': 'off',
 
-      // perfectionist
-      'perfectionist/sort-imports': [
-        'error',
-        {
-          groups: [
-            'type',
-            ['parent', 'sibling', 'index', 'internal'],
-            'builtin',
-            'external',
-            // 'internal',
-            // ['parent', 'sibling', 'index'],
-            'side-effect',
-            // 'object',
-            'unknown',
-          ],
-          newlinesBetween: 1,
-          order: 'asc',
-          type: 'natural',
-        },
-      ],
+      // // perfectionist
+      // 'perfectionist/sort-imports': [
+      //   'error',
+      //   {
+      //     groups: [
+      //       'type',
+      //       ['parent', 'sibling', 'index', 'internal'],
+      //       'builtin',
+      //       'external',
+      //       // 'internal',
+      //       // ['parent', 'sibling', 'index'],
+      //       'side-effect',
+      //       // 'object',
+      //       'unknown',
+      //     ],
+      //     newlinesBetween: 1,
+      //     order: 'asc',
+      //     type: 'natural',
+      //   },
+      // ],
     },
   },
 
