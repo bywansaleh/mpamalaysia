@@ -2,3 +2,6 @@ allowBuilds:
   '@parcel/watcher': true
   sharp: true
   unrs-resolver: true
+
+packages:
+  - .
