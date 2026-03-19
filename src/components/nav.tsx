@@ -78,7 +78,7 @@ export default function Nav() {
                         transition-all duration-300
                         sm:px-3
                       `,
-                      section === link.id && 'text-white!',
+                      // section === link.id && 'text-white!',
                     )}
                     onClick={(ev) => {
                       ev.preventDefault()
@@ -88,13 +88,13 @@ export default function Nav() {
                       }
                     }}
                   >
-                    <span className="relative z-10">{link.title}</span>
+                    <span className="relative z-10 drop-shadow-sm">{link.title}</span>
                     {section === link.id && (
                       <m.span
                         layoutId="nav-pill"
                         className={cn(`
-                          absolute inset-0 z-0 rounded-full bg-brand!
-                          text-white!
+                          absolute inset-0 z-0 rounded-full bg-linear-to-b
+                          from-brand to-brand-darker! text-white!
                         `)}
                       />
                     )}

@@ -59,8 +59,9 @@ export default function Footer() {
               <a
                 href={`mailto:${companyEmail}`}
                 className={`
-                  flex h-8 items-center rounded-full bg-foreground px-4
-                  text-background no-underline!
+                  flex h-8 items-center rounded-full border border-foreground/30
+                  bg-transparent px-4 text-foreground no-underline! duration-150
+                  hover:border-white
                 `}
               >
                 {companyEmail}
