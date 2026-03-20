@@ -24,10 +24,9 @@ export default function Pillars() {
         </p>
 
         <div className={`
-          grid grid-cols-2 gap-2.5
-          md:grid-cols-3 md:gap-4
-          lg:grid-cols-4
-          xl:grid-cols-6
+          grid grid-cols-1 gap-2.5
+          sm:grid-cols-2 sm:gap-4
+          lg:grid-cols-3
         `}
         >
           {pillars.map((pillar, i) => (
@@ -154,6 +153,7 @@ const pillars: Pillar[] = [
         <a href="https://macp.com.my">MACP</a>
         {' '}
         (Malaysia),
+        {' '}
         <a href="https://wami.id/">WAMI</a>
         {' '}
         (Indonesia),
