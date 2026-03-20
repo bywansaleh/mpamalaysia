@@ -99,6 +99,7 @@ export default function Footer() {
           {siteTitle}
           {' '}
           &copy;
+          {' '}
           {new Date().getFullYear()}
         </p>
       </div>
