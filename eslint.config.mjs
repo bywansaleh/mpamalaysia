@@ -3,7 +3,6 @@ import betterTailwind from 'eslint-plugin-better-tailwindcss'
 
 export default antfu(
   {
-    react: true,
     nextjs: true,
     typescript: true,
 
@@ -114,7 +113,7 @@ export default antfu(
     settings: {
       'better-tailwindcss': {
         // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
-        entryPoint: 'src/styles/globals.css',
+        entryPoint: 'src/app/globals.css',
       },
     },
   },
