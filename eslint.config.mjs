@@ -5,6 +5,7 @@ export default antfu(
   {
     nextjs: true,
     typescript: true,
+    // react: true,
 
     // Configuration preferences
     lessOpinionated: false,
@@ -29,12 +30,6 @@ export default antfu(
       '.github/**',
       'CLAUDE.md',
     ],
-
-    // react: {
-    //   overrides: {
-
-    //   }
-    // },
 
     rules: {
       'style/jsx-self-closing-comp': 'error',
@@ -113,7 +108,7 @@ export default antfu(
     settings: {
       'better-tailwindcss': {
         // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
-        entryPoint: 'src/app/globals.css',
+        entryPoint: 'src/styles/globals.css',
       },
     },
   },
