@@ -20,7 +20,7 @@ export default function Publishers() {
       <div className="container">
         <RevealFade delay={1}>
           <h2 className={styles.publishers_header}>
-            <span>Publishing Companies</span>
+            <span>Publisher Members</span>
           </h2>
         </RevealFade>
 
@@ -37,15 +37,15 @@ export default function Publishers() {
         >
           <div className="flex flex-wrap gap-4 gap-x-5">
             {publishers.map((publisher, i) => (
-              <div
+              <span
                 key={i}
                 className={`
-                  line-clamp-1 text-sm leading-tight! tracking-tight opacity-55
-                  md:text-base
+                  line-clamp-1 text-lg leading-tight! tracking-tight opacity-55
+                  md:text-xl
                 `}
               >
-                <h3>{publisher.name.replace(sdnBhdRegex, '')}</h3>
-              </div>
+                <>{publisher.name.replace(sdnBhdRegex, '')}</>
+              </span>
             ))}
           </div>
 

@@ -78,7 +78,7 @@ export default function Nav() {
                         transition-all duration-300
                         sm:px-3
                       `,
-                      // section === link.id && 'text-white!',
+                      section === link.id && 'text-white!',
                     )}
                     onClick={(ev) => {
                       ev.preventDefault()
