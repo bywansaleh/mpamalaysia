@@ -1,6 +1,6 @@
 # Instagram Integration Setup Guide (2026)
 
-Displays the 5 most recent posts from @mpa.my using the **Instagram API with Instagram Login** — the recommended method as of 2026 (no Facebook Page required).
+Displays the 6 most recent posts from @mpa.my using the **Instagram API with Instagram Login** — the recommended method as of 2026 (no Facebook Page required).
 
 ---
 
@@ -49,15 +49,16 @@ Displays the 5 most recent posts from @mpa.my using the **Instagram API with Ins
 
 Create or edit `.env.local` in the project root:
 
-```env
+~~~env
 IG_ACCESS_TOKEN=your_access_token_here
-```
+CRON_SECRET=your_vercel_cron_secret_here
+~~~
 
 Then restart the dev server:
 
-```bash
-bun run dev
-```
+~~~bash
+pnpm dev
+~~~
 
 ---
 
@@ -73,9 +74,10 @@ bun run dev
 
 **Option B — API endpoint (while app is running):**
 
-```bash
-curl http://localhost:2656/api/refresh-ig-token
-```
+~~~bash
+curl -H "Authorization: Bearer YOUR_CRON_SECRET" \
+  http://localhost:2656/api/refresh-ig-token
+~~~
 
 **Option C — Direct API call:**
 
@@ -94,7 +96,7 @@ Response:
 
 ### Automated refresh (production)
 
-Use [Vercel Cron Jobs](https://vercel.com/docs/cron-jobs) to call `/api/refresh-ig-token` every 30 days automatically.
+The repository's `vercel.json` calls `/api/refresh-ig-token` every 21 days. Configure `CRON_SECRET` in the deployment so the route's Bearer check can authenticate the cron request.
 
 ---
 
@@ -104,6 +106,8 @@ Set `IG_ACCESS_TOKEN` as an environment variable in your hosting platform:
 
 - **Vercel**: Project Settings → Environment Variables
 - **Netlify**: Site Settings → Build & Deploy → Environment
+
+Set both `IG_ACCESS_TOKEN` and `CRON_SECRET` in production. `IG_USER_ID` is not required by the current source.
 
 Never commit `.env.local` to version control — it's already in `.gitignore`.
 
@@ -120,6 +124,7 @@ Never commit `.env.local` to version control — it's already in `.gitignore`.
 | Rate limit | 200 calls/hour per user |
 | Cache | Responses cached for 1 hour via Next.js fetch |
 | Supported media types | `IMAGE`, `VIDEO`, `CAROUSEL_ALBUM` |
+| Page revalidation | 60 seconds; the Instagram fetch itself is cached for 1 hour |
 
 ---
 
@@ -156,4 +161,4 @@ Expected response:
 
 ---
 
-**Last updated:** March 2026
+**Last verified:** August 15, 2026
