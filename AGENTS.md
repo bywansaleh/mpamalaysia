@@ -45,6 +45,8 @@ TypeScript runs side-by-side on purpose. TypeScript 7 ships no JS compiler API, 
 
 `tsc` (and `bun tsc`) is TypeScript 7 native; `typescript` resolves to the 6.0 API for tooling, with `tsc6` as its binary. Do not "upgrade" the `typescript` key to 7.x — `bun lint` will fail with `typescript-eslint does not support TS 7.0`. Revert this pair only once typescript-eslint supports TS >= 7.1.
 
+Security overrides in `package.json` exist because the vulnerable packages are pinned exactly by their parents (`satori` → fflate 0.7.3, `oxfmt` → tinypool 2.1.0, `@tailwindcss/typography` → postcss-selector-parser 6.0.10, `micromark-extension-math` → katex ^0.16). The postcss-selector-parser override is scoped to that one parent because only 6.x is affected; scoping it globally would downgrade the healthy 7.1.7 copies. Keep `bun audit` at zero vulnerabilities, and do not drop an override without re-running it.
+
 The predev lifecycle removes the generated .next/ directory before `bun dev`. There is currently no test script or test tree; the normal validation baseline is lint, TypeScript, build, and a browser smoke check for UI work.
 
 ## Runtime map
@@ -65,6 +67,16 @@ The Instagram integration is server-only:
 - IG_USER_ID may exist in a local environment file, but current source does not read it.
 
 Metadata and discoverability live in **src/app/metadata.ts**, **src/app/sitemap.ts**, and **src/app/robots.ts**. When changing social previews, also inspect the image assets under **src/app/** and **src/lib/generate-opengraph.tsx**.
+
+## Deployment
+
+Production runs on Vercel in a **different account from the local CLI**: project `mpamalaysia` under the personal scope `bywansaleh-projects` (bywansaleh@gmail.com, Hobby plan). The `vercel` CLI on this machine is authenticated as `wansaleh` in team `wan-salehs-projects`, which cannot see this project — `vercel project ls`, `vercel domains inspect` and `vercel inspect dpl_…` all fail for it, and `--scope bywansaleh-projects` reports "scope does not exist". Read build logs and change settings in the Vercel dashboard (browser space `Chrome › bywansaleh`); a commit's deployment URL is also exposed by the GitHub status API: `gh api repos/bywansaleh/mpamalaysia/commits/<sha>/status`.
+
+- Git `bywansaleh/mpamalaysia`, branch `main`, is the Production branch, so **a push to main deploys the live site**. Vercel blocks a production redeploy behind an emailed one-time code.
+- Domains: www.mpamalaysia.com (canonical), mpamalaysia.com (308 → www), staging.mpamalaysia.com, mpamalaysia.vercel.app. Builds run in iad1; requests are served from sin1.
+- **Project Settings → Build and Deployment → Node.js Version must stay 24.x.** On 20.x every build died about 1s after cloning with `Node.js Version "20.x" is discontinued` no matter what the commit contained, because Node 20 was retired on 2026-10-01. Settings are not retroactive: after changing the version the old failed deployments stay failed and a redeploy is required.
+- Install and build commands are unset, so Vercel auto-detects bun from `bun.lock` plus `packageManager`; there is no `engines` field.
+- Production environment holds IG_ACCESS_TOKEN, IG_USER_ID (unused by source) and CRON_SECRET. The vercel.json cron relies on CRON_SECRET matching the refresh route's Bearer check.
 
 ## Component and styling conventions
 
