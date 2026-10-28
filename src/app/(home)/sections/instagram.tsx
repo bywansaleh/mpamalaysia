@@ -76,7 +76,9 @@ export default async function Instagram() {
 }
 
 function PostCard({ post }: { post: Post }) {
-  const imageUrl = post.media_type === 'VIDEO' ? post.thumbnail_url : post.media_url
+  const imageUrl = post.media_type === 'VIDEO'
+    ? post.thumbnail_url
+    : post.media_url
   const caption = post.caption?.slice(0, 150) || 'View on Instagram'
 
   return (

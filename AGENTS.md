@@ -18,19 +18,34 @@ Use the repository as the source of truth: package scripts, current imports, rou
 
 ## Tooling
 
-Use pnpm. The lockfile, .npmrc, and package.json all describe a pnpm workflow; do not copy the older Bun commands from historical docs.
+Use Bun. `bun.lock` is the lockfile and `package.json#packageManager` pins the Bun version; do not reintroduce pnpm/npm lockfiles.
+
+Bun skips dependency lifecycle scripts unless the package is listed in `package.json#trustedDependencies` (currently `sharp`, `@parcel/watcher`, `unrs-resolver`). Add an entry there whenever a new dependency needs a postinstall build step, or its native binary silently will not be built.
 
 ~~~bash
-pnpm dev              # Next dev server on port 2656
-pnpm dev-https        # HTTPS dev server on port 2656
-pnpm lint             # ESLint
-pnpm lint:fix         # ESLint autofix
-pnpm tsc              # TypeScript check
-pnpm build            # Production build
-pnpm start            # Serve the production build
+bun dev               # Next dev server on port 2656
+bun dev-https         # HTTPS dev server on port 2656
+bun lint              # ESLint
+bun lint:fix          # ESLint autofix
+bun tsc               # TypeScript check
+bun build             # Production build
+bun start             # Serve the production build
 ~~~
 
-The predev lifecycle removes the generated .next/ directory before pnpm dev. There is currently no test script or test tree; the normal validation baseline is lint, TypeScript, build, and a browser smoke check for UI work.
+TypeScript runs side-by-side on purpose. TypeScript 7 ships no JS compiler API, so `typescript-eslint` (and therefore ESLint) crashes on load if `typescript` resolves to 7.x. `package.json` therefore aliases:
+
+~~~json
+{
+  "devDependencies": {
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
+  }
+}
+~~~
+
+`tsc` (and `bun tsc`) is TypeScript 7 native; `typescript` resolves to the 6.0 API for tooling, with `tsc6` as its binary. Do not "upgrade" the `typescript` key to 7.x — `bun lint` will fail with `typescript-eslint does not support TS 7.0`. Revert this pair only once typescript-eslint supports TS >= 7.1.
+
+The predev lifecycle removes the generated .next/ directory before `bun dev`. There is currently no test script or test tree; the normal validation baseline is lint, TypeScript, build, and a browser smoke check for UI work.
 
 ## Runtime map
 
@@ -39,7 +54,7 @@ The home route is deliberately static/ISR:
 - **src/app/(home)/page.tsx** exports dynamic = 'force-static' and revalidate = 60.
 - The Instagram fetch has its own Next fetch cache of 3600 seconds. The page can regenerate every 60 seconds, but a successful Instagram response can remain cached for up to an hour.
 - If IG_ACCESS_TOKEN is missing or the Instagram request fails, the Instagram section logs the error and returns no section; the rest of the page still renders.
-- pnpm build loads .env.local and may make a live Instagram API request when the token is present.
+- `bun build` loads .env.local and may make a live Instagram API request when the token is present.
 
 The Instagram integration is server-only:
 
@@ -68,7 +83,7 @@ Metadata and discoverability live in **src/app/metadata.ts**, **src/app/sitemap.
 1. Trace the target from **src/app/(home)/page.tsx** or the relevant route before editing. Decide whether the change belongs in a section component, its data file, a shared component, or a global token.
 2. Check the server/client boundary before importing hooks, browser APIs, next-themes, Nanostores, or Framer Motion.
 3. For content changes, verify every referenced image/logo path exists under **public/images/** and preserve the data shape used by the renderer.
-4. Run pnpm lint, pnpm tsc, and pnpm build after code changes. For UI changes, run pnpm dev and check http://localhost:2656 in light and dark modes at narrow and wide widths, including anchor navigation.
+4. Run `bun lint`, `bun tsc`, and `bun build` after code changes. For UI changes, run `bun dev` and check http://localhost:2656 in light and dark modes at narrow and wide widths, including anchor navigation.
 5. For Instagram changes, test both with a configured token and without one. Test the refresh route with an explicit Bearer header and never print token values in logs or output.
 
 ## Known repository edges
@@ -76,3 +91,13 @@ Metadata and discoverability live in **src/app/metadata.ts**, **src/app/sitemap.
 - The repository contains legacy-looking files and variants, including **src/--opengraph-image.tsx**, **src/--twitter-image.tsx**, **src/app/registry.tsx**, and multiple logo components. Confirm the import graph before treating one as active or deleting it.
 - **.next/** and **.claude/worktrees/** are generated/local workspace material; do not edit them as application source.
 - The production build currently passes but emits a Next warning about metadataBase falling back to http://localhost:3000 while resolving social images. Treat this as a baseline warning and investigate it when touching metadata or Open Graph/Twitter image behavior.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

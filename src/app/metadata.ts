@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     follow: true,
   },
   description: siteDescription,
-  keywords: ['malaysia', 'music', 'publishers', 'mpa', 'rights', 'royalties', 'copyright'],
+  keywords: [
+    'malaysia',
+    'music',
+    'publishers',
+    'mpa',
+    'rights',
+    'royalties',
+    'copyright',
+  ],
   authors: [
     {
       name: 'Wan Saleh',

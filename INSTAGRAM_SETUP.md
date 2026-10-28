@@ -57,7 +57,7 @@ CRON_SECRET=your_vercel_cron_secret_here
 Then restart the dev server:
 
 ~~~bash
-pnpm dev
+bun dev
 ~~~
 
 ---

@@ -26,7 +26,7 @@ export default antfu(
       '**/.next/**',
       '**/public/**',
       '**/sanity.types.ts',
-      'pnpm-workspace.yaml',
+      'bun.lock',
       '.github/**',
       'CLAUDE.md',
     ],
